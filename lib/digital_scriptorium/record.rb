@@ -9,10 +9,9 @@ module DigitalScriptorium
     include StatementHelper
 
     def described_manuscript_id
-      described_manuscript_claim = get_first_claim_by_property_id DESCRIBED_MANUSCRIPT # P3
-      return nil unless described_manuscript_claim
+      described_manuscript_claim = first_claim_by_property_id DESCRIBED_MANUSCRIPT # P3
 
-      described_manuscript_claim.main_snak&.data_value&.value
+      described_manuscript_claim&.main_snak&.data_value&.value
     end
 
     def title_as_recorded_claims

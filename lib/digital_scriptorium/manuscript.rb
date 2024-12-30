@@ -9,14 +9,14 @@ module DigitalScriptorium
     include StatementHelper
 
     def ds_id
-      ds_id_claim = get_first_claim_by_property_id DS_ID # P1
+      ds_id_claim = first_claim_by_property_id DS_ID # P1
       return nil unless ds_id_claim
 
       ds_id_claim.main_snak&.data_value&.value
     end
 
     def holding_id
-      holding_id_claim = get_first_claim_by_property_id MANUSCRIPT_HOLDING # P2
+      holding_id_claim = first_claim_by_property_id MANUSCRIPT_HOLDING # P2
       return nil unless holding_id_claim
 
       holding_id_claim.main_snak&.data_value&.value

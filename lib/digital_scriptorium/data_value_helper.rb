@@ -27,7 +27,7 @@ module DigitalScriptorium
       statement&.main_snak&.data_value&.value&.id
     end
 
-    def time_value(statement)
+    def time_value_from(statement)
       # TODO: Implement me
     end
   end
