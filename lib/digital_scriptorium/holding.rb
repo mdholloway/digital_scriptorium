@@ -1,10 +1,8 @@
 # frozen_string_literal: true
 
-require 'wikibase_representable'
-
 module DigitalScriptorium
   # An item representing a Digital Scriptorium holding (instance of Q2)
-  class Holding < WikibaseRepresentable::Model::Item
+  class Holding < DsItem
     def institution_as_recorded_claims
       get_claims_by_property_id HOLDING_INSTITUTION_AS_RECORDED # P5
     end

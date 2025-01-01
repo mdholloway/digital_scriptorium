@@ -3,7 +3,7 @@
 require 'wikibase_representable'
 
 module DigitalScriptorium
-  class Meta
+  class DsMeta
     include DataValueHelper
 
     attr_reader :holding, :manuscript, :record
@@ -20,7 +20,7 @@ module DigitalScriptorium
       doc = SolrDocument.new
       doc.qid_meta = [holding.id, manuscript.id, record.id]
       doc.id = manuscript.ds_id
-      # doc.images_facet = record.iiif_manifest
+      doc.images_facet = record.iiif_manifest # skip later?
 
       doc
     end

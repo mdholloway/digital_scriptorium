@@ -1,17 +1,16 @@
 # frozen_string_literal: true
 
-require 'wikibase_representable'
-
 module DigitalScriptorium
   # An item representing a Digital Scriptorium record (instance of Q3)
-  class Record < WikibaseRepresentable::Model::Item
+  class Record < DsItem
+    include DataValueHelper
     include PropertyId
     include StatementHelper
 
     def described_manuscript_id
       described_manuscript_claim = first_claim_by_property_id DESCRIBED_MANUSCRIPT # P3
 
-      described_manuscript_claim&.main_snak&.data_value&.value
+      entity_id_value_from described_manuscript_claim
     end
 
     def title_as_recorded_claims
