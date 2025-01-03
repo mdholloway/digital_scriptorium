@@ -1,0 +1,106 @@
+P1:
+  prefix: id
+  fields:
+    - id
+    - display
+    - search
+P5:
+  prefix: institution
+  fields:
+    - display
+    - search
+    - facet
+  authority: P4
+P6:
+  prefix: holding_status
+  fields:
+    - display
+P8:
+  prefix: shelfmark
+  fields:
+    - display
+    - search
+P9:
+  prefix: institutional_record
+  fields:
+    - link
+P10:
+  prefix: title
+  fields:
+    - display
+    - search
+    - facet
+  authority: P11
+P12:
+  prefix: uniform_title
+  fields:
+    - search
+# NOTE: P14 can translate to any of a few different Solr fields based on the value of the
+# associated role (P15) qualifier, and is handled in its own dedicated processing method
+P14:
+  prefix: associated_name
+  fields: []
+P18:
+  prefix: term
+  fields:
+    - display
+    - search
+    - facet
+  authority: P20
+P19:
+  prefix: term
+  fields:
+    - display
+    - search
+    - facet
+  authority: P20
+P21:
+  prefix: language
+  fields:
+    - display
+    - search
+    - facet
+  authority: P22
+P23:
+  prefix: date
+  fields:
+    - meta
+    - display
+    - search
+    - facet
+  authority: P24
+P26:
+  prefix: dated
+  fields:
+    - display
+    - facet
+P27:
+  prefix: place
+  fields:
+    - display
+    - search
+    - facet
+  authority: P28
+P29:
+  prefix: physical_description
+  fields:
+    - display
+    - search
+P30:
+  prefix: material
+  fields:
+    - facet
+  authority: P31
+P32:
+  prefix: note
+  fields:
+    - display
+    - search
+P33:
+  prefix: acknowledgements
+  fields:
+    - display
+P41:
+  prefix: iiif_manifest
+  fields:
+    - link
