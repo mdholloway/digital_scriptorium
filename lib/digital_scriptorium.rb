@@ -12,9 +12,6 @@ require 'digital_scriptorium/record'
 require 'digital_scriptorium/export'
 require 'digital_scriptorium/export_representer'
 
-require 'digital_scriptorium/solr_document'
-require 'digital_scriptorium/solr_document_representer'
-
 require 'digital_scriptorium/statement_converter'
 require 'digital_scriptorium/date_statement_converter'
 require 'digital_scriptorium/name_statement_converter'
