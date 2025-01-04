@@ -8,7 +8,7 @@ Gem::Specification.new do |spec|
   spec.authors = ['Michael Holloway']
   spec.email = ['michael@mdholloway.org']
 
-  spec.summary = 'Model classes and serializers for the Digital Scriptorium project.'
+  spec.summary = 'Supporting code for the Digital Scriptorium DS Catalog 2.0 project'
   spec.homepage = 'https://github.com/mdholloway/digital_scriptorium'
   spec.license = 'MIT'
   spec.required_ruby_version = '>= 3.0.0'
