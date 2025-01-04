@@ -1,0 +1,14 @@
+{
+  "mainsnak": {
+    "snaktype": "value",
+    "property": "P8",
+    "hash": "9fd44b4cc9821c7bab3b7a68f9a3af3a132da32e",
+    "datavalue": {
+      "value": "Oversize LJS 110",
+      "type": "string"
+    }
+  },
+  "type": "statement",
+  "id": "Q542$C046FA26-2BC9-4B62-8A1B-8251861DEFEF",
+  "rank": "normal"
+}

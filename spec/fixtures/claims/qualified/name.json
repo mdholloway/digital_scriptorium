@@ -1,0 +1,50 @@
+{
+  "mainsnak": {
+    "snaktype": "value",
+    "property": "P14",
+    "hash": "1ca6263d1c4ecb518d467eab45dd604a375efec1",
+    "datavalue": {
+      "value": "Schoenberg, Lawrence J",
+      "type": "string"
+    }
+  },
+  "type": "statement",
+  "qualifiers": {
+    "P15": [
+      {
+        "snaktype": "value",
+        "property": "P15",
+        "hash": "63120b1e349365b8f15bbbe27edcb9ea07d676b0",
+        "datavalue": {
+          "value": {
+            "entity-type": "item",
+            "numeric-id": 21,
+            "id": "Q21"
+          },
+          "type": "wikibase-entityid"
+        }
+      }
+    ],
+    "P17": [
+      {
+        "snaktype": "value",
+        "property": "P17",
+        "hash": "5409c0609e3d036e4964abc513af899c8104e111",
+        "datavalue": {
+          "value": {
+            "entity-type": "item",
+            "numeric-id": 383,
+            "id": "Q383"
+          },
+          "type": "wikibase-entityid"
+        }
+      }
+    ]
+  },
+  "qualifiers-order": [
+    "P15",
+    "P17"
+  ],
+  "id": "Q544$E4DFCFB3-1276-49A3-A28B-7122A269314E",
+  "rank": "normal"
+}

@@ -1,0 +1,14 @@
+{
+  "mainsnak": {
+    "snaktype": "value",
+    "property": "P9",
+    "hash": "1f6b3c24699842b0f1cff5b5349144fcf0734f17",
+    "datavalue": {
+      "value": "https://franklin.library.upenn.edu/catalog/FRANKLIN_9949945603503681",
+      "type": "string"
+    }
+  },
+  "type": "statement",
+  "id": "Q542$9853212B-9FE4-4C16-8C76-C2BCEB703714",
+  "rank": "normal"
+}

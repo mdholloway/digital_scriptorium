@@ -1,0 +1,34 @@
+{
+  "mainsnak": {
+    "snaktype": "value",
+    "property": "P21",
+    "hash": "9e246379b0dedebec12a4f1c930189c2cdc4935c",
+    "datavalue": {
+      "value": "In Latin",
+      "type": "string"
+    }
+  },
+  "type": "statement",
+  "qualifiers": {
+    "P22": [
+      {
+        "snaktype": "value",
+        "property": "P22",
+        "hash": "88fd34b9b826a66b754b3b2f0db4ca42932c4bb7",
+        "datavalue": {
+          "value": {
+            "entity-type": "item",
+            "numeric-id": 113,
+            "id": "Q113"
+          },
+          "type": "wikibase-entityid"
+        }
+      }
+    ]
+  },
+  "qualifiers-order": [
+    "P22"
+  ],
+  "id": "Q544$07404B0B-82AB-474F-B702-9E14D552B287",
+  "rank": "normal"
+}

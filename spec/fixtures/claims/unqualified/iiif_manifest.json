@@ -1,0 +1,14 @@
+{
+  "mainsnak": {
+    "snaktype": "value",
+    "property": "P41",
+    "hash": "8326dcd070f4904d2ffe5324b1cc3161a53c6b36",
+    "datavalue": {
+      "value": "https://colenda.library.upenn.edu/phalt/iiif/2/81431-p33p8v/manifest",
+      "type": "string"
+    }
+  },
+  "type": "statement",
+  "id": "Q544$77CDD66C-1716-4A0F-8D84-37F91CE7A3C8",
+  "rank": "normal"
+}

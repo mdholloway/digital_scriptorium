@@ -1,0 +1,34 @@
+{
+  "mainsnak": {
+    "snaktype": "value",
+    "property": "P18",
+    "hash": "5d0305c385cd9e771a33cf3346a87909c54f9733",
+    "datavalue": {
+      "value": "Deeds",
+      "type": "string"
+    }
+  },
+  "type": "statement",
+  "qualifiers": {
+    "P20": [
+      {
+        "snaktype": "value",
+        "property": "P20",
+        "hash": "454f8b2a1550d0acdef00508e9ac3488bcbe700d",
+        "datavalue": {
+          "value": {
+            "entity-type": "item",
+            "numeric-id": 283,
+            "id": "Q283"
+          },
+          "type": "wikibase-entityid"
+        }
+      }
+    ]
+  },
+  "qualifiers-order": [
+    "P20"
+  ],
+  "id": "Q544$B974CC4D-4D42-47E2-8831-D687DDF3731A",
+  "rank": "normal"
+}

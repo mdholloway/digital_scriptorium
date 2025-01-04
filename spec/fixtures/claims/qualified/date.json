@@ -1,0 +1,91 @@
+{
+  "mainsnak": {
+    "snaktype": "value",
+    "property": "P23",
+    "hash": "ff62be508403e913e71c078a14d32189f907eb0d",
+    "datavalue": {
+      "value": "1358.",
+      "type": "string"
+    }
+  },
+  "type": "statement",
+  "qualifiers": {
+    "P25": [
+      {
+        "snaktype": "value",
+        "property": "P25",
+        "hash": "d54951c1291e69356cc97ad03e0bcde559341150",
+        "datavalue": {
+          "value": {
+            "time": "+1301-01-01T00:00:00Z",
+            "timezone": 0,
+            "before": 0,
+            "after": 0,
+            "precision": 7,
+            "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+          },
+          "type": "time"
+        }
+      }
+    ],
+    "P24": [
+      {
+        "snaktype": "value",
+        "property": "P24",
+        "hash": "57245da66b5ff9bf14ad3bf993369c42aed464fe",
+        "datavalue": {
+          "value": {
+            "entity-type": "item",
+            "numeric-id": 96,
+            "id": "Q96"
+          },
+          "type": "wikibase-entityid"
+        }
+      }
+    ],
+    "P37": [
+      {
+        "snaktype": "value",
+        "property": "P37",
+        "hash": "ae23519105351987fb859d15b7e5c8e0234b33e8",
+        "datavalue": {
+          "value": {
+            "time": "+1358-01-01T00:00:00Z",
+            "timezone": 0,
+            "before": 0,
+            "after": 0,
+            "precision": 9,
+            "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+          },
+          "type": "time"
+        }
+      }
+    ],
+    "P36": [
+      {
+        "snaktype": "value",
+        "property": "P36",
+        "hash": "41250abd15b0162d8e22e20b929116a3a380b2fc",
+        "datavalue": {
+          "value": {
+            "time": "+1358-12-31T00:00:00Z",
+            "timezone": 0,
+            "before": 0,
+            "after": 0,
+            "precision": 9,
+            "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+          },
+          "type": "time"
+        }
+      }
+    ]
+  },
+  "qualifiers-order": [
+    "P25",
+    "P24",
+    "P37",
+    "P36"
+  ],
+  "id": "Q544$868A931C-03C4-43DB-B6DB-FBB6A1ADD34C",
+  "rank": "normal"
+}

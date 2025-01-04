@@ -1,0 +1,34 @@
+{
+  "mainsnak": {
+    "snaktype": "value",
+    "property": "P5",
+    "hash": "9374610faba500b29dedf759055e43198e98cded",
+    "datavalue": {
+      "value": "University of Pennsylvania",
+      "type": "string"
+    }
+  },
+  "type": "statement",
+  "qualifiers": {
+    "P4": [
+      {
+        "snaktype": "value",
+        "property": "P4",
+        "hash": "9a1bca9ae683999ce197133cd1e265a01825363c",
+        "datavalue": {
+          "value": {
+            "entity-type": "item",
+            "numeric-id": 374,
+            "id": "Q374"
+          },
+          "type": "wikibase-entityid"
+        }
+      }
+    ]
+  },
+  "qualifiers-order": [
+    "P4"
+  ],
+  "id": "Q542$B0FDFE38-AAA8-4F33-AFC6-D486673EB44E",
+  "rank": "normal"
+}

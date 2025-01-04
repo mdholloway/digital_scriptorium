@@ -1,0 +1,34 @@
+{
+  "mainsnak": {
+    "snaktype": "value",
+    "property": "P30",
+    "hash": "02646471404243a788eaf5d487266bf4bb5524fe",
+    "datavalue": {
+      "value": "parchment",
+      "type": "string"
+    }
+  },
+  "type": "statement",
+  "qualifiers": {
+    "P31": [
+      {
+        "snaktype": "value",
+        "property": "P31",
+        "hash": "a528e66d12b7aa9f75b302ead6fd3e1e4faf23bf",
+        "datavalue": {
+          "value": {
+            "entity-type": "item",
+            "numeric-id": 33,
+            "id": "Q33"
+          },
+          "type": "wikibase-entityid"
+        }
+      }
+    ]
+  },
+  "qualifiers-order": [
+    "P31"
+  ],
+  "id": "Q544$A1CA52B3-A97A-4545-BBEC-DE5E6AC7DB6E",
+  "rank": "normal"
+}

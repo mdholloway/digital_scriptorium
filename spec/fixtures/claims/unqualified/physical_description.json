@@ -1,0 +1,14 @@
+{
+  "mainsnak": {
+    "snaktype": "value",
+    "property": "P29",
+    "hash": "56dfa6a02340087275087fd53b8beb26dee8394e",
+    "datavalue": {
+      "value": "Extent: 1 parchment ; 170 x 245 mm.",
+      "type": "string"
+    }
+  },
+  "type": "statement",
+  "id": "Q544$1C7B3A0B-8441-41D8-85D2-60B49F7E761A",
+  "rank": "normal"
+}
