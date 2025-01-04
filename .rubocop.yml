@@ -5,5 +5,15 @@ require:
 AllCops:
   TargetRubyVersion: 3.0
   NewCops: enable
+Metrics/AbcSize:
+  Enabled: false
+Metrics/BlockLength:
+  Enabled: false
+Metrics/CyclomaticComplexity:
+  Enabled: false
+Metrics/MethodLength:
+  Enabled: false
+Metrics/PerceivedComplexity:
+  Enabled: false
 Style/SafeNavigationChainLength:
   Enabled: false

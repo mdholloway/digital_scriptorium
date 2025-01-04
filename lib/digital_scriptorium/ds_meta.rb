@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 module DigitalScriptorium
+  # Represents a meta record consisting of a manuscript, its holding information, and metadata record.
   class DsMeta
     attr_reader :holding, :manuscript, :record
 

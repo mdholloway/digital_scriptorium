@@ -11,7 +11,7 @@ module DigitalScriptorium
       role_entity_id = claim.qualifier_by_property_id(ROLE_IN_AUTHORITY_FILE).entity_id_value
       role_item = export_hash[role_entity_id]
       role_label = role_item.label('en')
-      prefix = role_label.downcase.split(' ').last
+      prefix = role_label.downcase.split.last
 
       recorded_name = claim.data_value
       search_names = [recorded_name]
