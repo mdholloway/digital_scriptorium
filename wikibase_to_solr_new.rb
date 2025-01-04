@@ -57,7 +57,7 @@ start_time = Time.now
 
 config = YAML.load_file(config_file)
 
-loading_spinner = TTY::Spinner.new("[:spinner] Loading export data")
+loading_spinner = TTY::Spinner.new('[:spinner] Loading export data')
 loading_spinner.auto_spin
 
 export_json = Zlib::GzipReader.open(input_file).read
@@ -67,7 +67,7 @@ export_hash = DigitalScriptorium::ExportRepresenter.new(DigitalScriptorium::Expo
 loading_spinner.success('(done)')
 
 item_count = 0
-generating_spinner = TTY::Spinner.new("[:spinner] Generating Solr documents")
+generating_spinner = TTY::Spinner.new('[:spinner] Generating Solr documents')
 generating_spinner.auto_spin
 
 File.open(output_file, 'w') do |file|
@@ -103,4 +103,4 @@ File.open(output_file, 'w') do |file|
 end
 
 generating_spinner.success('(done)')
-puts "Generated #{item_count} Solr documents in #{sprintf("%0.02f", Time.now-start_time)} seconds"
+puts "Generated #{item_count} Solr documents in #{format('%0.02f', Time.now - start_time)} seconds"
