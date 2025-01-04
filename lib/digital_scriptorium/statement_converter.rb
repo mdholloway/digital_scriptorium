@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 require 'wikibase_representable'
-require 'pry'
 
 module DigitalScriptorium
   class StatementConverter
