@@ -5,13 +5,11 @@ require 'wikibase_representable'
 require 'yaml'
 
 module DigitalScriptorium
-  include WikibaseRepresentable::Representers
-
   RSpec.describe DateClaimTransformer do
     let(:date_json) { File.read(File.expand_path('../fixtures/claims/qualified/date.json', __dir__)) }
     let(:date_claim) { StatementRepresenter.new(Statement.new).from_json(date_json) }
-    let(:fourteenth_century) { File.read(File.expand_path('../fixtures/items/14c.json', __dir__)) }
-    let(:export_hash) { { 'Q96' => ItemRepresenter.new(Item.new).from_json(fourteenth_century) } }
+    let(:fourteenth_c_json) { File.read(File.expand_path('../fixtures/items/14c.json', __dir__)) }
+    let(:export_hash) { { 'Q96' => ItemRepresenter.new(Item.new).from_json(fourteenth_c_json) } }
     let(:config) { YAML.load_file(File.expand_path('../../property_config.yml', __dir__)) }
 
     it 'transforms a qualified date claim' do

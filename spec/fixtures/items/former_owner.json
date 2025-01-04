@@ -1,0 +1,51 @@
+{
+  "type": "item",
+  "id": "Q21",
+  "labels": {
+    "en": {
+      "language": "en",
+      "value": "Former owner"
+    }
+  },
+  "descriptions": [],
+  "aliases": [],
+  "claims": {
+    "P16": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P16",
+          "hash": "923d898dd929305bfe74017deb7441b0dd51bca4",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 10,
+              "id": "Q10"
+            },
+            "type": "wikibase-entityid"
+          }
+        },
+        "type": "statement",
+        "id": "Q21$2B5F6141-C582-4DC9-AC07-F2577CFC5D6F",
+        "rank": "normal"
+      }
+    ],
+    "P44": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P44",
+          "hash": "ef872d1d4e5ea17d7f7f95e00c217309522d7ae8",
+          "datavalue": {
+            "value": "http://vocab.getty.edu/aat/300203630",
+            "type": "string"
+          }
+        },
+        "type": "statement",
+        "id": "Q21$72F97CB4-D88D-49EA-B895-14165334E4B3",
+        "rank": "normal"
+      }
+    ]
+  },
+  "sitelinks": []
+}

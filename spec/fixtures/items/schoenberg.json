@@ -1,0 +1,67 @@
+{
+  "type": "item",
+  "id": "Q383",
+  "labels": {
+    "en": {
+      "language": "en",
+      "value": "Lawrence J. Schoenberg"
+    }
+  },
+  "descriptions": [],
+  "aliases": [],
+  "claims": {
+    "P1": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1",
+          "hash": "fd394376226059b5bb30fdd824eb7e30d0f9fc1a",
+          "datavalue": {
+            "value": "DSNAME110",
+            "type": "string"
+          }
+        },
+        "type": "statement",
+        "id": "Q383$46B1D2DA-044B-4F02-AA1E-934F21C3114D",
+        "rank": "normal"
+      }
+    ],
+    "P16": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P16",
+          "hash": "c3535818ce9d179c3b257aa9d555b61e33d12439",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 8,
+              "id": "Q8"
+            },
+            "type": "wikibase-entityid"
+          }
+        },
+        "type": "statement",
+        "id": "Q383$B66BFCE7-2B1A-4714-8FEB-23EE5F4C67C8",
+        "rank": "normal"
+      }
+    ],
+    "P42": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P42",
+          "hash": "89fb4aa7661a98d060b2645445cd973ebe987e86",
+          "datavalue": {
+            "value": "Q107542788",
+            "type": "string"
+          }
+        },
+        "type": "statement",
+        "id": "Q383$0709F78C-F01E-4C01-9CA8-AB073C7AAE78",
+        "rank": "normal"
+      }
+    ]
+  },
+  "sitelinks": []
+}
