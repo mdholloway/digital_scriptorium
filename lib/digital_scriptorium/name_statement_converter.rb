@@ -3,20 +3,19 @@
 module DigitalScriptorium
   class NameStatementConverter
     include PropertyId
-    include WikibaseRepresentable::Model::DataValueHelper
 
     def self.convert(statement, export_hash)
       return {} unless statement.qualifiers_by_property_id? ROLE_IN_AUTHORITY_FILE
 
-      role_entity_id = entity_id_value_from statement.qualifier_by_property_id(ROLE_IN_AUTHORITY_FILE)
+      role_entity_id = statement.qualifier_by_property_id(ROLE_IN_AUTHORITY_FILE).entity_id_value
       role_item = export_hash[role_entity_id]
       role_label = role_item.label('en')
       prefix = role_label.downcase.split(' ').last
 
-      recorded_name = data_value_from statement
+      recorded_name = statement.data_value
       search_names = [recorded_name]
 
-      name_in_original_script = data_value_from statement.qualifier_by_property_id(IN_ORIGINAL_SCRIPT)
+      name_in_original_script = statement.qualifier_by_property_id(IN_ORIGINAL_SCRIPT)&.data_value
       search_names << name_in_original_script unless name_in_original_script.nil?
 
       unless statement.qualifiers_by_property_id? NAME_IN_AUTHORITY_FILE
@@ -27,11 +26,11 @@ module DigitalScriptorium
         }
       end
 
-      name_entity_id = entity_id_value_from statement.qualifier_by_property_id(NAME_IN_AUTHORITY_FILE)
+      name_entity_id = statement.qualifier_by_property_id(NAME_IN_AUTHORITY_FILE).entity_id_value
       name_item = export_hash[name_entity_id]
       name_label = name_item.label('en')
 
-      wikidata_id = data_value_from name_item.claim_by_property_id(WIKIDATA_QID)
+      wikidata_id = name_item.claim_by_property_id(WIKIDATA_QID).data_value
       wikidata_url = "https://www.wikidata.org/wiki/#{wikidata_id}"
 
       search_names << name_label

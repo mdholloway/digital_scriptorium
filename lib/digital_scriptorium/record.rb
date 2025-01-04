@@ -4,10 +4,9 @@ module DigitalScriptorium
   # An item representing a Digital Scriptorium record (instance of Q3)
   class Record < DsItem
     include PropertyId
-    include WikibaseRepresentable::Model::DataValueHelper
 
     def described_manuscript_id
-      entity_id_value_from claim_by_property_id(DESCRIBED_MANUSCRIPT) # P3
+      claim_by_property_id(DESCRIBED_MANUSCRIPT).entity_id_value # P3
     end
 
     def title_as_recorded_claims
