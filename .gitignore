@@ -13,3 +13,5 @@
 *.json
 *.json.gz
 *.gem
+
+Gemfile.lock
