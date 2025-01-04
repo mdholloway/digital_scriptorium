@@ -3,6 +3,8 @@
 require 'digital_scriptorium'
 require 'json'
 require 'optparse'
+require 'time'
+require 'tty-spinner'
 require 'yaml'
 require 'zlib'
 
@@ -51,12 +53,22 @@ def merge_transformed_fields(solr_item, claim, export_hash, property_config)
   end
 end
 
+start_time = Time.now
+
 config = YAML.load_file(config_file)
+
+loading_spinner = TTY::Spinner.new("[:spinner] Loading export data")
+loading_spinner.auto_spin
 
 export_json = Zlib::GzipReader.open(input_file).read
 export_hash = DigitalScriptorium::ExportRepresenter.new(DigitalScriptorium::Export.new)
                                                    .from_json(export_json)
                                                    .to_hash
+loading_spinner.success('(done)')
+
+item_count = 0
+generating_spinner = TTY::Spinner.new("[:spinner] Generating Solr documents")
+generating_spinner.auto_spin
 
 File.open(output_file, 'w') do |file|
   file << '['
@@ -83,7 +95,12 @@ File.open(output_file, 'w') do |file|
     file << (pretty_print ? JSON.pretty_generate(solr_item) : JSON.generate(solr_item))
     file << ',' if idx < export_hash.size - 1
     file << "\n" if pretty_print
+
+    item_count += 1
   end
 
   file << ']'
 end
+
+generating_spinner.success('(done)')
+puts "Generated #{item_count} Solr documents in #{sprintf("%0.02f", Time.now-start_time)} seconds"
