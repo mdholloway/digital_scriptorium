@@ -7,10 +7,10 @@ module DigitalScriptorium
   include WikibaseRepresentable::Representers
 
   RSpec.describe Export do
-    let(:holding_json) { File.read(File.expand_path('../fixtures/holding.json', __dir__)) }
-    let(:manuscript_json) { File.read(File.expand_path('../fixtures/manuscript.json', __dir__)) }
-    let(:record_json) { File.read(File.expand_path('../fixtures/record.json', __dir__)) }
-    let(:property_json) { File.read(File.expand_path('../fixtures/instance_of.json', __dir__)) }
+    let(:holding_json) { File.read(File.expand_path('../fixtures/items/holding.json', __dir__)) }
+    let(:manuscript_json) { File.read(File.expand_path('../fixtures/items/manuscript.json', __dir__)) }
+    let(:record_json) { File.read(File.expand_path('../fixtures/items/record.json', __dir__)) }
+    let(:property_json) { File.read(File.expand_path('../fixtures/properties/instance_of.json', __dir__)) }
 
     it 'transforms a Wikibase export to a Hash' do
       export = described_class.new

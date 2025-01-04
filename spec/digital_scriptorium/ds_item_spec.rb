@@ -6,9 +6,9 @@ module DigitalScriptorium
   include WikibaseRepresentable::Representers
 
   RSpec.describe DsItem do
-    let(:holding_json) { File.read(File.expand_path('../fixtures/holding.json', __dir__)) }
-    let(:manuscript_json) { File.read(File.expand_path('../fixtures/manuscript.json', __dir__)) }
-    let(:record_json) { File.read(File.expand_path('../fixtures/record.json', __dir__)) }
+    let(:holding_json) { File.read(File.expand_path('../fixtures/items/holding.json', __dir__)) }
+    let(:manuscript_json) { File.read(File.expand_path('../fixtures/items/manuscript.json', __dir__)) }
+    let(:record_json) { File.read(File.expand_path('../fixtures/items/record.json', __dir__)) }
 
     it 'correctly reports if it is a holding' do
       item = ItemRepresenter.new(described_class.new).from_json(holding_json)
