@@ -1,0 +1,50 @@
+{
+  "type": "property",
+  "datatype": "wikibase-item",
+  "id": "P16",
+  "labels": {
+    "en": {
+      "language": "en",
+      "value": "instance of"
+    }
+  },
+  "descriptions": {
+    "en": {
+      "language": "en",
+      "value": "that class of which this subject is a particular example and member"
+    }
+  },
+  "aliases": [],
+  "claims": {
+    "P45": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P45",
+          "hash": "b97268ae16cea1cf5fde1a532bd4a6b633c836f1",
+          "datavalue": {
+            "value": "http://www.wikidata.org/entity/P31",
+            "type": "string"
+          }
+        },
+        "type": "statement",
+        "id": "P16$04eacd5d-42b5-63bb-4de3-1743285c91eb",
+        "rank": "normal"
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P45",
+          "hash": "79ed4ac5097dd275584b1b2c37c30f123290be20",
+          "datavalue": {
+            "value": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+            "type": "string"
+          }
+        },
+        "type": "statement",
+        "id": "P16$6b149b6f-4ae7-f63d-4fa6-0ca017f60613",
+        "rank": "normal"
+      }
+    ]
+  }
+}

@@ -10,8 +10,8 @@
 # rspec failure tracking
 .rspec_status
 
-*.json
-*.json.gz
-*.gem
+/*.json
+/*.json.gz
+/*.gem
 
 Gemfile.lock

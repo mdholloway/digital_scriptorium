@@ -1,0 +1,76 @@
+{
+  "type": "item",
+  "id": "Q543",
+  "labels": {
+    "en": {
+      "language": "en",
+      "value": "DS121"
+    }
+  },
+  "descriptions": {
+    "en": {
+      "language": "en",
+      "value": "Manuscript from University of Pennsylvania (9949945603503681)"
+    }
+  },
+  "aliases": [],
+  "claims": {
+    "P1": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1",
+          "hash": "902dc7465ced67bbe4960856c661406eb6eb77e0",
+          "datavalue": {
+            "value": "DS121",
+            "type": "string"
+          }
+        },
+        "type": "statement",
+        "id": "Q543$6BB164FA-0616-4A6A-B290-0521CB46451A",
+        "rank": "normal"
+      }
+    ],
+    "P16": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P16",
+          "hash": "630c6c5d1f0af632d49479574f9842c4c060f46b",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 1,
+              "id": "Q1"
+            },
+            "type": "wikibase-entityid"
+          }
+        },
+        "type": "statement",
+        "id": "Q543$5D1572B2-662D-4B54-9159-810B6F35EC7B",
+        "rank": "normal"
+      }
+    ],
+    "P2": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P2",
+          "hash": "21cd3fe51e2895f751b70fa40d90068a04090da8",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 542,
+              "id": "Q542"
+            },
+            "type": "wikibase-entityid"
+          }
+        },
+        "type": "statement",
+        "id": "Q543$AF62EB6E-6067-4C11-A252-2E6929A44348",
+        "rank": "normal"
+      }
+    ]
+  },
+  "sitelinks": []
+}

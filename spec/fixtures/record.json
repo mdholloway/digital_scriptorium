@@ -1,0 +1,762 @@
+{
+  "type": "item",
+  "id": "Q544",
+  "labels": {
+    "en": {
+      "language": "en",
+      "value": "John Elys deed (DS121)"
+    }
+  },
+  "descriptions": {
+    "en": {
+      "language": "en",
+      "value": "Manuscript metadata collected by UPenn from University of Pennsylvania (9949945603503681, Oversize LJS 110)"
+    }
+  },
+  "aliases": [],
+  "claims": {
+    "P10": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P10",
+          "hash": "46e4dcab853b717b02b6281ddd5f93ba714b281d",
+          "datavalue": {
+            "value": "John Elys deed",
+            "type": "string"
+          }
+        },
+        "type": "statement",
+        "id": "Q544$22FCBBED-7DAD-4EBE-A590-FC1E32CC7F95",
+        "rank": "normal"
+      }
+    ],
+    "P14": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P14",
+          "hash": "1ca6263d1c4ecb518d467eab45dd604a375efec1",
+          "datavalue": {
+            "value": "Schoenberg, Lawrence J",
+            "type": "string"
+          }
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P15": [
+            {
+              "snaktype": "value",
+              "property": "P15",
+              "hash": "63120b1e349365b8f15bbbe27edcb9ea07d676b0",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 21,
+                  "id": "Q21"
+                },
+                "type": "wikibase-entityid"
+              }
+            }
+          ],
+          "P17": [
+            {
+              "snaktype": "value",
+              "property": "P17",
+              "hash": "5409c0609e3d036e4964abc513af899c8104e111",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 383,
+                  "id": "Q383"
+                },
+                "type": "wikibase-entityid"
+              }
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P15",
+          "P17"
+        ],
+        "id": "Q544$E4DFCFB3-1276-49A3-A28B-7122A269314E",
+        "rank": "normal"
+      }
+    ],
+    "P16": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P16",
+          "hash": "ce901170fc9ef71d185742e65083673f50c506bd",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 3,
+              "id": "Q3"
+            },
+            "type": "wikibase-entityid"
+          }
+        },
+        "type": "statement",
+        "id": "Q544$4010FCC8-45A4-4C85-9CDB-C4931F94368A",
+        "rank": "normal"
+      }
+    ],
+    "P18": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P18",
+          "hash": "5d0305c385cd9e771a33cf3346a87909c54f9733",
+          "datavalue": {
+            "value": "Deeds",
+            "type": "string"
+          }
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P20": [
+            {
+              "snaktype": "value",
+              "property": "P20",
+              "hash": "454f8b2a1550d0acdef00508e9ac3488bcbe700d",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 283,
+                  "id": "Q283"
+                },
+                "type": "wikibase-entityid"
+              }
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P20"
+        ],
+        "id": "Q544$B974CC4D-4D42-47E2-8831-D687DDF3731A",
+        "rank": "normal"
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P18",
+          "hash": "155d41f27e8499eff2ef37a219b7a488961fd86a",
+          "datavalue": {
+            "value": "Indentures",
+            "type": "string"
+          }
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P20": [
+            {
+              "snaktype": "value",
+              "property": "P20",
+              "hash": "3b9769942b552cce5bc69da33d594031ab707950",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 230,
+                  "id": "Q230"
+                },
+                "type": "wikibase-entityid"
+              }
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P20"
+        ],
+        "id": "Q544$629995BB-A390-411F-9AF0-B9B620542CA6",
+        "rank": "normal"
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P18",
+          "hash": "fe5a855daafb75e77844165930d246b9d96a9e34",
+          "datavalue": {
+            "value": "Legal documents",
+            "type": "string"
+          }
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P20": [
+            {
+              "snaktype": "value",
+              "property": "P20",
+              "hash": "a832910721a0bf2168217134cf3b584199161a82",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 236,
+                  "id": "Q236"
+                },
+                "type": "wikibase-entityid"
+              }
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P20"
+        ],
+        "id": "Q544$F53152EE-E26A-4A0F-B191-59FF92D9D0CF",
+        "rank": "normal"
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P18",
+          "hash": "6bcffd1e7512fd477d23b42f7c7f44f748412d63",
+          "datavalue": {
+            "value": "Manuscripts, Latin",
+            "type": "string"
+          }
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P20": [
+            {
+              "snaktype": "value",
+              "property": "P20",
+              "hash": "4632a078af466a0d6a017d480825f723577a5cee",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 210,
+                  "id": "Q210"
+                },
+                "type": "wikibase-entityid"
+              }
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P20"
+        ],
+        "id": "Q544$28277173-256B-45D7-9AE1-369EAD2756A9",
+        "rank": "normal"
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P18",
+          "hash": "0eda3f1d8b848a184b093324c1160d89fe3e8739",
+          "datavalue": {
+            "value": "Manuscripts, Medieval",
+            "type": "string"
+          }
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P20": [
+            {
+              "snaktype": "value",
+              "property": "P20",
+              "hash": "3cc0c7bfa0dc6a3b0d57a7e5e0c4ca1c75d9210d",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 325,
+                  "id": "Q325"
+                },
+                "type": "wikibase-entityid"
+              }
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P20"
+        ],
+        "id": "Q544$8A4197C4-CED2-4FEE-8805-B5E3010A114C",
+        "rank": "normal"
+      }
+    ],
+    "P19": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P19",
+          "hash": "82789b83c9349d65fd5b7c5b754347cd2bb2a1a3",
+          "datavalue": {
+            "value": "Elys, John",
+            "type": "string"
+          }
+        },
+        "type": "statement",
+        "id": "Q544$E2646AED-ACE3-4050-92A6-9B90EF45CA46",
+        "rank": "normal"
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P19",
+          "hash": "e0b27989aba8a037b9dc3fda042bfcff460f0f21",
+          "datavalue": {
+            "value": "Beeleye, John de",
+            "type": "string"
+          }
+        },
+        "type": "statement",
+        "id": "Q544$932436EE-A82C-47B4-A552-7E1FB34DF7F4",
+        "rank": "normal"
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P19",
+          "hash": "77ef054f81d550e0e14f27cc51f72082d46906ba",
+          "datavalue": {
+            "value": "Beeleye, Margery de",
+            "type": "string"
+          }
+        },
+        "type": "statement",
+        "id": "Q544$8FBC6BAF-EE64-4B40-BDCD-63762D063D97",
+        "rank": "normal"
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P19",
+          "hash": "df64bd63c4bce9726c00e795eef2b2e911b5e5ff",
+          "datavalue": {
+            "value": "Real property--England--Warwickshire",
+            "type": "string"
+          }
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P20": [
+            {
+              "snaktype": "value",
+              "property": "P20",
+              "hash": "69196ea3b47c596138193514ebcef18ef97d8429",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 161,
+                  "id": "Q161"
+                },
+                "type": "wikibase-entityid"
+              }
+            },
+            {
+              "snaktype": "value",
+              "property": "P20",
+              "hash": "2a4c91b0cea017f9946f82c1569abad378c1c927",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 320,
+                  "id": "Q320"
+                },
+                "type": "wikibase-entityid"
+              }
+            },
+            {
+              "snaktype": "value",
+              "property": "P20",
+              "hash": "ac4b90c675fe49e34e271c704c77c81e6da46f58",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 228,
+                  "id": "Q228"
+                },
+                "type": "wikibase-entityid"
+              }
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P20"
+        ],
+        "id": "Q544$8C053308-C607-4513-BFF6-A8068FC64C23",
+        "rank": "normal"
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P19",
+          "hash": "f8101a402699cbefa09d491d818728a1c5b0cb9c",
+          "datavalue": {
+            "value": "Real property",
+            "type": "string"
+          }
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P20": [
+            {
+              "snaktype": "value",
+              "property": "P20",
+              "hash": "69196ea3b47c596138193514ebcef18ef97d8429",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 161,
+                  "id": "Q161"
+                },
+                "type": "wikibase-entityid"
+              }
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P20"
+        ],
+        "id": "Q544$E05BF1C8-8CD6-4ED6-AF89-1A776D84F707",
+        "rank": "normal"
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P19",
+          "hash": "944d17ca67d493030040c6f6c8a4cddce6d2f2de",
+          "datavalue": {
+            "value": "Warwickshire (England)--History",
+            "type": "string"
+          }
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P20": [
+            {
+              "snaktype": "value",
+              "property": "P20",
+              "hash": "ac4b90c675fe49e34e271c704c77c81e6da46f58",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 228,
+                  "id": "Q228"
+                },
+                "type": "wikibase-entityid"
+              }
+            },
+            {
+              "snaktype": "value",
+              "property": "P20",
+              "hash": "fe7ac28ec54cbb2b63d0f2506a2702eeeeee57b5",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 279,
+                  "id": "Q279"
+                },
+                "type": "wikibase-entityid"
+              }
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P20"
+        ],
+        "id": "Q544$FBACE41D-706C-461D-B170-153BBDF60895",
+        "rank": "normal"
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P19",
+          "hash": "71c0d0ba7795be22699b9558152aa07ce20d7fc4",
+          "datavalue": {
+            "value": "England--Warwickshire",
+            "type": "string"
+          }
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P20": [
+            {
+              "snaktype": "value",
+              "property": "P20",
+              "hash": "ac4b90c675fe49e34e271c704c77c81e6da46f58",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 228,
+                  "id": "Q228"
+                },
+                "type": "wikibase-entityid"
+              }
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P20"
+        ],
+        "id": "Q544$AD7524EA-8127-4CF9-B1AD-9F58831B68FC",
+        "rank": "normal"
+      }
+    ],
+    "P21": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P21",
+          "hash": "9e246379b0dedebec12a4f1c930189c2cdc4935c",
+          "datavalue": {
+            "value": "In Latin",
+            "type": "string"
+          }
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P22": [
+            {
+              "snaktype": "value",
+              "property": "P22",
+              "hash": "88fd34b9b826a66b754b3b2f0db4ca42932c4bb7",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 113,
+                  "id": "Q113"
+                },
+                "type": "wikibase-entityid"
+              }
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P22"
+        ],
+        "id": "Q544$07404B0B-82AB-474F-B702-9E14D552B287",
+        "rank": "normal"
+      }
+    ],
+    "P23": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P23",
+          "hash": "ff62be508403e913e71c078a14d32189f907eb0d",
+          "datavalue": {
+            "value": "1358.",
+            "type": "string"
+          }
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P25": [
+            {
+              "snaktype": "value",
+              "property": "P25",
+              "hash": "d54951c1291e69356cc97ad03e0bcde559341150",
+              "datavalue": {
+                "value": {
+                  "time": "+1301-01-01T00:00:00Z",
+                  "timezone": 0,
+                  "before": 0,
+                  "after": 0,
+                  "precision": 7,
+                  "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                },
+                "type": "time"
+              }
+            }
+          ],
+          "P24": [
+            {
+              "snaktype": "value",
+              "property": "P24",
+              "hash": "57245da66b5ff9bf14ad3bf993369c42aed464fe",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 96,
+                  "id": "Q96"
+                },
+                "type": "wikibase-entityid"
+              }
+            }
+          ],
+          "P37": [
+            {
+              "snaktype": "value",
+              "property": "P37",
+              "hash": "ae23519105351987fb859d15b7e5c8e0234b33e8",
+              "datavalue": {
+                "value": {
+                  "time": "+1358-01-01T00:00:00Z",
+                  "timezone": 0,
+                  "before": 0,
+                  "after": 0,
+                  "precision": 9,
+                  "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                },
+                "type": "time"
+              }
+            }
+          ],
+          "P36": [
+            {
+              "snaktype": "value",
+              "property": "P36",
+              "hash": "41250abd15b0162d8e22e20b929116a3a380b2fc",
+              "datavalue": {
+                "value": {
+                  "time": "+1358-12-31T00:00:00Z",
+                  "timezone": 0,
+                  "before": 0,
+                  "after": 0,
+                  "precision": 9,
+                  "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                },
+                "type": "time"
+              }
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P25",
+          "P24",
+          "P37",
+          "P36"
+        ],
+        "id": "Q544$868A931C-03C4-43DB-B6DB-FBB6A1ADD34C",
+        "rank": "normal"
+      }
+    ],
+    "P29": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P29",
+          "hash": "56dfa6a02340087275087fd53b8beb26dee8394e",
+          "datavalue": {
+            "value": "Extent: 1 parchment ; 170 x 245 mm.",
+            "type": "string"
+          }
+        },
+        "type": "statement",
+        "id": "Q544$1C7B3A0B-8441-41D8-85D2-60B49F7E761A",
+        "rank": "normal"
+      }
+    ],
+    "P3": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P3",
+          "hash": "678b9e29e0e18a104eb1e755e205f2172b1ec9c8",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 543,
+              "id": "Q543"
+            },
+            "type": "wikibase-entityid"
+          }
+        },
+        "type": "statement",
+        "id": "Q544$AD25140B-4535-4D35-9F02-5542FB6514DE",
+        "rank": "normal"
+      }
+    ],
+    "P30": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P30",
+          "hash": "02646471404243a788eaf5d487266bf4bb5524fe",
+          "datavalue": {
+            "value": "parchment",
+            "type": "string"
+          }
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P31": [
+            {
+              "snaktype": "value",
+              "property": "P31",
+              "hash": "a528e66d12b7aa9f75b302ead6fd3e1e4faf23bf",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 33,
+                  "id": "Q33"
+                },
+                "type": "wikibase-entityid"
+              }
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P31"
+        ],
+        "id": "Q544$A1CA52B3-A97A-4545-BBEC-DE5E6AC7DB6E",
+        "rank": "normal"
+      }
+    ],
+    "P34": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P34",
+          "hash": "f7753be3df0ca2dc886646cc80ff4568eb85b039",
+          "datavalue": {
+            "value": {
+              "time": "+2022-12-23T00:00:00Z",
+              "timezone": 0,
+              "before": 0,
+              "after": 0,
+              "precision": 11,
+              "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+            },
+            "type": "time"
+          }
+        },
+        "type": "statement",
+        "id": "Q544$F5F9A772-97A1-4C53-9BFB-D7B10EB4B8E0",
+        "rank": "normal"
+      }
+    ],
+    "P35": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P35",
+          "hash": "393d71ad41fd6c776cabc3a5e93064322e0abc18",
+          "datavalue": {
+            "value": {
+              "time": "+2022-12-23T00:00:00Z",
+              "timezone": 0,
+              "before": 0,
+              "after": 0,
+              "precision": 11,
+              "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+            },
+            "type": "time"
+          }
+        },
+        "type": "statement",
+        "id": "Q544$8384C69D-C409-4141-9ABF-77EAA4772ABE",
+        "rank": "normal"
+      }
+    ],
+    "P41": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P41",
+          "hash": "8326dcd070f4904d2ffe5324b1cc3161a53c6b36",
+          "datavalue": {
+            "value": "https://colenda.library.upenn.edu/phalt/iiif/2/81431-p33p8v/manifest",
+            "type": "string"
+          }
+        },
+        "type": "statement",
+        "id": "Q544$77CDD66C-1716-4A0F-8D84-37F91CE7A3C8",
+        "rank": "normal"
+      }
+    ]
+  },
+  "sitelinks": []
+}

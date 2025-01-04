@@ -6,15 +6,9 @@ module DigitalScriptorium
   include WikibaseRepresentable::Representers
 
   RSpec.describe DsMeta do
-    let(:holding_json) do
-      '{"id":"Q102","claims":{"P16":[{"mainsnak":{"datavalue":{"value":{"id":"Q2"},"type":"wikibase-entityid"}}}],"P1":[{"mainsnak":{"datavalue":{"value":"DS 1","type":"string"}}}]}}'
-    end
-    let(:manuscript_json) do
-      '{"id":"Q101","claims":{"P16":[{"mainsnak":{"datavalue":{"value":{"id":"Q1"},"type":"wikibase-entityid"}}}],"P2":[{"mainsnak":{"datavalue":{"value":{"id":"Q102"},"type":"wikibase-entityid"}}}]}}'
-    end
-    let(:record_json) do
-      '{"id":"Q103","claims":{"P16":[{"mainsnak":{"datavalue":{"value":{"id":"Q3"},"type":"wikibase-entityid"}}}],"P3":[{"mainsnak":{"datavalue":{"value":{"id":"Q101"},"type":"wikibase-entityid"}}}]}}'
-    end
+    let(:holding_json) { File.read(File.expand_path('../fixtures/holding.json', __dir__)) }
+    let(:manuscript_json) { File.read(File.expand_path('../fixtures/manuscript.json', __dir__)) }
+    let(:record_json) { File.read(File.expand_path('../fixtures/record.json', __dir__)) }
 
     it 'initializes from linked records in export' do
       holding = ItemRepresenter.new(DsItem.new).from_json(holding_json)

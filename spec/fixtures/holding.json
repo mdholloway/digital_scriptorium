@@ -1,0 +1,167 @@
+{
+  "type": "item",
+  "id": "Q542",
+  "labels": {
+    "en": {
+      "language": "en",
+      "value": "Holding: University of Pennsylvania"
+    }
+  },
+  "descriptions": {
+    "en": {
+      "language": "en",
+      "value": "Holding of metadata collected by UPenn from University of Pennsylvania (9949945603503681, Oversize LJS 110)"
+    }
+  },
+  "aliases": [],
+  "claims": {
+    "P16": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P16",
+          "hash": "4dd159a209ed411a4f50592de9ee831893162774",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 2,
+              "id": "Q2"
+            },
+            "type": "wikibase-entityid"
+          }
+        },
+        "type": "statement",
+        "id": "Q542$6BB273DA-1E75-45FB-99DB-952A3AD3C61F",
+        "rank": "normal"
+      }
+    ],
+    "P38": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P38",
+          "hash": "b6ce8b7be90c47d6e95667f5cb3b857a5c72cd6b",
+          "datavalue": {
+            "value": {
+              "time": "+2022-12-23T00:00:00Z",
+              "timezone": 0,
+              "before": 0,
+              "after": 0,
+              "precision": 11,
+              "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+            },
+            "type": "time"
+          }
+        },
+        "type": "statement",
+        "id": "Q542$EBB62690-BAA8-4223-8900-00DAF2DC7859",
+        "rank": "normal"
+      }
+    ],
+    "P5": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P5",
+          "hash": "9374610faba500b29dedf759055e43198e98cded",
+          "datavalue": {
+            "value": "University of Pennsylvania",
+            "type": "string"
+          }
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P4": [
+            {
+              "snaktype": "value",
+              "property": "P4",
+              "hash": "9a1bca9ae683999ce197133cd1e265a01825363c",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 374,
+                  "id": "Q374"
+                },
+                "type": "wikibase-entityid"
+              }
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P4"
+        ],
+        "id": "Q542$B0FDFE38-AAA8-4F33-AFC6-D486673EB44E",
+        "rank": "normal"
+      }
+    ],
+    "P6": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P6",
+          "hash": "7d915bfe178137b727c89aedc21b9470aa87b484",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 4,
+              "id": "Q4"
+            },
+            "type": "wikibase-entityid"
+          }
+        },
+        "type": "statement",
+        "id": "Q542$A2575F13-07E2-43CD-900C-0C5E9832CD64",
+        "rank": "normal"
+      }
+    ],
+    "P7": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P7",
+          "hash": "66786f395ee93dd9adaa79494093596e700d8c60",
+          "datavalue": {
+            "value": "9949945603503681",
+            "type": "string"
+          }
+        },
+        "type": "statement",
+        "id": "Q542$AB8B602B-7A79-4CDD-9CFD-F0136EE635EC",
+        "rank": "normal"
+      }
+    ],
+    "P8": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P8",
+          "hash": "9fd44b4cc9821c7bab3b7a68f9a3af3a132da32e",
+          "datavalue": {
+            "value": "Oversize LJS 110",
+            "type": "string"
+          }
+        },
+        "type": "statement",
+        "id": "Q542$C046FA26-2BC9-4B62-8A1B-8251861DEFEF",
+        "rank": "normal"
+      }
+    ],
+    "P9": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P9",
+          "hash": "1f6b3c24699842b0f1cff5b5349144fcf0734f17",
+          "datavalue": {
+            "value": "https://franklin.library.upenn.edu/catalog/FRANKLIN_9949945603503681",
+            "type": "string"
+          }
+        },
+        "type": "statement",
+        "id": "Q542$9853212B-9FE4-4C16-8C76-C2BCEB703714",
+        "rank": "normal"
+      }
+    ]
+  },
+  "sitelinks": []
+}
