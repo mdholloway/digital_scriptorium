@@ -21,6 +21,6 @@ Metrics/PerceivedComplexity:
 Style/SafeNavigationChainLength:
   Enabled: false
 RSpec/ExampleLength:
-  Max: 12
+  Enabled: false
 RSpec/MultipleExpectations:
   Enabled: false

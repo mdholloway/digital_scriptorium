@@ -5,6 +5,7 @@ source 'https://rubygems.org'
 # Specify your gem's dependencies in digital_scriptorium.gemspec
 gemspec
 
+gem 'pry', '~> 0.15'
 gem 'rake', '~> 13.2'
 gem 'rspec', '~> 3.13'
 gem 'rubocop', '~> 1.69'

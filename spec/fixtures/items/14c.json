@@ -1,0 +1,51 @@
+{
+  "type": "item",
+  "id": "Q96",
+  "labels": {
+    "en": {
+      "language": "en",
+      "value": "fourteenth century (dates CE)"
+    }
+  },
+  "descriptions": [],
+  "aliases": [],
+  "claims": {
+    "P16": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P16",
+          "hash": "67d596655401ff17ce186d131f993aaf710236dc",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 13,
+              "id": "Q13"
+            },
+            "type": "wikibase-entityid"
+          }
+        },
+        "type": "statement",
+        "id": "Q96$21E5E206-00A7-4125-87CB-7DF8B9253016",
+        "rank": "normal"
+      }
+    ],
+    "P44": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P44",
+          "hash": "d9e7a73c36e32d820ff6dc5185a09577c4f70e95",
+          "datavalue": {
+            "value": "http://vocab.getty.edu/aat/300404506",
+            "type": "string"
+          }
+        },
+        "type": "statement",
+        "id": "Q96$48B50B6F-065C-4D56-B63B-E7BDB7E1ACA8",
+        "rank": "normal"
+      }
+    ]
+  },
+  "sitelinks": []
+}

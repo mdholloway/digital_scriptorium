@@ -20,12 +20,13 @@ module DigitalScriptorium
       property = PropertyRepresenter.new(Property.new).from_json(property_json)
       export << holding << manuscript << record << property
 
-      expect(export.to_hash).to eq({
-                                     'Q542' => holding,
-                                     'Q543' => manuscript,
-                                     'Q544' => record,
-                                     'P16' => property
-                                   })
+      expected = {
+        'Q542' => holding,
+        'Q543' => manuscript,
+        'Q544' => record,
+        'P16' => property
+      }
+      expect(export.to_hash).to eq(expected)
     end
   end
 end
