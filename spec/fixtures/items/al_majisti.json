@@ -1,0 +1,1106 @@
+{
+  "type": "item",
+  "id": "Q649",
+  "labels": {
+    "en": {
+      "language": "en",
+      "value": "Kitāb al-Majisṭī (DS156)"
+    }
+  },
+  "descriptions": {
+    "en": {
+      "language": "en",
+      "value": "Manuscript metadata collected by UPenn from University of Pennsylvania (9950583033503681, Oversize LJS 268)"
+    }
+  },
+  "aliases": {
+    "en": [
+      {
+        "language": "en",
+        "value": "Almagest."
+      },
+      {
+        "language": "en",
+        "value": "كتاب المجسطي."
+      }
+    ]
+  },
+  "claims": {
+    "P10": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P10",
+          "hash": "c543c2bae4274a088607a2055abe341658557324",
+          "datavalue": {
+            "value": "Kitāb al-Majisṭī",
+            "type": "string"
+          }
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P13": [
+            {
+              "snaktype": "value",
+              "property": "P13",
+              "hash": "6aaaba1010b58d17a08c359fcd378b5847a3b3ad",
+              "datavalue": {
+                "value": "كتاب المجسطي.",
+                "type": "string"
+              }
+            }
+          ],
+          "P11": [
+            {
+              "snaktype": "value",
+              "property": "P11",
+              "hash": "fca380e23fd38307fbacf992c20595bc5b56e495",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 354,
+                  "id": "Q354"
+                },
+                "type": "wikibase-entityid"
+              }
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P13",
+          "P11"
+        ],
+        "id": "Q649$B4FBF451-232F-4319-8333-9F3E1622E96E",
+        "rank": "normal"
+      }
+    ],
+    "P12": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P12",
+          "hash": "3215fca380aa3804bcbc6d6dbdc6cc654921d020",
+          "datavalue": {
+            "value": "Almagest.",
+            "type": "string"
+          }
+        },
+        "type": "statement",
+        "id": "Q649$7B318A5E-CB41-4598-9D7E-3882AF191832",
+        "rank": "normal"
+      }
+    ],
+    "P14": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P14",
+          "hash": "608cbf145d1f9806f236104622e68d88376f8bea",
+          "datavalue": {
+            "value": "Ptolemy, active 2nd century",
+            "type": "string"
+          }
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P13": [
+            {
+              "snaktype": "value",
+              "property": "P13",
+              "hash": "5479ba95a7bc7b1dbf37ab33cb37d2d4555458e6",
+              "datavalue": {
+                "value": "بطليموس، active 2nd century",
+                "type": "string"
+              }
+            }
+          ],
+          "P15": [
+            {
+              "snaktype": "value",
+              "property": "P15",
+              "hash": "a23aa5ba60851153e20b586d814911f4e8b95b91",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 18,
+                  "id": "Q18"
+                },
+                "type": "wikibase-entityid"
+              }
+            }
+          ],
+          "P17": [
+            {
+              "snaktype": "value",
+              "property": "P17",
+              "hash": "d70aa16c2aa89b882148bd81d1c04c65d429be48",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 478,
+                  "id": "Q478"
+                },
+                "type": "wikibase-entityid"
+              }
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P13",
+          "P15",
+          "P17"
+        ],
+        "id": "Q649$3738BDF4-A39D-4784-98A1-BC61A90AF4DF",
+        "rank": "normal"
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P14",
+          "hash": "8efbc2ec24a4b0a6c73f40ffe4b18ddf64ed7a5b",
+          "datavalue": {
+            "value": "Muḥammad ʻAbd al-Ḥayy ibn ʻAbd al-Kabīr al-Kinānī al-Ḥasanī",
+            "type": "string"
+          }
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P13": [
+            {
+              "snaktype": "value",
+              "property": "P13",
+              "hash": "f51e250e135d0f2dd266acb9dcf8a414a0eae68b",
+              "datavalue": {
+                "value": "محمد عبد الحي بن عبد الكبير الكناني الحسني،",
+                "type": "string"
+              }
+            }
+          ],
+          "P15": [
+            {
+              "snaktype": "value",
+              "property": "P15",
+              "hash": "63120b1e349365b8f15bbbe27edcb9ea07d676b0",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 21,
+                  "id": "Q21"
+                },
+                "type": "wikibase-entityid"
+              }
+            }
+          ],
+          "P17": [
+            {
+              "snaktype": "value",
+              "property": "P17",
+              "hash": "b30f426b259fbf690e89b0eec1dbc4b5900b5ab0",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 479,
+                  "id": "Q479"
+                },
+                "type": "wikibase-entityid"
+              }
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P13",
+          "P15",
+          "P17"
+        ],
+        "id": "Q649$75904F94-9341-427D-892A-6FBE7929140B",
+        "rank": "normal"
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P14",
+          "hash": "1ca6263d1c4ecb518d467eab45dd604a375efec1",
+          "datavalue": {
+            "value": "Schoenberg, Lawrence J",
+            "type": "string"
+          }
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P15": [
+            {
+              "snaktype": "value",
+              "property": "P15",
+              "hash": "63120b1e349365b8f15bbbe27edcb9ea07d676b0",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 21,
+                  "id": "Q21"
+                },
+                "type": "wikibase-entityid"
+              }
+            }
+          ],
+          "P17": [
+            {
+              "snaktype": "value",
+              "property": "P17",
+              "hash": "5409c0609e3d036e4964abc513af899c8104e111",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 383,
+                  "id": "Q383"
+                },
+                "type": "wikibase-entityid"
+              }
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P15",
+          "P17"
+        ],
+        "id": "Q649$5F32B62C-61A1-45C9-B55D-C1F42755DC0F",
+        "rank": "normal"
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P14",
+          "hash": "55673f1513b6b5761055e4899741be263ce468de",
+          "datavalue": {
+            "value": "Aḥmad ibn Mubārak Luṭf Allāh",
+            "type": "string"
+          }
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P13": [
+            {
+              "snaktype": "value",
+              "property": "P13",
+              "hash": "a911a2591d803b0264ee8fcec6ad8b5db605195c",
+              "datavalue": {
+                "value": "احمد بن مبارك لطف الله،",
+                "type": "string"
+              }
+            }
+          ],
+          "P15": [
+            {
+              "snaktype": "value",
+              "property": "P15",
+              "hash": "63120b1e349365b8f15bbbe27edcb9ea07d676b0",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 21,
+                  "id": "Q21"
+                },
+                "type": "wikibase-entityid"
+              }
+            }
+          ],
+          "P17": [
+            {
+              "snaktype": "value",
+              "property": "P17",
+              "hash": "6dd1efec7a3489db3263cc4a052e048d80913846",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 480,
+                  "id": "Q480"
+                },
+                "type": "wikibase-entityid"
+              }
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P13",
+          "P15",
+          "P17"
+        ],
+        "id": "Q649$62CAD9E2-5847-453A-BADF-4096BDB07837",
+        "rank": "normal"
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P14",
+          "hash": "31819716e51c201698bef09a35b31c309a3334db",
+          "datavalue": {
+            "value": "Muḥammad al-Raʼīs",
+            "type": "string"
+          }
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P13": [
+            {
+              "snaktype": "value",
+              "property": "P13",
+              "hash": "61a58b4844dfc0050b31573f0afc4e3630276272",
+              "datavalue": {
+                "value": "محمد الرأيس،",
+                "type": "string"
+              }
+            }
+          ],
+          "P15": [
+            {
+              "snaktype": "value",
+              "property": "P15",
+              "hash": "63120b1e349365b8f15bbbe27edcb9ea07d676b0",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 21,
+                  "id": "Q21"
+                },
+                "type": "wikibase-entityid"
+              }
+            }
+          ],
+          "P17": [
+            {
+              "snaktype": "value",
+              "property": "P17",
+              "hash": "69e4c457b331db986bb228388d4d0bca60496df9",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 481,
+                  "id": "Q481"
+                },
+                "type": "wikibase-entityid"
+              }
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P13",
+          "P15",
+          "P17"
+        ],
+        "id": "Q649$AD955D94-7A97-40F5-8504-D6436CF6498A",
+        "rank": "normal"
+      }
+    ],
+    "P16": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P16",
+          "hash": "ce901170fc9ef71d185742e65083673f50c506bd",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 3,
+              "id": "Q3"
+            },
+            "type": "wikibase-entityid"
+          }
+        },
+        "type": "statement",
+        "id": "Q649$DE94D4AF-60CF-4E7D-8A16-2651ECA5E613",
+        "rank": "normal"
+      }
+    ],
+    "P18": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P18",
+          "hash": "597cc735327161e37d09b13ce0c4af140eb21aa3",
+          "datavalue": {
+            "value": "Tables (Data)",
+            "type": "string"
+          }
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P20": [
+            {
+              "snaktype": "value",
+              "property": "P20",
+              "hash": "521833110665884a2e03333164ef1dd2e04f5519",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 238,
+                  "id": "Q238"
+                },
+                "type": "wikibase-entityid"
+              }
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P20"
+        ],
+        "id": "Q649$6E091C34-C955-4981-BFCE-994564175EBB",
+        "rank": "normal"
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P18",
+          "hash": "597cc735327161e37d09b13ce0c4af140eb21aa3",
+          "datavalue": {
+            "value": "Tables (Data)",
+            "type": "string"
+          }
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P20": [
+            {
+              "snaktype": "value",
+              "property": "P20",
+              "hash": "521833110665884a2e03333164ef1dd2e04f5519",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 238,
+                  "id": "Q238"
+                },
+                "type": "wikibase-entityid"
+              }
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P20"
+        ],
+        "id": "Q649$43EDBA11-F44B-49AD-904A-44A99788DA19",
+        "rank": "normal"
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P18",
+          "hash": "c21f71aa972033a1e81b216151521eba68f559e4",
+          "datavalue": {
+            "value": "Annotations (Provenance)",
+            "type": "string"
+          }
+        },
+        "type": "statement",
+        "id": "Q649$935CB6B2-1FC9-4334-9879-7A9547DFA13B",
+        "rank": "normal"
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P18",
+          "hash": "15aedbd960a7be252c51cbf7cc1ef6c399a21a16",
+          "datavalue": {
+            "value": "Manuscripts, Arabic",
+            "type": "string"
+          }
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P20": [
+            {
+              "snaktype": "value",
+              "property": "P20",
+              "hash": "983cd80c8d55e8b823155f5ddf551a5b9580413d",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 256,
+                  "id": "Q256"
+                },
+                "type": "wikibase-entityid"
+              }
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P20"
+        ],
+        "id": "Q649$E01E021C-3205-4D57-B042-025265CF7AA4",
+        "rank": "normal"
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P18",
+          "hash": "6d494069c5f8758cbcc3843c82022df25585b704",
+          "datavalue": {
+            "value": "Manuscripts, 14th century",
+            "type": "string"
+          }
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P20": [
+            {
+              "snaktype": "value",
+              "property": "P20",
+              "hash": "87a3edbe25a988ed3f37c009a450c67e7f0a49c7",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 331,
+                  "id": "Q331"
+                },
+                "type": "wikibase-entityid"
+              }
+            },
+            {
+              "snaktype": "value",
+              "property": "P20",
+              "hash": "b18270e990cb7ae2edb2e4ff6c526ec09513f71f",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 295,
+                  "id": "Q295"
+                },
+                "type": "wikibase-entityid"
+              }
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P20"
+        ],
+        "id": "Q649$87A69E68-2D31-43E6-8B83-9FF7F73A0286",
+        "rank": "normal"
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P18",
+          "hash": "d63070f4872b2068165b3754a1a691f873891d8a",
+          "datavalue": {
+            "value": "Treatises",
+            "type": "string"
+          }
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P20": [
+            {
+              "snaktype": "value",
+              "property": "P20",
+              "hash": "51233e407f65f9dcd03673c3ba92f48ce0f74ad4",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 160,
+                  "id": "Q160"
+                },
+                "type": "wikibase-entityid"
+              }
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P20"
+        ],
+        "id": "Q649$FA8EA295-5A65-4A8F-A193-2F83D2DA96F3",
+        "rank": "normal"
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P18",
+          "hash": "193e11980f0f57c8e0083b8406cb61ee2875fba2",
+          "datavalue": {
+            "value": "Codices (bound manuscripts)",
+            "type": "string"
+          }
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P20": [
+            {
+              "snaktype": "value",
+              "property": "P20",
+              "hash": "d9e8069fd663c80897a1e795d105f3f0986a3dd4",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 168,
+                  "id": "Q168"
+                },
+                "type": "wikibase-entityid"
+              }
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P20"
+        ],
+        "id": "Q649$408C1F40-255E-48C0-8858-97096B24DDC0",
+        "rank": "normal"
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P18",
+          "hash": "d4716d646e2c60d11a11a9cee669daccec13a2b9",
+          "datavalue": {
+            "value": "Diagrams",
+            "type": "string"
+          }
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P20": [
+            {
+              "snaktype": "value",
+              "property": "P20",
+              "hash": "45d4579c43fe834fa64475de82dbb63ca8d6e0cd",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 276,
+                  "id": "Q276"
+                },
+                "type": "wikibase-entityid"
+              }
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P20"
+        ],
+        "id": "Q649$D3E51424-2475-427D-90B8-F420E3A59ACF",
+        "rank": "normal"
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P18",
+          "hash": "0eda3f1d8b848a184b093324c1160d89fe3e8739",
+          "datavalue": {
+            "value": "Manuscripts, Medieval",
+            "type": "string"
+          }
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P20": [
+            {
+              "snaktype": "value",
+              "property": "P20",
+              "hash": "3cc0c7bfa0dc6a3b0d57a7e5e0c4ca1c75d9210d",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 325,
+                  "id": "Q325"
+                },
+                "type": "wikibase-entityid"
+              }
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P20"
+        ],
+        "id": "Q649$44464799-BB4F-4546-A470-CC3158129590",
+        "rank": "normal"
+      }
+    ],
+    "P19": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P19",
+          "hash": "7f07fbccb6b584925a18636cf6bdff85d3076d5e",
+          "datavalue": {
+            "value": "Astronomy--Early works to 1800",
+            "type": "string"
+          }
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P20": [
+            {
+              "snaktype": "value",
+              "property": "P20",
+              "hash": "ad4f86c46d27381518a428f7fceb0e222f542a3a",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 166,
+                  "id": "Q166"
+                },
+                "type": "wikibase-entityid"
+              }
+            },
+            {
+              "snaktype": "value",
+              "property": "P20",
+              "hash": "d137ca39eabb27edab1f0647e5fdafe552bc3161",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 300,
+                  "id": "Q300"
+                },
+                "type": "wikibase-entityid"
+              }
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P20"
+        ],
+        "id": "Q649$2650EE7D-416B-4955-971E-599C4EB81988",
+        "rank": "normal"
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P19",
+          "hash": "e52adb0f7948dd09093445c699af613ab646fd50",
+          "datavalue": {
+            "value": "Astronomy",
+            "type": "string"
+          }
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P20": [
+            {
+              "snaktype": "value",
+              "property": "P20",
+              "hash": "ad4f86c46d27381518a428f7fceb0e222f542a3a",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 166,
+                  "id": "Q166"
+                },
+                "type": "wikibase-entityid"
+              }
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P20"
+        ],
+        "id": "Q649$81FF1961-8A4C-42D4-9330-BD4DDA8B8505",
+        "rank": "normal"
+      }
+    ],
+    "P21": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P21",
+          "hash": "7a7db38dfd5addeafd669a8da680d17787a61aab",
+          "datavalue": {
+            "value": "Arabic",
+            "type": "string"
+          }
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P22": [
+            {
+              "snaktype": "value",
+              "property": "P22",
+              "hash": "87d461a6b1653666549fc8dab4b9804bdde8c5fa",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 118,
+                  "id": "Q118"
+                },
+                "type": "wikibase-entityid"
+              }
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P22"
+        ],
+        "id": "Q649$4F70757B-7DEC-4949-A3A9-191F9645DBED",
+        "rank": "normal"
+      }
+    ],
+    "P23": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P23",
+          "hash": "1ebfea57773fef6399d2b3d0cec0acbd13aacded",
+          "datavalue": {
+            "value": "1381",
+            "type": "string"
+          }
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P25": [
+            {
+              "snaktype": "value",
+              "property": "P25",
+              "hash": "d54951c1291e69356cc97ad03e0bcde559341150",
+              "datavalue": {
+                "value": {
+                  "time": "+1301-01-01T00:00:00Z",
+                  "timezone": 0,
+                  "before": 0,
+                  "after": 0,
+                  "precision": 7,
+                  "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                },
+                "type": "time"
+              }
+            }
+          ],
+          "P24": [
+            {
+              "snaktype": "value",
+              "property": "P24",
+              "hash": "57245da66b5ff9bf14ad3bf993369c42aed464fe",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 96,
+                  "id": "Q96"
+                },
+                "type": "wikibase-entityid"
+              }
+            }
+          ],
+          "P37": [
+            {
+              "snaktype": "value",
+              "property": "P37",
+              "hash": "fedc35d4d8af136ae0d47f136b3a2f69c2c3c61e",
+              "datavalue": {
+                "value": {
+                  "time": "+1381-01-01T00:00:00Z",
+                  "timezone": 0,
+                  "before": 0,
+                  "after": 0,
+                  "precision": 9,
+                  "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                },
+                "type": "time"
+              }
+            }
+          ],
+          "P36": [
+            {
+              "snaktype": "value",
+              "property": "P36",
+              "hash": "12359cf901f5463772d64fc1ab592df968701c79",
+              "datavalue": {
+                "value": {
+                  "time": "+1381-12-31T00:00:00Z",
+                  "timezone": 0,
+                  "before": 0,
+                  "after": 0,
+                  "precision": 9,
+                  "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                },
+                "type": "time"
+              }
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P25",
+          "P24",
+          "P37",
+          "P36"
+        ],
+        "id": "Q649$1093A28E-8AC0-4B3F-B73B-2ABDDA6016BB",
+        "rank": "normal"
+      }
+    ],
+    "P29": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P29",
+          "hash": "5e1738c61f2c31a35d11e647e40cce6ea99b1993",
+          "datavalue": {
+            "value": "Extent: i, 174, i leaves : paper ; 280 x 215 (220 x 145) mm bound to 280 x 225 mm.",
+            "type": "string"
+          }
+        },
+        "type": "statement",
+        "id": "Q649$D0BA0D74-496E-46B2-BDB1-8F99474DB022",
+        "rank": "normal"
+      }
+    ],
+    "P3": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P3",
+          "hash": "03358788723e6a066b7cbf549ac22eafa2fce222",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 648,
+              "id": "Q648"
+            },
+            "type": "wikibase-entityid"
+          }
+        },
+        "type": "statement",
+        "id": "Q649$48F1458D-5259-40DD-B218-72FA0F057E6A",
+        "rank": "normal"
+      }
+    ],
+    "P30": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P30",
+          "hash": "e2986395daacb360672b476569e3d6b575067fd2",
+          "datavalue": {
+            "value": "paper",
+            "type": "string"
+          }
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P31": [
+            {
+              "snaktype": "value",
+              "property": "P31",
+              "hash": "421d2d87e440c2b7dadcefaaa3bd818fc4019949",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 31,
+                  "id": "Q31"
+                },
+                "type": "wikibase-entityid"
+              }
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P31"
+        ],
+        "id": "Q649$B395CF0C-3D38-4746-A46D-E781FA4C39C5",
+        "rank": "normal"
+      }
+    ],
+    "P32": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P32",
+          "hash": "84b0e294e4a204a26288f213751824009c52ff74",
+          "datavalue": {
+            "value": "Many edges and corners of leaves mended with paper.",
+            "type": "string"
+          }
+        },
+        "type": "statement",
+        "id": "Q649$5F91DD46-CD33-4273-9B48-DEF8A1065EBF",
+        "rank": "normal"
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P32",
+          "hash": "6976c50d7e1675cfc8a7c43823e2b76c761335af",
+          "datavalue": {
+            "value": "Title from title page (f. 1r).",
+            "type": "string"
+          }
+        },
+        "type": "statement",
+        "id": "Q649$1DC6B3E4-D4CD-4BC9-BAC6-A0DCE39F9DB6",
+        "rank": "normal"
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P32",
+          "hash": "cf6a02a2f60a08778ca32ee4da88000c5a9399c4",
+          "datavalue": {
+            "value": "Ms. codex.",
+            "type": "string"
+          }
+        },
+        "type": "statement",
+        "id": "Q649$F8A58280-6BB3-45DD-BBA0-23CF84B4B85B",
+        "rank": "normal"
+      }
+    ],
+    "P34": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P34",
+          "hash": "f7753be3df0ca2dc886646cc80ff4568eb85b039",
+          "datavalue": {
+            "value": {
+              "time": "+2022-12-23T00:00:00Z",
+              "timezone": 0,
+              "before": 0,
+              "after": 0,
+              "precision": 11,
+              "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+            },
+            "type": "time"
+          }
+        },
+        "type": "statement",
+        "id": "Q649$1C5F6F31-7963-4DDA-B91C-64A34F9D4173",
+        "rank": "normal"
+      }
+    ],
+    "P35": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P35",
+          "hash": "393d71ad41fd6c776cabc3a5e93064322e0abc18",
+          "datavalue": {
+            "value": {
+              "time": "+2022-12-23T00:00:00Z",
+              "timezone": 0,
+              "before": 0,
+              "after": 0,
+              "precision": 11,
+              "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+            },
+            "type": "time"
+          }
+        },
+        "type": "statement",
+        "id": "Q649$6BA47AFF-8881-4851-A312-C2AB97A919FA",
+        "rank": "normal"
+      }
+    ],
+    "P41": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P41",
+          "hash": "c31c150675d70a7b0e0b00e901baeac59826645c",
+          "datavalue": {
+            "value": "https://colenda.library.upenn.edu/phalt/iiif/2/81431-p3ff3m111/manifest",
+            "type": "string"
+          }
+        },
+        "type": "statement",
+        "id": "Q649$AEE91809-BD06-42E7-A24C-69418BAF8FFE",
+        "rank": "normal"
+      }
+    ]
+  },
+  "sitelinks": []
+}

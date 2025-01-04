@@ -1,0 +1,51 @@
+{
+  "type": "item",
+  "id": "Q33",
+  "labels": {
+    "en": {
+      "language": "en",
+      "value": "Parchment"
+    }
+  },
+  "descriptions": [],
+  "aliases": [],
+  "claims": {
+    "P16": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P16",
+          "hash": "e6d5a2714d4f1b3f6ae6029aca5f0abb63e667c0",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 17,
+              "id": "Q17"
+            },
+            "type": "wikibase-entityid"
+          }
+        },
+        "type": "statement",
+        "id": "Q33$9A521893-ED3C-4400-9225-53BDF006CA10",
+        "rank": "normal"
+      }
+    ],
+    "P44": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P44",
+          "hash": "06f27f887803a1983b3d249973807f3f0fbb3cea",
+          "datavalue": {
+            "value": "http://vocab.getty.edu/aat/300011851",
+            "type": "string"
+          }
+        },
+        "type": "statement",
+        "id": "Q33$35B7DE30-DFA9-47A3-93CA-F3CC78F6867C",
+        "rank": "normal"
+      }
+    ]
+  },
+  "sitelinks": []
+}

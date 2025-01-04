@@ -1,0 +1,67 @@
+{
+  "type": "item",
+  "id": "Q374",
+  "labels": {
+    "en": {
+      "language": "en",
+      "value": "University of Pennsylvania"
+    }
+  },
+  "descriptions": [],
+  "aliases": [],
+  "claims": {
+    "P1": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1",
+          "hash": "0b386d26f8216222d5e0c3f66db0d050d4ce6900",
+          "datavalue": {
+            "value": "DSNAME101",
+            "type": "string"
+          }
+        },
+        "type": "statement",
+        "id": "Q374$338A2B1D-EFDD-449A-899A-DB59D9A39EF9",
+        "rank": "normal"
+      }
+    ],
+    "P16": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P16",
+          "hash": "d7802bc9843b37791cee7344ec0c8f91ef782317",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 9,
+              "id": "Q9"
+            },
+            "type": "wikibase-entityid"
+          }
+        },
+        "type": "statement",
+        "id": "Q374$C776CCE4-BD48-45BA-8474-E9057C90F6B6",
+        "rank": "normal"
+      }
+    ],
+    "P42": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P42",
+          "hash": "10e5d8bdcbbbfe03f412b0979d356c6b68b32191",
+          "datavalue": {
+            "value": "Q49117",
+            "type": "string"
+          }
+        },
+        "type": "statement",
+        "id": "Q374$50E9F8B4-6A64-465B-9C0C-82BA70F6FD75",
+        "rank": "normal"
+      }
+    ]
+  },
+  "sitelinks": []
+}

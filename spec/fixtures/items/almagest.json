@@ -1,0 +1,35 @@
+{
+  "type": "item",
+  "id": "Q354",
+  "labels": {
+    "en": {
+      "language": "en",
+      "value": "Almagest"
+    }
+  },
+  "descriptions": [],
+  "aliases": [],
+  "claims": {
+    "P16": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P16",
+          "hash": "9f65c70c420b7124b50e1f937ed67afdd38f1146",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 6,
+              "id": "Q6"
+            },
+            "type": "wikibase-entityid"
+          }
+        },
+        "type": "statement",
+        "id": "Q354$16576780-5B9E-4E7C-9B5B-CB4FEC591D1F",
+        "rank": "normal"
+      }
+    ]
+  },
+  "sitelinks": []
+}

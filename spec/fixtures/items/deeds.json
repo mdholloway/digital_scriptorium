@@ -1,0 +1,51 @@
+{
+  "type": "item",
+  "id": "Q283",
+  "labels": {
+    "en": {
+      "language": "en",
+      "value": "deeds"
+    }
+  },
+  "descriptions": [],
+  "aliases": [],
+  "claims": {
+    "P16": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P16",
+          "hash": "5a9182d9c735e4930804c1df38c8fa26a0e53582",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 11,
+              "id": "Q11"
+            },
+            "type": "wikibase-entityid"
+          }
+        },
+        "type": "statement",
+        "id": "Q283$7D7AF7E8-ACEC-44CC-96DF-E0F568629781",
+        "rank": "normal"
+      }
+    ],
+    "P44": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P44",
+          "hash": "58832ff11f6d9c0d51f5b3a30ccfeba65a41ce5c",
+          "datavalue": {
+            "value": "http://vocab.getty.edu/aat/300027249",
+            "type": "string"
+          }
+        },
+        "type": "statement",
+        "id": "Q283$8B93C3D0-AAF5-4627-8DB9-EF3BF26889AA",
+        "rank": "normal"
+      }
+    ]
+  },
+  "sitelinks": []
+}

@@ -1,0 +1,51 @@
+{
+  "type": "item",
+  "id": "Q113",
+  "labels": {
+    "en": {
+      "language": "en",
+      "value": "Latin"
+    }
+  },
+  "descriptions": [],
+  "aliases": [],
+  "claims": {
+    "P16": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P16",
+          "hash": "cddf65c250a7478cda6bae8878aa6f4b1a5811aa",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 12,
+              "id": "Q12"
+            },
+            "type": "wikibase-entityid"
+          }
+        },
+        "type": "statement",
+        "id": "Q113$42C0CB25-6E35-4EA7-B75B-0BFBB45424BF",
+        "rank": "normal"
+      }
+    ],
+    "P42": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P42",
+          "hash": "bef08846760fa0100d3e143f693bbcbc2d8e5248",
+          "datavalue": {
+            "value": "Q397",
+            "type": "string"
+          }
+        },
+        "type": "statement",
+        "id": "Q113$9F6B24F6-3130-4860-A18F-AFFEE0A01D08",
+        "rank": "normal"
+      }
+    ]
+  },
+  "sitelinks": []
+}

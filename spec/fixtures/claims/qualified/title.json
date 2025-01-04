@@ -1,0 +1,46 @@
+{
+  "mainsnak": {
+    "snaktype": "value",
+    "property": "P10",
+    "hash": "c543c2bae4274a088607a2055abe341658557324",
+    "datavalue": {
+      "value": "Kitāb al-Majisṭī",
+      "type": "string"
+    }
+  },
+  "type": "statement",
+  "qualifiers": {
+    "P13": [
+      {
+        "snaktype": "value",
+        "property": "P13",
+        "hash": "6aaaba1010b58d17a08c359fcd378b5847a3b3ad",
+        "datavalue": {
+          "value": "كتاب المجسطي.",
+          "type": "string"
+        }
+      }
+    ],
+    "P11": [
+      {
+        "snaktype": "value",
+        "property": "P11",
+        "hash": "fca380e23fd38307fbacf992c20595bc5b56e495",
+        "datavalue": {
+          "value": {
+            "entity-type": "item",
+            "numeric-id": 354,
+            "id": "Q354"
+          },
+          "type": "wikibase-entityid"
+        }
+      }
+    ]
+  },
+  "qualifiers-order": [
+    "P13",
+    "P11"
+  ],
+  "id": "Q649$B4FBF451-232F-4319-8333-9F3E1622E96E",
+  "rank": "normal"
+}
