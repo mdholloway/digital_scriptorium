@@ -1,24 +1,25 @@
 # frozen_string_literal: true
 
 module DigitalScriptorium
-  class NameStatementConverter
+  # Special-purpose transformer for name (P14) claims
+  class NameClaimTransformer
     include PropertyId
 
-    def self.convert(statement, export_hash)
-      return {} unless statement.qualifiers_by_property_id? ROLE_IN_AUTHORITY_FILE
+    def self.transform(claim, export_hash)
+      return {} unless claim.qualifiers_by_property_id? ROLE_IN_AUTHORITY_FILE
 
-      role_entity_id = statement.qualifier_by_property_id(ROLE_IN_AUTHORITY_FILE).entity_id_value
+      role_entity_id = claim.qualifier_by_property_id(ROLE_IN_AUTHORITY_FILE).entity_id_value
       role_item = export_hash[role_entity_id]
       role_label = role_item.label('en')
       prefix = role_label.downcase.split(' ').last
 
-      recorded_name = statement.data_value
+      recorded_name = claim.data_value
       search_names = [recorded_name]
 
-      name_in_original_script = statement.qualifier_by_property_id(IN_ORIGINAL_SCRIPT)&.data_value
+      name_in_original_script = claim.qualifier_by_property_id(IN_ORIGINAL_SCRIPT)&.data_value
       search_names << name_in_original_script unless name_in_original_script.nil?
 
-      unless statement.qualifiers_by_property_id? NAME_IN_AUTHORITY_FILE
+      unless claim.qualifiers_by_property_id? NAME_IN_AUTHORITY_FILE
         return {
           "#{prefix}_display" => [{ 'PV' => recorded_name }.to_json],
           "#{prefix}_search" => search_names,
@@ -26,7 +27,7 @@ module DigitalScriptorium
         }
       end
 
-      name_entity_id = statement.qualifier_by_property_id(NAME_IN_AUTHORITY_FILE).entity_id_value
+      name_entity_id = claim.qualifier_by_property_id(NAME_IN_AUTHORITY_FILE).entity_id_value
       name_item = export_hash[name_entity_id]
       name_label = name_item.label('en')
 

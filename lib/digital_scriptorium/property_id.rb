@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 module DigitalScriptorium
+  # Constants for Digital Scriptorium Wikibase property IDs
   module PropertyId
     DS_ID                                 = 'P1'
     MANUSCRIPT_HOLDING                    = 'P2'

@@ -55,11 +55,11 @@ File.open(output_file, 'w') do |file|
             next unless property_config = config[property_id]
   
             if property_id == PropertyId::ASSOCIATED_NAME_AS_RECORDED
-              solr_item = merge(solr_item, NameStatementConverter.convert(claim, export_hash))
+              solr_item = merge(solr_item, NameClaimTransformer.transform(claim, export_hash))
             elsif property_id == PropertyId::PRODUCTION_DATE_AS_RECORDED
-              solr_item = merge(solr_item, DateStatementConverter.convert(claim, export_hash, property_config))
+              solr_item = merge(solr_item, DateClaimTransformer.transform(claim, export_hash, property_config))
             else
-              solr_item = merge(solr_item, StatementConverter.convert(claim, export_hash, property_config))
+              solr_item = merge(solr_item, ClaimTransformer.transform(claim, export_hash, property_config))
             end
           end
         end

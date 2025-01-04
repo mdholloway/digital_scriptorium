@@ -3,25 +3,26 @@
 require 'wikibase_representable'
 
 module DigitalScriptorium
-  class StatementConverter
+  # Transformer for converting claims of Digital Scriptorium items into Solr fields.
+  class ClaimTransformer
     include PropertyId
     include WikibaseRepresentable::Model
 
-    def self.convert(statement, export_hash, config)
+    def self.transform(claim, export_hash, config)
       solr_props = {}
 
       prefix = config['prefix']
       requested_fields = config['fields']
       authority_property_id = config['authority']
 
-      if statement.value_type? EntityIdValue
-        entity_id = statement.entity_id_value
+      if claim.value_type? EntityIdValue
+        entity_id = claim.entity_id_value
         referenced_item = export_hash[entity_id]
         value = referenced_item.label('en')
-      elsif statement.value_type? TimeValue
-        value = statement.time_value
+      elsif claim.value_type? TimeValue
+        value = claim.time_value
       else
-        value = statement.data_value
+        value = claim.data_value
       end
     
       solr_props["#{prefix}"] = [value] if requested_fields.include? 'id'
@@ -29,8 +30,8 @@ module DigitalScriptorium
 
       display_props = { 'PV' => value }
     
-      if authority_property_id && statement.qualifiers_by_property_id?(authority_property_id)
-        authority_id = statement.qualifier_by_property_id(authority_property_id).entity_id_value
+      if authority_property_id && claim.qualifiers_by_property_id?(authority_property_id)
+        authority_id = claim.qualifier_by_property_id(authority_property_id).entity_id_value
         authority = export_hash[authority_id]
     
         if authority
@@ -58,7 +59,7 @@ module DigitalScriptorium
       solr_props["#{config['prefix']}_search"] = [value] if config['fields'].include? 'search'
       solr_props["#{config['prefix']}_facet"] = [value] if config['fields'].include? 'facet'
     
-      solr_props["images_facet"] = ['Yes'] if value && statement.property_id == IIIF_MANIFEST
+      solr_props["images_facet"] = ['Yes'] if value && claim.property_id == IIIF_MANIFEST
       solr_props["#{config['prefix']}_link"] = [value] if config['fields'].include? 'link'
     
       solr_props
