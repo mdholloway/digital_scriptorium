@@ -5,6 +5,9 @@ require:
 AllCops:
   TargetRubyVersion: 3.0
   NewCops: enable
+Layout/LineLength:
+  Exclude:
+    - spec/**/*
 Metrics/AbcSize:
   Enabled: false
 Metrics/BlockLength:
@@ -16,4 +19,8 @@ Metrics/MethodLength:
 Metrics/PerceivedComplexity:
   Enabled: false
 Style/SafeNavigationChainLength:
+  Enabled: false
+RSpec/ExampleLength:
+  Max: 10
+RSpec/MultipleExpectations:
   Enabled: false
