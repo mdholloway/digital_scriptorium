@@ -15,15 +15,7 @@ module DigitalScriptorium
       requested_fields = config['fields']
       authority_property_id = config['authority']
 
-      if claim.value_type? EntityIdValue
-        entity_id = claim.entity_id_value
-        referenced_item = export_hash[entity_id]
-        value = referenced_item.label('en')
-      elsif claim.value_type? TimeValue
-        value = claim.time_value
-      else
-        value = claim.data_value
-      end
+      value = primary_value_from_claim(claim, export_hash)
 
       solr_props['id'] = [value] if requested_fields.include? 'id'
       solr_props["#{prefix}_meta"] = [value] if requested_fields.include? 'meta'
@@ -63,6 +55,18 @@ module DigitalScriptorium
       solr_props["#{config['prefix']}_link"] = [value] if config['fields'].include? 'link'
 
       solr_props
+    end
+
+    def self.primary_value_from_claim(claim, export_hash)
+      if claim.value_type? EntityIdValue
+        entity_id = claim.entity_id_value
+        referenced_item = export_hash[entity_id]
+        referenced_item.label('en')
+      elsif claim.value_type? TimeValue
+        claim.time_value
+      else
+        claim.data_value
+      end
     end
   end
 end
