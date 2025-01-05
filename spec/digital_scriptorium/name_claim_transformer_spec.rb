@@ -16,7 +16,7 @@ module DigitalScriptorium
       }
     end
 
-    it 'transforms a qualified name claim' do
+    it 'transforms a name claim' do
       solr_item = described_class.transform(name_claim, export_hash)
       expected = {
         'owner_display' => ['{"PV":"Schoenberg, Lawrence J","QL":"Lawrence J. Schoenberg","QU":"https://www.wikidata.org/wiki/Q107542788"}'],

@@ -12,7 +12,7 @@ module DigitalScriptorium
     let(:export_hash) { { 'Q96' => ItemRepresenter.new(Item.new).from_json(fourteenth_c_json) } }
     let(:config) { YAML.load_file(File.expand_path('../../property_config.yml', __dir__)) }
 
-    it 'transforms a qualified date claim' do
+    it 'transforms a date claim' do
       solr_item = described_class.transform(date_claim, export_hash, config[PropertyId::PRODUCTION_DATE_AS_RECORDED])
       expected = {
         'date_meta' => ['1358.'],

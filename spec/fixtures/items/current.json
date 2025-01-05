@@ -1,0 +1,19 @@
+{
+  "type": "item",
+  "id": "Q4",
+  "labels": {
+    "en": {
+      "language": "en",
+      "value": "Current"
+    }
+  },
+  "descriptions": {
+    "en": {
+      "language": "en",
+      "value": "The manuscript holding is current"
+    }
+  },
+  "aliases": [],
+  "claims": [],
+  "sitelinks": []
+}
