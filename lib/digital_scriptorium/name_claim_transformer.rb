@@ -14,14 +14,16 @@ module DigitalScriptorium
       prefix = role_label.downcase.split.last
 
       recorded_name = claim.data_value
+      display_names = { 'PV' => recorded_name }
       search_names = [recorded_name]
 
-      name_in_original_script = claim.qualifier_by_property_id(IN_ORIGINAL_SCRIPT)&.data_value
-      search_names << name_in_original_script unless name_in_original_script.nil?
+      name_in_original_script = claim.qualifier_by_property_id(IN_ORIGINAL_SCRIPT)&.data_value&.value
+      display_names['AGR'] = name_in_original_script if name_in_original_script
+      search_names << name_in_original_script if name_in_original_script
 
       unless claim.qualifiers_by_property_id? NAME_IN_AUTHORITY_FILE
         return {
-          "#{prefix}_display" => [{ 'PV' => recorded_name }.to_json],
+          "#{prefix}_display" => [display_names.to_json],
           "#{prefix}_search" => search_names,
           "#{prefix}_facet" => [recorded_name]
         }
@@ -35,12 +37,8 @@ module DigitalScriptorium
       wikidata_url = "https://www.wikidata.org/wiki/#{wikidata_id}"
 
       search_names << name_label
-      display_names = {
-        'PV' => recorded_name,
-        'QL' => name_label
-      }
+      display_names['QL'] = name_label
       display_names['QU'] = wikidata_url if wikidata_url
-      display_names['AGR'] = name_in_original_script if name_in_original_script
 
       {
         "#{prefix}_display" => [display_names.to_json],
