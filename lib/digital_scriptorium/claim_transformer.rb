@@ -39,20 +39,20 @@ module DigitalScriptorium
           display_props['QU'] = external_uri if external_uri
           display_props['QU'] = wikidata_uri if wikidata_uri
 
-          solr_props["#{config['prefix']}_display"] = [display_props.to_json] if config['fields'].include? 'display'
-          solr_props["#{config['prefix']}_search"] = [value, label].uniq if config['fields'].include? 'search'
-          solr_props["#{config['prefix']}_facet"] = [label] if config['fields'].include? 'facet'
+          solr_props["#{prefix}_display"] = [display_props.to_json] if requested_fields.include? 'display'
+          solr_props["#{prefix}_search"] = [value, label].uniq if requested_fields.include? 'search'
+          solr_props["#{prefix}_facet"] = [label] if requested_fields.include? 'facet'
 
           return solr_props
         end
       end
 
-      solr_props["#{config['prefix']}_display"] = [display_props.to_json] if config['fields'].include? 'display'
-      solr_props["#{config['prefix']}_search"] = [value] if config['fields'].include? 'search'
-      solr_props["#{config['prefix']}_facet"] = [value] if config['fields'].include? 'facet'
+      solr_props["#{prefix}_display"] = [display_props.to_json] if requested_fields.include? 'display'
+      solr_props["#{prefix}_search"] = [value] if requested_fields.include? 'search'
+      solr_props["#{prefix}_facet"] = [value] if requested_fields.include? 'facet'
 
       solr_props['images_facet'] = ['Yes'] if value && claim.property_id == IIIF_MANIFEST
-      solr_props["#{config['prefix']}_link"] = [value] if config['fields'].include? 'link'
+      solr_props["#{prefix}_link"] = [value] if requested_fields.include? 'link'
 
       solr_props
     end
