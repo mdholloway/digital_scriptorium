@@ -10,4 +10,4 @@ The conversion script [wikibase_to_solr_new.rb](../wikibase_to_solr_new.rb) proc
 
 The specific Solr fields produced for each claim are controlled by the configuration file [property_config.yml](../property_config.yml). This file also defines the prefix (representing the property name) to be attached to each field for a given property, and whether a claim based on the property might have a related authority qualifier. 
 
-The script was written so as not to rely on the structure of the export file beyond that it will be a JSON array of Wikibase entities, with records linked to manuscripts and manuscripts linked to holdings by P3 (described manuscript) and P2 (holding) claims respectively.
+The script was written so as not to rely on the structure of the export file beyond that it will be a JSON array consisting of all entities in the DS 2.0 Wikibase, with record items linked to manuscript items and manuscript items linked to holding items by P3 (described manuscript) and P2 (holding) claims respectively.
