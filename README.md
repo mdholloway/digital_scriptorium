@@ -1,6 +1,6 @@
 # DigitalScriptorium
 
-This gem provides code to support the pipeline for ingesting Digital Scriptorium Wikibase data exports into Apache Solr, so that they can be searched as part of [DS Catalog 2.0](https://search.digital-scriptorium.org/).
+This gem provides code to support the transformation of Digital Scriptorium Wikibase data exports into Apache Solr documents that can be searched using [DS Catalog](https://search.digital-scriptorium.org/).
 
 See [here](doc/overview.md) for a technical overview of the logic for transforming Wikibase items in the export to Solr records.
 
