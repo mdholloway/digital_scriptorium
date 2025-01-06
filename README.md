@@ -1,5 +1,9 @@
 # DigitalScriptorium
 
+This gem provides code to support the pipeline for ingesting Digital Scriptorium Wikibase data exports into Apache Solr, so that they can be searched as part of [DS Catalog 2.0](https://search.digital-scriptorium.org/).
+
+See [here](doc/overview.md) for a technical overview of the logic for transforming Wikibase items in the export to Solr records.
+
 ## Installation
 
 Install the gem and add to the application's Gemfile by executing:
@@ -13,10 +17,6 @@ If bundler is not being used to manage dependencies, install the gem by executin
 ```bash
 gem install digital_scriptorium
 ```
-
-## Usage
-
-TODO: Write usage instructions here
 
 ## Development
 
