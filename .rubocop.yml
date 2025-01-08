@@ -10,14 +10,13 @@ Layout/LineLength:
     - spec/**/*
 Metrics/AbcSize:
   Enabled: false
-Metrics/BlockLength:
-  Enabled: false
 Metrics/CyclomaticComplexity:
   Enabled: false
 Metrics/MethodLength:
   Enabled: false
 Metrics/ModuleLength:
-  Enabled: false
+  Exclude:
+    - spec/**/*
 Metrics/PerceivedComplexity:
   Enabled: false
 RSpec/ExampleLength:
@@ -25,6 +24,4 @@ RSpec/ExampleLength:
 RSpec/MultipleExpectations:
   Enabled: false
 RSpec/MultipleMemoizedHelpers:
-  Enabled: false
-Style/SafeNavigationChainLength:
   Enabled: false
