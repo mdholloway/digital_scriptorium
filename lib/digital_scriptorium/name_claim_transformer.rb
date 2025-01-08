@@ -14,46 +14,47 @@ module DigitalScriptorium
       prefix = role_label.downcase.split.last
 
       recorded_name = claim.data_value
-      display_names = { 'PV' => recorded_name }
-      search_names = [recorded_name]
+      display_data = { 'recorded_value' => recorded_name }
+      search_terms = [recorded_name]
 
       name_in_original_script = claim.qualifier_by_property_id(IN_ORIGINAL_SCRIPT)&.data_value&.value
-      display_names['AGR'] = name_in_original_script if name_in_original_script
-      search_names << name_in_original_script if name_in_original_script
+      display_data['AGR'] = name_in_original_script if name_in_original_script
+      search_terms << name_in_original_script if name_in_original_script
 
       unless claim.qualifiers_by_property_id? NAME_IN_AUTHORITY_FILE
         return {
-          "#{prefix}_display" => [display_names.to_json],
-          "#{prefix}_search" => search_names,
+          "#{prefix}_display" => [display_data.to_json],
+          "#{prefix}_search" => search_terms,
           "#{prefix}_facet" => [recorded_name]
         }
       end
 
-      display_entries = []
       facets = []
+      linked_terms = []
 
       claim.qualifiers_by_property_id(NAME_IN_AUTHORITY_FILE).each do |qualifier|
-        display_names_for_qualifier = { 'PV' => recorded_name }
-        display_names_for_qualifier['AGR'] = name_in_original_script if name_in_original_script
+        term = {}
 
         name_entity_id = qualifier.entity_id_value
         name_item = export_hash[name_entity_id]
         name_label = name_item.label('en')
 
-        display_names_for_qualifier['QL'] = name_label
-        search_names << name_label
+        term['label'] = name_label
+        search_terms << name_label
         facets << name_label
 
         wikidata_id = name_item.claim_by_property_id(WIKIDATA_QID).data_value
         wikidata_url = "https://www.wikidata.org/wiki/#{wikidata_id}"
-        display_names_for_qualifier['QU'] = wikidata_url if wikidata_url
+        term['source_url'] = wikidata_url if wikidata_url
 
-        display_entries << display_names_for_qualifier.to_json
+        linked_terms << term
       end
 
+      display_data['linked_terms'] = linked_terms.uniq if linked_terms.any?
+
       {
-        "#{prefix}_display" => display_entries.uniq,
-        "#{prefix}_search" => search_names.uniq,
+        "#{prefix}_display" => [display_data.to_json],
+        "#{prefix}_search" => search_terms.uniq,
         "#{prefix}_facet" => facets.uniq
       }
     end

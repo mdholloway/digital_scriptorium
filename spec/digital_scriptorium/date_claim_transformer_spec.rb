@@ -16,7 +16,7 @@ module DigitalScriptorium
       solr_item = described_class.transform(date_claim, export_hash, config[PropertyId::PRODUCTION_DATE_AS_RECORDED])
       expected = {
         'date_meta' => ['1358.'],
-        'date_display' => ['{"PV":"1358.","QL":"fourteenth century (dates CE)","QU":"http://vocab.getty.edu/aat/300404506"}'],
+        'date_display' => ['{"recorded_value":"1358.","linked_terms":[{"label":"fourteenth century (dates CE)","source_url":"http://vocab.getty.edu/aat/300404506"}]}'],
         'date_search' => ['1358.', 'fourteenth century (dates CE)'],
         'date_facet' => ['fourteenth century (dates CE)'],
         'century_int' => [1301],

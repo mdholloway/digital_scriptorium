@@ -16,13 +16,15 @@ module DigitalScriptorium
       authority_property_id = config['authority']
 
       value = primary_value_from_claim(claim, export_hash)
+      display_data = { 'recorded_value' => value }
+      search_terms = [value]
 
       solr_props['id'] = [value] if requested_fields.include? 'id'
       solr_props["#{prefix}_meta"] = [value] if requested_fields.include? 'meta'
 
       unless authority_property_id && claim.qualifiers_by_property_id?(authority_property_id)
-        solr_props["#{prefix}_display"] = [{ 'PV' => value }.to_json] if requested_fields.include? 'display'
-        solr_props["#{prefix}_search"] = [value] if requested_fields.include? 'search'
+        solr_props["#{prefix}_display"] = [display_data.to_json] if requested_fields.include? 'display'
+        solr_props["#{prefix}_search"] = search_terms if requested_fields.include? 'search'
         solr_props["#{prefix}_facet"] = [value] if requested_fields.include? 'facet'
 
         solr_props['images_facet'] = ['Yes'] if value && claim.property_id == IIIF_MANIFEST
@@ -31,37 +33,37 @@ module DigitalScriptorium
         return solr_props
       end
 
-      display_entries = []
-      search_entries = [value]
       facets = []
+      linked_terms = []
 
       claim.qualifiers_by_property_id(authority_property_id).each do |qualifier|
-        display_props = { 'PV' => value }
-
         authority_id = qualifier.entity_id_value
         authority = export_hash[authority_id]
 
-        if authority
-          label = authority.label('en')
+        next unless authority
 
-          display_props['QL'] = label
-          search_entries << label
-          facets << label
+        term = {}
+        label = authority.label('en')
 
-          external_uri = authority.claim_by_property_id(EXTERNAL_URI)&.data_value
-          wikidata_id = authority.claim_by_property_id(WIKIDATA_QID)&.data_value
-          wikidata_uri = wikidata_id && "https://www.wikidata.org/wiki/#{wikidata_id}"
+        term['label'] = label
+        search_terms << label
+        facets << label
 
-          # Only one or the other of these seem to exist for a given item in practice.
-          display_props['QU'] = external_uri if external_uri
-          display_props['QU'] = wikidata_uri if wikidata_uri
-        end
+        external_uri = authority.claim_by_property_id(EXTERNAL_URI)&.data_value
+        wikidata_id = authority.claim_by_property_id(WIKIDATA_QID)&.data_value
+        wikidata_uri = wikidata_id && "https://www.wikidata.org/wiki/#{wikidata_id}"
 
-        display_entries << display_props.to_json
+        # Only one or the other of these seem to exist for a given item in practice.
+        term['source_url'] = external_uri if external_uri
+        term['source_url'] = wikidata_uri if wikidata_uri
+
+        linked_terms << term
       end
 
-      solr_props["#{prefix}_display"] = display_entries.uniq if requested_fields.include? 'display'
-      solr_props["#{prefix}_search"] = search_entries.uniq if requested_fields.include? 'search'
+      display_data['linked_terms'] = linked_terms.uniq if linked_terms.any?
+
+      solr_props["#{prefix}_display"] = [display_data.to_json] if requested_fields.include? 'display'
+      solr_props["#{prefix}_search"] = search_terms.uniq if requested_fields.include? 'search'
       solr_props["#{prefix}_facet"] = facets.uniq if requested_fields.include? 'facet'
 
       solr_props

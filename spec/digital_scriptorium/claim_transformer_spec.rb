@@ -47,7 +47,7 @@ module DigitalScriptorium
       solr_item = described_class.transform(id_claim, export_hash, config[PropertyId::DS_ID])
       expected = {
         'id' => ['DS121'],
-        'id_display' => ['{"PV":"DS121"}'],
+        'id_display' => ['{"recorded_value":"DS121"}'],
         'id_search' => ['DS121']
       }
       expect(solr_item).to eq(expected)
@@ -57,7 +57,7 @@ module DigitalScriptorium
       institution_claim = StatementRepresenter.new(Statement.new).from_json(institution_json)
       solr_item = described_class.transform(institution_claim, export_hash, config[PropertyId::HOLDING_INSTITUTION_AS_RECORDED])
       expected = {
-        'institution_display' => ['{"PV":"University of Pennsylvania","QL":"University of Pennsylvania","QU":"https://www.wikidata.org/wiki/Q49117"}'],
+        'institution_display' => ['{"recorded_value":"University of Pennsylvania","linked_terms":[{"label":"University of Pennsylvania","source_url":"https://www.wikidata.org/wiki/Q49117"}]}'],
         'institution_search' => ['University of Pennsylvania'],
         'institution_facet' => ['University of Pennsylvania']
       }
@@ -67,7 +67,7 @@ module DigitalScriptorium
     it 'transforms a holding status claim' do
       status_claim = StatementRepresenter.new(Statement.new).from_json(status_json)
       solr_item = described_class.transform(status_claim, export_hash, config[PropertyId::HOLDING_STATUS])
-      expected = { 'holding_status_display' => ['{"PV":"Current"}'] }
+      expected = { 'holding_status_display' => ['{"recorded_value":"Current"}'] }
       expect(solr_item).to eq(expected)
     end
 
@@ -75,7 +75,7 @@ module DigitalScriptorium
       shelfmark_claim = StatementRepresenter.new(Statement.new).from_json(shelfmark_json)
       solr_item = described_class.transform(shelfmark_claim, export_hash, config[PropertyId::SHELFMARK])
       expected = {
-        'shelfmark_display' => ['{"PV":"Oversize LJS 110"}'],
+        'shelfmark_display' => ['{"recorded_value":"Oversize LJS 110"}'],
         'shelfmark_search' => ['Oversize LJS 110']
       }
       expect(solr_item).to eq(expected)
@@ -92,7 +92,7 @@ module DigitalScriptorium
       title_claim = StatementRepresenter.new(Statement.new).from_json(title_json)
       solr_item = described_class.transform(title_claim, export_hash, config[PropertyId::TITLE_AS_RECORDED])
       expected = {
-        'title_display' => ['{"PV":"Kitāb al-Majisṭī","QL":"Almagest"}'],
+        'title_display' => ['{"recorded_value":"Kitāb al-Majisṭī","linked_terms":[{"label":"Almagest"}]}'],
         'title_search' => ['Kitāb al-Majisṭī', 'Almagest'],
         'title_facet' => ['Almagest']
       }
@@ -103,7 +103,7 @@ module DigitalScriptorium
       genre_claim = StatementRepresenter.new(Statement.new).from_json(genre_json)
       solr_item = described_class.transform(genre_claim, export_hash, config[PropertyId::GENRE_AS_RECORDED])
       expected = {
-        'term_display' => ['{"PV":"Deeds","QL":"deeds","QU":"http://vocab.getty.edu/aat/300027249"}'],
+        'term_display' => ['{"recorded_value":"Deeds","linked_terms":[{"label":"deeds","source_url":"http://vocab.getty.edu/aat/300027249"}]}'],
         'term_search' => %w[Deeds deeds],
         'term_facet' => ['deeds']
       }
@@ -114,7 +114,7 @@ module DigitalScriptorium
       language_claim = StatementRepresenter.new(Statement.new).from_json(language_json)
       solr_item = described_class.transform(language_claim, export_hash, config[PropertyId::LANGUAGE_AS_RECORDED])
       expected = {
-        'language_display' => ['{"PV":"In Latin","QL":"Latin","QU":"https://www.wikidata.org/wiki/Q397"}'],
+        'language_display' => ['{"recorded_value":"In Latin","linked_terms":[{"label":"Latin","source_url":"https://www.wikidata.org/wiki/Q397"}]}'],
         'language_search' => ['In Latin', 'Latin'],
         'language_facet' => ['Latin']
       }
@@ -125,7 +125,7 @@ module DigitalScriptorium
       physical_description_claim = StatementRepresenter.new(Statement.new).from_json(physical_description_json)
       solr_item = described_class.transform(physical_description_claim, export_hash, config[PropertyId::PHYSICAL_DESCRIPTION])
       expected = {
-        'physical_description_display' => ['{"PV":"Extent: 1 parchment ; 170 x 245 mm."}'],
+        'physical_description_display' => ['{"recorded_value":"Extent: 1 parchment ; 170 x 245 mm."}'],
         'physical_description_search' => ['Extent: 1 parchment ; 170 x 245 mm.']
       }
       expect(solr_item).to eq(expected)
@@ -153,8 +153,7 @@ module DigitalScriptorium
       solr_item = described_class.transform(place_claim, export_hash, config[PropertyId::PRODUCTION_PLACE_AS_RECORDED])
       expected = {
         'place_display' => [
-          '{"PV":"[Provence or Spain],","QL":"Provence","QU":"http://vocab.getty.edu/tgn/7012209"}',
-          '{"PV":"[Provence or Spain],","QL":"Spain","QU":"http://vocab.getty.edu/tgn/1000095"}'
+          '{"recorded_value":"[Provence or Spain],","linked_terms":[{"label":"Provence","source_url":"http://vocab.getty.edu/tgn/7012209"},{"label":"Spain","source_url":"http://vocab.getty.edu/tgn/1000095"}]}'
         ],
         'place_search' => [
           '[Provence or Spain],',
