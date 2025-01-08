@@ -35,7 +35,7 @@ module DigitalScriptorium
       expect(solr_item).to eq(expected)
     end
 
-    it 'transforms a name claim with multiple qualifiers' do
+    it 'transforms a name claim with multiple values for a qualifier' do
       solr_item = described_class.transform(name_multiple_qualifier_values_claim, export_hash)
       expected = {
         'owner_display' => [
