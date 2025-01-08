@@ -18,7 +18,7 @@ module DigitalScriptorium
       search_terms = [recorded_name]
 
       name_in_original_script = claim.qualifier_by_property_id(IN_ORIGINAL_SCRIPT)&.data_value&.value
-      display_data['AGR'] = name_in_original_script if name_in_original_script
+      display_data['original_script'] = name_in_original_script if name_in_original_script
       search_terms << name_in_original_script if name_in_original_script
 
       unless claim.qualifiers_by_property_id? NAME_IN_AUTHORITY_FILE

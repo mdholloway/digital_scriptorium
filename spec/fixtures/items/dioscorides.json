@@ -1,0 +1,74 @@
+{
+  "type": "item",
+  "id": "Q394",
+  "labels": {
+    "en": {
+      "language": "en",
+      "value": "Pedanius Dioscorides"
+    }
+  },
+  "descriptions": [],
+  "aliases": {
+    "en": [
+      {
+        "language": "en",
+        "value": "ديسقوريدس. of Anazarbos"
+      }
+    ]
+  },
+  "claims": {
+    "P1": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1",
+          "hash": "28c5fc2c3389cc00838472ab513e0081772cbec9",
+          "datavalue": {
+            "value": "DSNAME121",
+            "type": "string"
+          }
+        },
+        "type": "statement",
+        "id": "Q394$D7DEEE5B-E154-4097-9A3C-4FDEFE998045",
+        "rank": "normal"
+      }
+    ],
+    "P16": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P16",
+          "hash": "c3535818ce9d179c3b257aa9d555b61e33d12439",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 8,
+              "id": "Q8"
+            },
+            "type": "wikibase-entityid"
+          }
+        },
+        "type": "statement",
+        "id": "Q394$C56E1761-302C-466B-8AAC-81BA8AF7659A",
+        "rank": "normal"
+      }
+    ],
+    "P42": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P42",
+          "hash": "2131e70f1df3ff9b9879854ca236c24e00c9f39c",
+          "datavalue": {
+            "value": "Q297776",
+            "type": "string"
+          }
+        },
+        "type": "statement",
+        "id": "Q394$D1A71E3F-5CBC-49BB-BA06-60894A85CE6B",
+        "rank": "normal"
+      }
+    ]
+  },
+  "sitelinks": []
+}

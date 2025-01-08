@@ -88,12 +88,12 @@ module DigitalScriptorium
       expect(solr_item).to eq(expected)
     end
 
-    it 'transforms a title claim' do
+    it 'transforms a title claim (with original script qualifier)' do
       title_claim = StatementRepresenter.new(Statement.new).from_json(title_json)
       solr_item = described_class.transform(title_claim, export_hash, config[PropertyId::TITLE_AS_RECORDED])
       expected = {
-        'title_display' => ['{"recorded_value":"Kitāb al-Majisṭī","linked_terms":[{"label":"Almagest"}]}'],
-        'title_search' => ['Kitāb al-Majisṭī', 'Almagest'],
+        'title_display' => ['{"recorded_value":"Kitāb al-Majisṭī","original_script":"كتاب المجسطي.","linked_terms":[{"label":"Almagest"}]}'],
+        'title_search' => ['Kitāb al-Majisṭī', 'كتاب المجسطي.', 'Almagest'],
         'title_facet' => ['Almagest']
       }
       expect(solr_item).to eq(expected)

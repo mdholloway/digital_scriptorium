@@ -22,6 +22,10 @@ module DigitalScriptorium
       solr_props['id'] = [value] if requested_fields.include? 'id'
       solr_props["#{prefix}_meta"] = [value] if requested_fields.include? 'meta'
 
+      value_in_original_script = claim.qualifier_by_property_id(IN_ORIGINAL_SCRIPT)&.data_value&.value
+      display_data['original_script'] = value_in_original_script if value_in_original_script
+      search_terms << value_in_original_script if value_in_original_script
+
       unless authority_property_id && claim.qualifiers_by_property_id?(authority_property_id)
         solr_props["#{prefix}_display"] = [display_data.to_json] if requested_fields.include? 'display'
         solr_props["#{prefix}_search"] = search_terms if requested_fields.include? 'search'

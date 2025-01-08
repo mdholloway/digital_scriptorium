@@ -1,0 +1,51 @@
+{
+  "type": "item",
+  "id": "Q18",
+  "labels": {
+    "en": {
+      "language": "en",
+      "value": "Author"
+    }
+  },
+  "descriptions": [],
+  "aliases": [],
+  "claims": {
+    "P16": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P16",
+          "hash": "923d898dd929305bfe74017deb7441b0dd51bca4",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 10,
+              "id": "Q10"
+            },
+            "type": "wikibase-entityid"
+          }
+        },
+        "type": "statement",
+        "id": "Q18$C4A00BBF-9491-4C47-B1F9-E6865BEE1454",
+        "rank": "normal"
+      }
+    ],
+    "P44": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P44",
+          "hash": "ded3b52c5f02de82ed1f3336e387ebcbbba22bef",
+          "datavalue": {
+            "value": "http://vocab.getty.edu/aat/300025492",
+            "type": "string"
+          }
+        },
+        "type": "statement",
+        "id": "Q18$52251ecd-4af9-a180-375b-b3f00ce2fdc3",
+        "rank": "normal"
+      }
+    ]
+  },
+  "sitelinks": []
+}
