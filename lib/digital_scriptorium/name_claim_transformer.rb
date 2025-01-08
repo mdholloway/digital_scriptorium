@@ -8,7 +8,7 @@ module DigitalScriptorium
     def self.transform(claim, export_hash)
       return {} unless claim.qualifiers_by_property_id? ROLE_IN_AUTHORITY_FILE
 
-      role_entity_id = claim.qualifier_by_property_id(ROLE_IN_AUTHORITY_FILE).entity_id_value
+      role_entity_id = claim.qualifiers_by_property_id(ROLE_IN_AUTHORITY_FILE).first.entity_id_value
       role_item = export_hash[role_entity_id]
       role_label = role_item.label('en')
       prefix = role_label.downcase.split.last
@@ -17,7 +17,7 @@ module DigitalScriptorium
       display_data = { 'recorded_value' => recorded_name }
       search_terms = [recorded_name]
 
-      name_in_original_script = claim.qualifier_by_property_id(IN_ORIGINAL_SCRIPT)&.data_value&.value
+      name_in_original_script = claim.qualifiers_by_property_id(IN_ORIGINAL_SCRIPT)&.first&.data_value&.value
       display_data['original_script'] = name_in_original_script if name_in_original_script
       search_terms << name_in_original_script if name_in_original_script
 
@@ -43,8 +43,8 @@ module DigitalScriptorium
         search_terms << name_label
         facets << name_label
 
-        wikidata_id = name_item.claim_by_property_id(WIKIDATA_QID).data_value
-        wikidata_url = "https://www.wikidata.org/wiki/#{wikidata_id}"
+        wikidata_id = name_item.claims_by_property_id(WIKIDATA_QID)&.first&.data_value
+        wikidata_url = wikidata_id && "https://www.wikidata.org/wiki/#{wikidata_id}"
         term['source_url'] = wikidata_url if wikidata_url
 
         linked_terms << term

@@ -22,7 +22,7 @@ module DigitalScriptorium
       solr_props['id'] = [value] if requested_fields.include? 'id'
       solr_props["#{prefix}_meta"] = [value] if requested_fields.include? 'meta'
 
-      value_in_original_script = claim.qualifier_by_property_id(IN_ORIGINAL_SCRIPT)&.data_value&.value
+      value_in_original_script = claim.qualifiers_by_property_id(IN_ORIGINAL_SCRIPT)&.first&.data_value&.value
       display_data['original_script'] = value_in_original_script if value_in_original_script
       search_terms << value_in_original_script if value_in_original_script
 
@@ -53,8 +53,8 @@ module DigitalScriptorium
         search_terms << label
         facets << label
 
-        external_uri = authority.claim_by_property_id(EXTERNAL_URI)&.data_value
-        wikidata_id = authority.claim_by_property_id(WIKIDATA_QID)&.data_value
+        external_uri = authority.claims_by_property_id(EXTERNAL_URI)&.first&.data_value
+        wikidata_id = authority.claims_by_property_id(WIKIDATA_QID)&.first&.data_value
         wikidata_uri = wikidata_id && "https://www.wikidata.org/wiki/#{wikidata_id}"
 
         # Only one or the other of these seem to exist for a given item in practice.

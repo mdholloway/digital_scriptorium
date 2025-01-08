@@ -14,15 +14,15 @@ module DigitalScriptorium
     end
 
     def holding_id
-      claim_by_property_id(PropertyId::MANUSCRIPT_HOLDING)&.entity_id_value # P2
+      claims_by_property_id(PropertyId::MANUSCRIPT_HOLDING)&.first&.entity_id_value # P2
     end
 
     def described_manuscript_id
-      claim_by_property_id(PropertyId::DESCRIBED_MANUSCRIPT)&.entity_id_value # P3
+      claims_by_property_id(PropertyId::DESCRIBED_MANUSCRIPT)&.first&.entity_id_value # P3
     end
 
     def iiif_manifest
-      claim_by_property_id(PropertyId::IIIF_MANIFEST)&.entity_id_value # P41
+      claims_by_property_id(PropertyId::IIIF_MANIFEST)&.first&.entity_id_value # P41
     end
 
     def core_model_item?
