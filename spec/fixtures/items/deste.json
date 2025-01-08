@@ -1,0 +1,70 @@
+{
+  "type": "item",
+  "id": "Q1105",
+  "labels": {
+    "en": {
+      "language": "en",
+      "value": "Leonello d'Este, Marquis of Ferrara"
+    }
+  },
+  "descriptions": {},
+  "aliases": {},
+  "claims": {
+    "P1": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1",
+          "hash": "099c865aac9501f59131b13e60efff96333d9660",
+          "datavalue": {
+            "value": "DSNAME303",
+            "type": "string"
+          },
+          "datatype": "string"
+        },
+        "type": "statement",
+        "id": "Q1105$DDF95E12-7F78-4798-96A6-35B9412576FA",
+        "rank": "normal"
+      }
+    ],
+    "P16": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P16",
+          "hash": "c3535818ce9d179c3b257aa9d555b61e33d12439",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 8,
+              "id": "Q8"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q1105$31FE313C-6144-4222-9C8C-6E91D08CD6C5",
+        "rank": "normal"
+      }
+    ],
+    "P42": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P42",
+          "hash": "8a5d851349c01581d7e7d4cbc6355e468924f399",
+          "datavalue": {
+            "value": "Q1379797",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q1105$60F7A04E-913D-4FCE-898E-16365E1B3FBD",
+        "rank": "normal"
+      }
+    ]
+  },
+  "sitelinks": {}
+}

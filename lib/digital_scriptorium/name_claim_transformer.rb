@@ -29,21 +29,32 @@ module DigitalScriptorium
         }
       end
 
-      name_entity_id = claim.qualifier_by_property_id(NAME_IN_AUTHORITY_FILE).entity_id_value
-      name_item = export_hash[name_entity_id]
-      name_label = name_item.label('en')
+      display_entries = []
+      facets = []
 
-      wikidata_id = name_item.claim_by_property_id(WIKIDATA_QID).data_value
-      wikidata_url = "https://www.wikidata.org/wiki/#{wikidata_id}"
+      claim.qualifiers_by_property_id(NAME_IN_AUTHORITY_FILE).each do |qualifier|
+        display_names_for_qualifier = { 'PV' => recorded_name }
+        display_names_for_qualifier['AGR'] = name_in_original_script if name_in_original_script
 
-      search_names << name_label
-      display_names['QL'] = name_label
-      display_names['QU'] = wikidata_url if wikidata_url
+        name_entity_id = qualifier.entity_id_value
+        name_item = export_hash[name_entity_id]
+        name_label = name_item.label('en')
+
+        display_names_for_qualifier['QL'] = name_label
+        search_names << name_label
+        facets << name_label
+
+        wikidata_id = name_item.claim_by_property_id(WIKIDATA_QID).data_value
+        wikidata_url = "https://www.wikidata.org/wiki/#{wikidata_id}"
+        display_names_for_qualifier['QU'] = wikidata_url if wikidata_url
+
+        display_entries << display_names_for_qualifier.to_json
+      end
 
       {
-        "#{prefix}_display" => [display_names.to_json],
-        "#{prefix}_search" => search_names,
-        "#{prefix}_facet" => [name_label]
+        "#{prefix}_display" => display_entries.uniq,
+        "#{prefix}_search" => search_names.uniq,
+        "#{prefix}_facet" => facets.uniq
       }
     end
   end

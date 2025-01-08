@@ -1,0 +1,47 @@
+{
+  "mainsnak": {
+    "snaktype": "value",
+    "property": "P27",
+    "hash": "64060adb20324c30cdacd76a5437499fa23d877e",
+    "datavalue": {
+      "value": "[Provence or Spain],",
+      "type": "string"
+    }
+  },
+  "type": "statement",
+  "qualifiers": {
+    "P28": [
+      {
+        "snaktype": "value",
+        "property": "P28",
+        "hash": "6743114a55c6219abbd508d8edc2ca5ee8823b94",
+        "datavalue": {
+          "value": {
+            "entity-type": "item",
+            "numeric-id": 128,
+            "id": "Q128"
+          },
+          "type": "wikibase-entityid"
+        }
+      },
+      {
+        "snaktype": "value",
+        "property": "P28",
+        "hash": "13fa622bb66ec32da0a324c6ba7fe596309e458a",
+        "datavalue": {
+          "value": {
+            "entity-type": "item",
+            "numeric-id": 129,
+            "id": "Q129"
+          },
+          "type": "wikibase-entityid"
+        }
+      }
+    ]
+  },
+  "qualifiers-order": [
+    "P28"
+  ],
+  "id": "Q493$0711BABA-CD68-411C-9A2D-FAEE42761663",
+  "rank": "normal"
+}

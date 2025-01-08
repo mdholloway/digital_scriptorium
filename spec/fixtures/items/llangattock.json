@@ -1,0 +1,70 @@
+{
+  "type": "item",
+  "id": "Q1106",
+  "labels": {
+    "en": {
+      "language": "en",
+      "value": "Baron Llangattock"
+    }
+  },
+  "descriptions": {},
+  "aliases": {},
+  "claims": {
+    "P1": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1",
+          "hash": "2f7e79b4d1b2e8b8dd5efc431b9a1d3031e39138",
+          "datavalue": {
+            "value": "DSNAME304",
+            "type": "string"
+          },
+          "datatype": "string"
+        },
+        "type": "statement",
+        "id": "Q1106$48C79A93-715A-45B7-B085-A8503034A529",
+        "rank": "normal"
+      }
+    ],
+    "P16": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P16",
+          "hash": "d7802bc9843b37791cee7344ec0c8f91ef782317",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 9,
+              "id": "Q9"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q1106$21F25786-6400-45EA-B676-6E1AAF738979",
+        "rank": "normal"
+      }
+    ],
+    "P42": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P42",
+          "hash": "190812f2c0428eda2c9ed48d8d6164f2a3b0b412",
+          "datavalue": {
+            "value": "Q4862572",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q1106$77F1FDBE-69DA-4935-A1B8-EB2D1CB27B0D",
+        "rank": "normal"
+      }
+    ]
+  },
+  "sitelinks": {}
+}

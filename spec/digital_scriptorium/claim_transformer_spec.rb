@@ -14,6 +14,7 @@ module DigitalScriptorium
     let(:title_json) { File.read(File.expand_path('../fixtures/claims/qualified/title.json', __dir__)) }
     let(:genre_json) { File.read(File.expand_path('../fixtures/claims/qualified/genre.json', __dir__)) }
     let(:language_json) { File.read(File.expand_path('../fixtures/claims/qualified/language.json', __dir__)) }
+    let(:place_json) { File.read(File.expand_path('../fixtures/claims/qualified/place.json', __dir__)) }
     let(:physical_description_json) { File.read(File.expand_path('../fixtures/claims/unqualified/physical_description.json', __dir__)) }
     let(:material_json) { File.read(File.expand_path('../fixtures/claims/qualified/material.json', __dir__)) }
     let(:iiif_manifest_json) { File.read(File.expand_path('../fixtures/claims/unqualified/iiif_manifest.json', __dir__)) }
@@ -24,12 +25,16 @@ module DigitalScriptorium
     let(:latin_json) { File.read(File.expand_path('../fixtures/items/latin.json', __dir__)) }
     let(:parchment_json) { File.read(File.expand_path('../fixtures/items/parchment.json', __dir__)) }
     let(:penn_json) { File.read(File.expand_path('../fixtures/items/penn.json', __dir__)) }
+    let(:provence_json) { File.read(File.expand_path('../fixtures/items/provence.json', __dir__)) }
+    let(:spain_json) { File.read(File.expand_path('../fixtures/items/spain.json', __dir__)) }
 
     let(:export_hash) do
       {
         'Q4' => ItemRepresenter.new(Item.new).from_json(current_json),
         'Q33' => ItemRepresenter.new(Item.new).from_json(parchment_json),
         'Q113' => ItemRepresenter.new(Item.new).from_json(latin_json),
+        'Q128' => ItemRepresenter.new(Item.new).from_json(provence_json),
+        'Q129' => ItemRepresenter.new(Item.new).from_json(spain_json),
         'Q283' => ItemRepresenter.new(Item.new).from_json(deeds_json),
         'Q354' => ItemRepresenter.new(Item.new).from_json(almagest_json),
         'Q374' => ItemRepresenter.new(Item.new).from_json(penn_json)
@@ -139,6 +144,27 @@ module DigitalScriptorium
       expected = {
         'iiif_manifest_link' => ['https://colenda.library.upenn.edu/phalt/iiif/2/81431-p33p8v/manifest'],
         'images_facet' => ['Yes']
+      }
+      expect(solr_item).to eq(expected)
+    end
+
+    it 'transforms a place claim (with multiple values for a qualifier)' do
+      place_claim = StatementRepresenter.new(Statement.new).from_json(place_json)
+      solr_item = described_class.transform(place_claim, export_hash, config[PropertyId::PRODUCTION_PLACE_AS_RECORDED])
+      expected = {
+        'place_display' => [
+          '{"PV":"[Provence or Spain],","QL":"Provence","QU":"http://vocab.getty.edu/tgn/7012209"}',
+          '{"PV":"[Provence or Spain],","QL":"Spain","QU":"http://vocab.getty.edu/tgn/1000095"}'
+        ],
+        'place_search' => [
+          '[Provence or Spain],',
+          'Provence',
+          'Spain'
+        ],
+        'place_facet' => [
+          'Provence',
+          'Spain'
+        ],
       }
       expect(solr_item).to eq(expected)
     end

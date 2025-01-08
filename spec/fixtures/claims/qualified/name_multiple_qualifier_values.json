@@ -1,0 +1,67 @@
+{
+  "mainsnak": {
+      "snaktype": "value",
+      "property": "P14",
+      "hash": "8708be626abd3353ace9da110f82846648f0378d",
+      "datavalue": {
+          "value": "From the codex made for Leonello d'Este. Brought to Wales as war booty by 1813, already in a damaged state, by the Rolls family, later enobled as Barons Llangattock, of The Hendre, Monmouth (Llangattock sale, London, Christie's, 8 December 1958, lot 190);",
+          "type": "string"
+      },
+      "datatype": "string"
+  },
+  "type": "statement",
+  "qualifiers": {
+      "P15": [
+          {
+              "snaktype": "value",
+              "property": "P15",
+              "hash": "63120b1e349365b8f15bbbe27edcb9ea07d676b0",
+              "datavalue": {
+                  "value": {
+                      "entity-type": "item",
+                      "numeric-id": 21,
+                      "id": "Q21"
+                  },
+                  "type": "wikibase-entityid"
+              },
+              "datatype": "wikibase-item"
+          }
+      ],
+      "P17": [
+          {
+              "snaktype": "value",
+              "property": "P17",
+              "hash": "0c2afbf3a7bbcd269d9a58cd6eb67fb0da28329a",
+              "datavalue": {
+                  "value": {
+                      "entity-type": "item",
+                      "numeric-id": 1105,
+                      "id": "Q1105"
+                  },
+                  "type": "wikibase-entityid"
+              },
+              "datatype": "wikibase-item"
+          },
+          {
+              "snaktype": "value",
+              "property": "P17",
+              "hash": "c84c903febab4599d45c53533f8b8db2940f5e2e",
+              "datavalue": {
+                  "value": {
+                      "entity-type": "item",
+                      "numeric-id": 1106,
+                      "id": "Q1106"
+                  },
+                  "type": "wikibase-entityid"
+              },
+              "datatype": "wikibase-item"
+          }
+      ]
+  },
+  "qualifiers-order": [
+      "P15",
+      "P17"
+  ],
+  "id": "Q1113$F05ACDDC-1EA1-4677-B797-99DA67AB0000",
+  "rank": "normal"
+}

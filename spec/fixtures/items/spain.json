@@ -1,0 +1,51 @@
+{
+  "type": "item",
+  "id": "Q129",
+  "labels": {
+    "en": {
+      "language": "en",
+      "value": "Spain"
+    }
+  },
+  "descriptions": [],
+  "aliases": [],
+  "claims": {
+    "P16": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P16",
+          "hash": "235c025dab24b448b89c92a6bd3e464b0db1d268",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 16,
+              "id": "Q16"
+            },
+            "type": "wikibase-entityid"
+          }
+        },
+        "type": "statement",
+        "id": "Q129$527B7F34-E100-4D08-88ED-B588B7417C47",
+        "rank": "normal"
+      }
+    ],
+    "P44": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P44",
+          "hash": "2ebd47807e08ac2d4793d537f13c8633f81bfec5",
+          "datavalue": {
+            "value": "http://vocab.getty.edu/tgn/1000095",
+            "type": "string"
+          }
+        },
+        "type": "statement",
+        "id": "Q129$6A49358E-558F-4701-BA2E-42B743BAEE24",
+        "rank": "normal"
+      }
+    ]
+  },
+  "sitelinks": []
+}
