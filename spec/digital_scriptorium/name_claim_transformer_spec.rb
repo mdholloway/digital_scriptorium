@@ -12,7 +12,7 @@ module DigitalScriptorium
     let(:schoenberg_json) { File.read(File.expand_path('../fixtures/items/schoenberg.json', __dir__)) }
 
     let(:name_multiple_qualifier_values_json) { File.read(File.expand_path('../fixtures/claims/qualified/name_multiple_qualifier_values.json', __dir__)) }
-    let(:name_multiple_qualifier_values_claim) { StatementRepresenter.new(Statement.new).from_json(name_multiple_qualifier_values_json) }  
+    let(:name_multiple_qualifier_values_claim) { StatementRepresenter.new(Statement.new).from_json(name_multiple_qualifier_values_json) }
     let(:deste_json) { File.read(File.expand_path('../fixtures/items/deste.json', __dir__)) }
     let(:llangattock_json) { File.read(File.expand_path('../fixtures/items/llangattock.json', __dir__)) }
 
@@ -40,7 +40,8 @@ module DigitalScriptorium
       expected = {
         'owner_display' => [
           '{"PV":"From the codex made for Leonello d\'Este. Brought to Wales as war booty by 1813, already in a damaged state, by the Rolls family, later enobled as Barons Llangattock, of The Hendre, Monmouth (Llangattock sale, London, Christie\'s, 8 December 1958, lot 190);","QL":"Leonello d\'Este, Marquis of Ferrara","QU":"https://www.wikidata.org/wiki/Q1379797"}',
-          '{"PV":"From the codex made for Leonello d\'Este. Brought to Wales as war booty by 1813, already in a damaged state, by the Rolls family, later enobled as Barons Llangattock, of The Hendre, Monmouth (Llangattock sale, London, Christie\'s, 8 December 1958, lot 190);","QL":"Baron Llangattock","QU":"https://www.wikidata.org/wiki/Q4862572"}'],
+          '{"PV":"From the codex made for Leonello d\'Este. Brought to Wales as war booty by 1813, already in a damaged state, by the Rolls family, later enobled as Barons Llangattock, of The Hendre, Monmouth (Llangattock sale, London, Christie\'s, 8 December 1958, lot 190);","QL":"Baron Llangattock","QU":"https://www.wikidata.org/wiki/Q4862572"}'
+        ],
         'owner_search' => [
           'From the codex made for Leonello d\'Este. Brought to Wales as war booty by 1813, already in a damaged state, by the Rolls family, later enobled as Barons Llangattock, of The Hendre, Monmouth (Llangattock sale, London, Christie\'s, 8 December 1958, lot 190);',
           'Leonello d\'Este, Marquis of Ferrara',

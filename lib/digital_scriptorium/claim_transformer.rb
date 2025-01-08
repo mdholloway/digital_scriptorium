@@ -24,10 +24,10 @@ module DigitalScriptorium
         solr_props["#{prefix}_display"] = [{ 'PV' => value }.to_json] if requested_fields.include? 'display'
         solr_props["#{prefix}_search"] = [value] if requested_fields.include? 'search'
         solr_props["#{prefix}_facet"] = [value] if requested_fields.include? 'facet'
-  
+
         solr_props['images_facet'] = ['Yes'] if value && claim.property_id == IIIF_MANIFEST
         solr_props["#{prefix}_link"] = [value] if requested_fields.include? 'link'
-  
+
         return solr_props
       end
 
@@ -40,18 +40,18 @@ module DigitalScriptorium
 
         authority_id = qualifier.entity_id_value
         authority = export_hash[authority_id]
-  
+
         if authority
           label = authority.label('en')
 
           display_props['QL'] = label
           search_entries << label
           facets << label
-  
+
           external_uri = authority.claim_by_property_id(EXTERNAL_URI)&.data_value
           wikidata_id = authority.claim_by_property_id(WIKIDATA_QID)&.data_value
           wikidata_uri = wikidata_id && "https://www.wikidata.org/wiki/#{wikidata_id}"
-  
+
           # Only one or the other of these seem to exist for a given item in practice.
           display_props['QU'] = external_uri if external_uri
           display_props['QU'] = wikidata_uri if wikidata_uri

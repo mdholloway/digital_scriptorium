@@ -161,10 +161,10 @@ module DigitalScriptorium
           'Provence',
           'Spain'
         ],
-        'place_facet' => [
-          'Provence',
-          'Spain'
-        ],
+        'place_facet' => %w[
+          Provence
+          Spain
+        ]
       }
       expect(solr_item).to eq(expected)
     end
