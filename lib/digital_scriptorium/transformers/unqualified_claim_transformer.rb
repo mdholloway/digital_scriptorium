@@ -16,7 +16,8 @@ module DigitalScriptorium
           'recorded_value' => recorded_value,
           'original_script' => original_script
         }.compact.to_json],
-        "#{config['prefix']}_search" => [recorded_value, original_script].compact
+        "#{config['prefix']}_search" => [recorded_value, original_script].compact,
+        "#{config['prefix']}_facet" => [recorded_value]
       }
     end
 
