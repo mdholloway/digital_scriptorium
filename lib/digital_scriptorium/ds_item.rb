@@ -10,7 +10,7 @@ module DigitalScriptorium
     end
 
     def ds_id
-      claim_by_property_id(PropertyId::DS_ID)&.data_value # P1
+      claims_by_property_id(PropertyId::DS_ID)&.first&.data_value # P1
     end
 
     def holding_id

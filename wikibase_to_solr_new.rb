@@ -42,15 +42,23 @@ def merge(solr_item, new_props)
   end
 end
 
-def merge_transformed_fields(solr_item, claim, export_hash, property_config)
-  if config['fields'] == ['link']
-    merge(solr_item, DigitalScriptorium::LinkClaimTransformer.transform(claim, property_config))
+def link_property?(property_config)
+  property_config['type'] == 'link'
+end
+
+def qualified_property?(property_config)
+  property_config['type'] == 'qualified'
+end
+
+def get_transformed_fields(claim, export_hash, property_config)
+  if link_property?(property_config)
+    DigitalScriptorium::LinkClaimTransformer.transform(claim, property_config)
   elsif claim.property_id == DigitalScriptorium::PropertyId::ASSOCIATED_NAME_AS_RECORDED
-    merge(solr_item, DigitalScriptorium::NameClaimTransformer.transform(claim, export_hash))
-  elsif property_config['authority']
-    merge(solr_item, DigitalScriptorium::QualifiedClaimTransformer.transform(claim, export_hash, property_config))
+    DigitalScriptorium::NameClaimTransformer.transform(claim, export_hash)
+  elsif qualified_property?(property_config)
+    DigitalScriptorium::QualifiedClaimTransformer.transform(claim, export_hash, property_config)
   else
-    merge(solr_item, DigitalScriptorium::UnqualifiedClaimTransformer.transform(claim, export_hash, property_config))
+    DigitalScriptorium::UnqualifiedClaimTransformer.transform(claim, export_hash, property_config)
   end
 end
 
@@ -103,8 +111,9 @@ File.open(output_file, 'w') do |file|
         claims.each do |claim|
           next unless (property_config = config[property_id])
 
-          solr_item = merge_transformed_fields(solr_item, claim, export_hash, property_config)
-          solr_item = SolrFieldFilter.filter(solr_item, property_config)
+          fields = get_transformed_fields(claim, export_hash, property_config)
+
+          solr_item = merge(solr_item, DigitalScriptorium::SolrFieldFilter.filter(fields, property_config))
         end
       end
     end

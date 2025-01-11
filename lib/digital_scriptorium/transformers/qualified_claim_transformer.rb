@@ -23,10 +23,10 @@ module DigitalScriptorium
         "#{prefix}_display" => [{
           'recorded_value' => recorded_value,
           'original_script' => original_script,
-          'linked_terms' => linked_terms
+          'linked_terms' => linked_terms.any? ? linked_terms : nil
         }.compact.to_json],
         "#{prefix}_search" => ([recorded_value, original_script].compact + linked_term_labels).uniq,
-        "#{prefix}_facet" => linked_term_labels.uniq
+        "#{prefix}_facet" => linked_term_labels.any? ? linked_term_labels.uniq : [recorded_value]
       }.merge(get_date_props(claim))
     end
 
@@ -48,7 +48,7 @@ module DigitalScriptorium
     def self.get_linked_terms(claim, export_hash, config)
       linked_terms = []
 
-      claim.qualifiers_by_property_id(config['authority']).each do |qualifier|
+      claim.qualifiers_by_property_id(config['authority'])&.each do |qualifier|
         authority_id = qualifier.entity_id_value
         authority = export_hash[authority_id]
         linked_terms << get_linked_term(authority) if authority
