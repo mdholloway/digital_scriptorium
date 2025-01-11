@@ -17,3 +17,5 @@ require 'digital_scriptorium/link_claim_transformer'
 require 'digital_scriptorium/name_claim_transformer'
 require 'digital_scriptorium/qualified_claim_transformer'
 require 'digital_scriptorium/unqualified_claim_transformer'
+
+require 'digital_scriptorium/solr_field_filter'

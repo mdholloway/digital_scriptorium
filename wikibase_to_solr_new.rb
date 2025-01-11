@@ -3,6 +3,7 @@
 require 'digital_scriptorium'
 require 'json'
 require 'optparse'
+require 'set'
 require 'time'
 require 'tty-spinner'
 require 'yaml'
@@ -65,6 +66,12 @@ def base_solr_item(meta)
   }
 end
 
+def record?(entity)
+  entity.is_a?(DigitalScriptorium::DsItem) &&
+    entity.claims_by_property_id?(DigitalScriptorium::PropertyId::INSTANCE_OF) &&
+    entity.record?
+end
+
 start_time = Time.now.utc
 
 config = YAML.load_file(config_file)
@@ -88,9 +95,7 @@ File.open(output_file, 'w') do |file|
   file << "\n" if pretty_print
 
   export_hash.each_with_index do |(_, entity), idx|
-    next unless entity.is_a?(DigitalScriptorium::DsItem) &&
-                entity.claims_by_property_id?(DigitalScriptorium::PropertyId::INSTANCE_OF) &&
-                entity.record?
+    next unless record?(entity)
 
     meta = DigitalScriptorium::DsMeta.new(entity, export_hash)
     solr_item = base_solr_item(meta)
@@ -101,6 +106,7 @@ File.open(output_file, 'w') do |file|
           next unless (property_config = config[property_id])
 
           solr_item = merge_transformed_fields(solr_item, claim, export_hash, property_config)
+          solr_item = SolrFieldFilter.filter(solr_item, property_config)
         end
       end
     end
