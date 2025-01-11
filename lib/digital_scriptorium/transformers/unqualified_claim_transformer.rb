@@ -14,8 +14,7 @@ module DigitalScriptorium
       {
         "#{config['prefix']}_display" => [{
           'recorded_value' => recorded_value,
-          'original_script' => original_script,
-          'linked_terms' => []
+          'original_script' => original_script
         }.compact.to_json],
         "#{config['prefix']}_search" => [recorded_value, original_script].compact
       }

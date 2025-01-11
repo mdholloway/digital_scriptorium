@@ -9,7 +9,13 @@ module DigitalScriptorium
       json = read_fixture('claims/qualified/P14_name.json')
       claim = StatementRepresenter.new(Statement.new).from_json(json)
       expected = {
-        'owner_display' => ['{"recorded_value":"Schoenberg, Lawrence J","linked_terms":[{"label":"Lawrence J. Schoenberg","source_url":"https://www.wikidata.org/wiki/Q107542788"}]}'],
+        'owner_display' => [{
+          'recorded_value' => 'Schoenberg, Lawrence J',
+          'linked_terms' => [{
+            'label' => 'Lawrence J. Schoenberg',
+            'source_url' => 'https://www.wikidata.org/wiki/Q107542788'
+          }]
+        }.to_json],
         'owner_search' => ['Schoenberg, Lawrence J', 'Lawrence J. Schoenberg'],
         'owner_facet' => ['Lawrence J. Schoenberg']
       }
@@ -23,12 +29,23 @@ module DigitalScriptorium
     context 'with multiple name in authority file (P17) qualifiers' do
       json = read_fixture('claims/qualified/P14_name_multiple_qualifier_values.json')
       claim = StatementRepresenter.new(Statement.new).from_json(json)
+
+      recorded_value = 'From the codex made for Leonello d\'Este. ' \
+        'Brought to Wales as war booty by 1813, already in a damaged state, by the Rolls family, ' \
+        'later enobled as Barons Llangattock, of The Hendre, Monmouth ' \
+        '(Llangattock sale, London, Christie\'s, 8 December 1958, lot 190);'
+
       expected = {
-        'owner_display' => [
-          '{"recorded_value":"From the codex made for Leonello d\'Este. Brought to Wales as war booty by 1813, already in a damaged state, by the Rolls family, later enobled as Barons Llangattock, of The Hendre, Monmouth (Llangattock sale, London, Christie\'s, 8 December 1958, lot 190);","linked_terms":[{"label":"Leonello d\'Este, Marquis of Ferrara","source_url":"https://www.wikidata.org/wiki/Q1379797"},{"label":"Baron Llangattock","source_url":"https://www.wikidata.org/wiki/Q4862572"}]}'
-        ],
+        'owner_display' => [{
+          'recorded_value' => recorded_value,
+          'linked_terms' => [
+            { 'label' => 'Leonello d\'Este, Marquis of Ferrara',
+              'source_url' => 'https://www.wikidata.org/wiki/Q1379797' },
+            { 'label' => 'Baron Llangattock', 'source_url' => 'https://www.wikidata.org/wiki/Q4862572' }
+          ]
+        }.to_json],
         'owner_search' => [
-          'From the codex made for Leonello d\'Este. Brought to Wales as war booty by 1813, already in a damaged state, by the Rolls family, later enobled as Barons Llangattock, of The Hendre, Monmouth (Llangattock sale, London, Christie\'s, 8 December 1958, lot 190);',
+          recorded_value,
           'Leonello d\'Este, Marquis of Ferrara',
           'Baron Llangattock'
         ],
@@ -48,7 +65,14 @@ module DigitalScriptorium
       json = read_fixture('claims/qualified/P14_name_original_script.json')
       claim = StatementRepresenter.new(Statement.new).from_json(json)
       expected = {
-        'author_display' => ['{"recorded_value":"Dioscorides Pedanius, of Anazarbos","original_script":"ديسقوريدس. of Anazarbos","linked_terms":[{"label":"Pedanius Dioscorides","source_url":"https://www.wikidata.org/wiki/Q297776"}]}'],
+        'author_display' => [{
+          'recorded_value' => 'Dioscorides Pedanius, of Anazarbos',
+          'original_script' => 'ديسقوريدس. of Anazarbos',
+          'linked_terms' => [{
+            'label' => 'Pedanius Dioscorides',
+            'source_url' => 'https://www.wikidata.org/wiki/Q297776'
+          }]
+        }.to_json],
         'author_search'  => ['Dioscorides Pedanius, of Anazarbos', 'ديسقوريدس. of Anazarbos', 'Pedanius Dioscorides'],
         'author_facet'   => ['Pedanius Dioscorides']
       }

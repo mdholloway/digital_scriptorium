@@ -13,7 +13,7 @@ module DigitalScriptorium
       json = read_fixture('claims/unqualified/P6_status.json')
       claim = StatementRepresenter.new(Statement.new).from_json(json)
       expected = {
-        'holding_status_display' => ['{"recorded_value":"Current","linked_terms":[]}'],
+        'holding_status_display' => ['{"recorded_value":"Current"}'],
         'holding_status_search' => ['Current']
       }
 
@@ -27,7 +27,7 @@ module DigitalScriptorium
       json = read_fixture('claims/unqualified/P8_shelfmark.json')
       claim = StatementRepresenter.new(Statement.new).from_json(json)
       expected = {
-        'shelfmark_display' => ['{"recorded_value":"Oversize LJS 110","linked_terms":[]}'],
+        'shelfmark_display' => ['{"recorded_value":"Oversize LJS 110"}'],
         'shelfmark_search' => ['Oversize LJS 110']
       }
 
@@ -41,7 +41,7 @@ module DigitalScriptorium
       json = read_fixture('claims/unqualified/P29_physical_description.json')
       claim = StatementRepresenter.new(Statement.new).from_json(json)
       expected = {
-        'physical_description_display' => ['{"recorded_value":"Extent: 1 parchment ; 170 x 245 mm.","linked_terms":[]}'],
+        'physical_description_display' => ['{"recorded_value":"Extent: 1 parchment ; 170 x 245 mm."}'],
         'physical_description_search' => ['Extent: 1 parchment ; 170 x 245 mm.']
       }
 

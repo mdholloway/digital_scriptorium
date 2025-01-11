@@ -4,6 +4,7 @@ require 'json'
 require 'wikibase_representable'
 
 module DigitalScriptorium
+  include PropertyId
   include WikibaseRepresentable::Model
   include WikibaseRepresentable::Representers
 
@@ -15,13 +16,19 @@ module DigitalScriptorium
     context 'with an institution (P5) claim' do
       json = read_fixture('claims/qualified/P5_institution.json')
       expected = {
-        'institution_display' => ['{"recorded_value":"University of Pennsylvania","linked_terms":[{"label":"University of Pennsylvania","source_url":"https://www.wikidata.org/wiki/Q49117"}]}'],
+        'institution_display' => [{
+          'recorded_value' => 'University of Pennsylvania',
+          'linked_terms' => [{
+            'label' => 'University of Pennsylvania',
+            'source_url' => 'https://www.wikidata.org/wiki/Q49117'
+          }]
+        }.to_json],
         'institution_search' => ['University of Pennsylvania'],
         'institution_facet' => ['University of Pennsylvania']
       }
 
       it 'provides the qualifier label in the display, search, and facet fields' do
-        solr_item = described_class.transform(build_claim(json), export_hash, config[PropertyId::HOLDING_INSTITUTION_AS_RECORDED])
+        solr_item = described_class.transform(build_claim(json), export_hash, config[HOLDING_INSTITUTION_AS_RECORDED])
         expect(solr_item).to eq(expected)
       end
     end
@@ -29,13 +36,17 @@ module DigitalScriptorium
     context 'with a title (P10) claim with standard title (P11) and original script (P13) qualifiers' do
       json = read_fixture('claims/qualified/P10_title.json')
       expected = {
-        'title_display' => ['{"recorded_value":"Kitāb al-Majisṭī","original_script":"كتاب المجسطي.","linked_terms":[{"label":"Almagest"}]}'],
+        'title_display' => [{
+          'recorded_value' => 'Kitāb al-Majisṭī',
+          'original_script' => 'كتاب المجسطي.',
+          'linked_terms': [{ 'label' => 'Almagest' }]
+        }.to_json],
         'title_search' => ['Kitāb al-Majisṭī', 'كتاب المجسطي.', 'Almagest'],
         'title_facet' => ['Almagest']
       }
 
       it 'provides all titles in the display and search fields and the standard title in the facet field' do
-        solr_item = described_class.transform(build_claim(json), export_hash, config[PropertyId::TITLE_AS_RECORDED])
+        solr_item = described_class.transform(build_claim(json), export_hash, config[TITLE_AS_RECORDED])
         expect(solr_item).to eq(expected)
       end
     end
@@ -43,13 +54,16 @@ module DigitalScriptorium
     context 'with a qualified genre (P18) claim' do
       json = read_fixture('claims/qualified/P18_genre.json')
       expected = {
-        'term_display' => ['{"recorded_value":"Deeds","linked_terms":[{"label":"deeds","source_url":"http://vocab.getty.edu/aat/300027249"}]}'],
+        'term_display' => [{
+          'recorded_value' => 'Deeds',
+          'linked_terms': [{ 'label' => 'deeds', 'source_url' => 'http://vocab.getty.edu/aat/300027249' }]
+        }.to_json],
         'term_search' => %w[Deeds deeds],
         'term_facet' => ['deeds']
       }
 
       it 'provides both values in display and search fields and authoritative value in the facet field' do
-        solr_item = described_class.transform(build_claim(json), export_hash, config[PropertyId::GENRE_AS_RECORDED])
+        solr_item = described_class.transform(build_claim(json), export_hash, config[GENRE_AS_RECORDED])
         expect(solr_item).to eq(expected)
       end
     end
@@ -57,13 +71,16 @@ module DigitalScriptorium
     context 'with a qualified language (P21) claim' do
       json = read_fixture('claims/qualified/P21_language.json')
       expected = {
-        'language_display' => ['{"recorded_value":"In Latin","linked_terms":[{"label":"Latin","source_url":"https://www.wikidata.org/wiki/Q397"}]}'],
+        'language_display' => [{
+          'recorded_value' => 'In Latin',
+          'linked_terms': [{ 'label' => 'Latin', 'source_url' => 'https://www.wikidata.org/wiki/Q397' }]
+        }.to_json],
         'language_search' => ['In Latin', 'Latin'],
         'language_facet' => ['Latin']
       }
 
       it 'provides both values in display and search fields and authoritative value in the facet field' do
-        solr_item = described_class.transform(build_claim(json), export_hash, config[PropertyId::LANGUAGE_AS_RECORDED])
+        solr_item = described_class.transform(build_claim(json), export_hash, config[LANGUAGE_AS_RECORDED])
         expect(solr_item).to eq(expected)
       end
     end
@@ -72,7 +89,13 @@ module DigitalScriptorium
       json = read_fixture('claims/qualified/P23_date.json')
       expected = {
         'date_meta' => ['1358.'],
-        'date_display' => ['{"recorded_value":"1358.","linked_terms":[{"label":"fourteenth century (dates CE)","source_url":"http://vocab.getty.edu/aat/300404506"}]}'],
+        'date_display' => [{
+          'recorded_value' => '1358.',
+          'linked_terms' => [{
+            'label' => 'fourteenth century (dates CE)',
+            'source_url' => 'http://vocab.getty.edu/aat/300404506'
+          }]
+        }.to_json],
         'date_search' => ['1358.', 'fourteenth century (dates CE)'],
         'date_facet' => ['fourteenth century (dates CE)'],
         'century_int' => [1301],
@@ -81,7 +104,7 @@ module DigitalScriptorium
       }
 
       it 'extracts display, search, facet and extra date fields' do
-        solr_item = described_class.transform(build_claim(json), export_hash, config[PropertyId::PRODUCTION_DATE_AS_RECORDED])
+        solr_item = described_class.transform(build_claim(json), export_hash, config[PRODUCTION_DATE_AS_RECORDED])
         expect(solr_item).to eq(expected)
       end
     end
@@ -89,13 +112,19 @@ module DigitalScriptorium
     context 'with a place (P27) claim with multi-valued qualifier' do
       json = read_fixture('claims/qualified/P27_place.json')
       expected = {
-        'place_display' => ['{"recorded_value":"[Provence or Spain],","linked_terms":[{"label":"Provence","source_url":"http://vocab.getty.edu/tgn/7012209"},{"label":"Spain","source_url":"http://vocab.getty.edu/tgn/1000095"}]}'],
+        'place_display' => [{
+          'recorded_value' => '[Provence or Spain],',
+          'linked_terms' => [
+            { 'label' => 'Provence', 'source_url' => 'http://vocab.getty.edu/tgn/7012209' },
+            { 'label' => 'Spain', 'source_url' => 'http://vocab.getty.edu/tgn/1000095' }
+          ]
+        }.to_json],
         'place_search' => ['[Provence or Spain],', 'Provence', 'Spain'],
         'place_facet' => %w[Provence Spain]
       }
 
       it 'includes the data from all qualifiers in the display, search, and facet fields' do
-        solr_item = described_class.transform(build_claim(json), export_hash, config[PropertyId::PRODUCTION_PLACE_AS_RECORDED])
+        solr_item = described_class.transform(build_claim(json), export_hash, config[PRODUCTION_PLACE_AS_RECORDED])
         expect(solr_item).to eq(expected)
       end
     end
@@ -103,13 +132,16 @@ module DigitalScriptorium
     context 'with a qualified material (P30) claim' do
       json = read_fixture('claims/qualified/P30_material.json')
       expected = {
-        'material_display' => ['{"recorded_value":"parchment","linked_terms":[{"label":"Parchment","source_url":"http://vocab.getty.edu/aat/300011851"}]}'],
+        'material_display' => [{
+          'recorded_value' => 'parchment',
+          'linked_terms' => [{ 'label' => 'Parchment', 'source_url' => 'http://vocab.getty.edu/aat/300011851' }]
+        }.to_json],
         'material_search' => %w[parchment Parchment],
         'material_facet' => ['Parchment']
       }
 
       it 'provides the authoritative label in the facet field' do
-        solr_item = described_class.transform(build_claim(json), export_hash, config[PropertyId::MATERIAL_AS_RECORDED])
+        solr_item = described_class.transform(build_claim(json), export_hash, config[MATERIAL_AS_RECORDED])
         expect(solr_item).to eq(expected)
       end
     end
