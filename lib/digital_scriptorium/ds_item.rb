@@ -44,9 +44,5 @@ module DigitalScriptorium
     def record?
       instance_of_claims.any? { |claim| claim.entity_id_value == ItemId::RECORD }
     end
-
-    def current_holding?
-      holding? && status_claims.any? { |claim| claim.data_value == 'current' }
-    end
   end
 end

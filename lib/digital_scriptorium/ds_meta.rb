@@ -22,7 +22,7 @@ module DigitalScriptorium
     end
 
     def current?(holding)
-      holding.claims_by_property_id(HOLDING_STATUS)&.first&.entity_id_value == HOLDING_STATUS_CURRENT
+      holding.holding_status == HOLDING_STATUS_CURRENT
     end
 
     def current_holdings(manuscript, export_hash)
