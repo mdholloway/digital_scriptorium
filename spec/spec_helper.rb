@@ -40,6 +40,7 @@ end
 
 EXPORT_HASH = {
   'Q4' => item_from_fixture('items/Q4_holding_status_current.json'),
+  'Q5' => item_from_fixture('items/Q5_holding_status_non_current.json'),
   'Q18' => item_from_fixture('items/Q18_author.json'),
   'Q21' => item_from_fixture('items/Q21_former_owner.json'),
   'Q33' => item_from_fixture('items/Q33_parchment.json'),
@@ -52,6 +53,9 @@ EXPORT_HASH = {
   'Q374' => item_from_fixture('items/Q374_upenn.json'),
   'Q383' => item_from_fixture('items/Q383_schoenberg.json'),
   'Q394' => item_from_fixture('items/Q394_dioscorides.json'),
+  'Q542' => item_from_fixture('items/Q542_holding_example.json'),
+  'Q543' => item_from_fixture('items/Q543_manuscript_example.json'),
+  'Q544' => item_from_fixture('items/Q544_record_example.json'),
   'Q1105' => item_from_fixture('items/Q1105_deste.json'),
   'Q1106' => item_from_fixture('items/Q1106_llangattock.json')
 }.freeze

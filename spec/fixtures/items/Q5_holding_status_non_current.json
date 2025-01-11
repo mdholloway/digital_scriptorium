@@ -1,0 +1,19 @@
+{
+  "type": "item",
+  "id": "Q5",
+  "labels": {
+    "en": {
+      "language": "en",
+      "value": "Non-Current"
+    }
+  },
+  "descriptions": {
+    "en": {
+      "language": "en",
+      "value": "The described holding is not current"
+    }
+  },
+  "aliases": [],
+  "claims": [],
+  "sitelinks": []
+}

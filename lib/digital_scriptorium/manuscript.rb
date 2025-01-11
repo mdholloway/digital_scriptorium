@@ -6,11 +6,11 @@ module DigitalScriptorium
     include PropertyId
 
     def ds_id
-      claim_by_property_id(DS_ID).data_value # P1
+      claims_by_property_id(DS_ID)&.first&.data_value # P1
     end
 
-    def holding_id
-      claim_by_property_id(MANUSCRIPT_HOLDING).entity_id_value # P2
+    def holding_ids
+      claims_by_property_id(MANUSCRIPT_HOLDING)&.map(&:entity_id_value) # P2
     end
   end
 end

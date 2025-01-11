@@ -13,12 +13,16 @@ module DigitalScriptorium
       claims_by_property_id(PropertyId::DS_ID)&.first&.data_value # P1
     end
 
-    def holding_id
-      claims_by_property_id(PropertyId::MANUSCRIPT_HOLDING)&.first&.entity_id_value # P2
+    def holding_ids
+      claims_by_property_id(PropertyId::MANUSCRIPT_HOLDING)&.map(&:entity_id_value) # P2
     end
 
     def described_manuscript_id
       claims_by_property_id(PropertyId::DESCRIBED_MANUSCRIPT)&.first&.entity_id_value # P3
+    end
+
+    def holding_status
+      claims_by_property_id(PropertyId::HOLDING_STATUS)&.first&.entity_id_value # P6
     end
 
     def iiif_manifest
@@ -39,6 +43,10 @@ module DigitalScriptorium
 
     def record?
       instance_of_claims.any? { |claim| claim.entity_id_value == ItemId::RECORD }
+    end
+
+    def current_holding?
+      holding? && status_claims.any? { |claim| claim.data_value == 'current' }
     end
   end
 end

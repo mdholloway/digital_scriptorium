@@ -6,7 +6,7 @@ module DigitalScriptorium
     include PropertyId
 
     def described_manuscript_id
-      claim_by_property_id(DESCRIBED_MANUSCRIPT).entity_id_value # P3
+      claims_by_property_id(DESCRIBED_MANUSCRIPT)&.first&.entity_id_value # P3
     end
 
     def title_as_recorded_claims
