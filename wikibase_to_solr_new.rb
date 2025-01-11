@@ -47,8 +47,6 @@ def merge_transformed_fields(solr_item, claim, export_hash, property_config)
     merge(solr_item, DigitalScriptorium::LinkClaimTransformer.transform(claim, property_config))
   elsif claim.property_id == DigitalScriptorium::PropertyId::ASSOCIATED_NAME_AS_RECORDED
     merge(solr_item, DigitalScriptorium::NameClaimTransformer.transform(claim, export_hash))
-  elsif claim.property_id == DigitalScriptorium::PropertyId::PRODUCTION_DATE_AS_RECORDED
-    merge(solr_item, DigitalScriptorium::DateClaimTransformer.transform(claim, export_hash, property_config))
   elsif property_config['authority']
     merge(solr_item, DigitalScriptorium::QualifiedClaimTransformer.transform(claim, export_hash, property_config))
   else

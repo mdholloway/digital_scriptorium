@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+require 'time'
 require 'wikibase_representable'
 
 module DigitalScriptorium
@@ -12,10 +13,10 @@ module DigitalScriptorium
       original_script = claim.qualifiers_by_property_id(IN_ORIGINAL_SCRIPT)&.first&.data_value&.value
       linked_terms = get_linked_terms(claim, export_hash, config)
 
-      build_solr_props(config['prefix'], recorded_value, original_script, linked_terms)
+      build_solr_props(claim, config['prefix'], recorded_value, original_script, linked_terms)
     end
 
-    def self.build_solr_props(prefix, recorded_value, original_script, linked_terms)
+    def self.build_solr_props(claim, prefix, recorded_value, original_script, linked_terms)
       linked_term_labels = get_labels(linked_terms)
 
       {
@@ -26,6 +27,21 @@ module DigitalScriptorium
         }.compact.to_json],
         "#{prefix}_search" => ([recorded_value, original_script].compact + linked_term_labels).uniq,
         "#{prefix}_facet" => linked_term_labels.uniq
+      }.merge(get_date_props(claim))
+    end
+
+    def self.get_date_props(claim)
+      return {} unless claim.qualifiers && claim.property_id == PRODUCTION_DATE_AS_RECORDED
+
+      century = time_value_from_qualifier(claim, CENTURY)
+      earliest = time_value_from_qualifier(claim, EARLIEST_DATE)
+      latest = time_value_from_qualifier(claim, LATEST_DATE)
+
+      {
+        'date_meta' => [claim.data_value],
+        'century_int' => [parse_year(century)],
+        'earliest_int' => [parse_year(earliest)],
+        'latest_int' => [parse_year(latest)]
       }
     end
 
@@ -65,6 +81,16 @@ module DigitalScriptorium
 
     def self.get_labels(linked_terms)
       linked_terms.map { |term| term['label'] }
+    end
+
+    def self.time_value_from_qualifier(claim, property_id)
+      claim.qualifiers_by_property_id(property_id)&.first&.time_value
+    end
+
+    # Wikibase date format "resembling ISO 8601": +YYYY-MM-DDT00:00:00Z
+    # https://www.wikidata.org/wiki/Help:Dates#Time_datatype
+    def self.parse_year(date)
+      Time.iso8601(date[1..]).year
     end
   end
 end

@@ -8,8 +8,6 @@ module DigitalScriptorium
   include WikibaseRepresentable::Representers
 
   RSpec.describe LinkClaimTransformer do
-    let(:config) { YAML.load_file(File.expand_path('../../property_config.yml', __dir__)) }
-
     context 'with an institutional record claim' do
       json = read_fixture('claims/unqualified/institutional_record.json')
       claim = StatementRepresenter.new(Statement.new).from_json(json)

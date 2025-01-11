@@ -12,7 +12,6 @@ require 'digital_scriptorium/record'
 require 'digital_scriptorium/export'
 require 'digital_scriptorium/export_representer'
 
-require 'digital_scriptorium/date_claim_transformer'
 require 'digital_scriptorium/link_claim_transformer'
 require 'digital_scriptorium/name_claim_transformer'
 require 'digital_scriptorium/qualified_claim_transformer'

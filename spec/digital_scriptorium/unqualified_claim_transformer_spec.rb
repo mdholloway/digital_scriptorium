@@ -9,9 +9,6 @@ module DigitalScriptorium
   include WikibaseRepresentable::Representers
 
   RSpec.describe UnqualifiedClaimTransformer do
-    let(:export_hash) { { 'Q4' => ItemRepresenter.new(Item.new).from_json(read_fixture('items/current.json')) } }
-    let(:config) { YAML.load_file(File.expand_path('../../property_config.yml', __dir__)) }
-
     context 'with a holding status claim' do
       json = read_fixture('claims/unqualified/status.json')
       claim = StatementRepresenter.new(Statement.new).from_json(json)

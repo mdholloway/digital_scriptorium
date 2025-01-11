@@ -5,17 +5,6 @@ require 'wikibase_representable'
 
 module DigitalScriptorium
   RSpec.describe NameClaimTransformer do
-    let(:export_hash) do
-      {
-        'Q18' => ItemRepresenter.new(Item.new).from_json(read_fixture('items/author.json')),
-        'Q21' => ItemRepresenter.new(Item.new).from_json(read_fixture('items/former_owner.json')),
-        'Q383' => ItemRepresenter.new(Item.new).from_json(read_fixture('items/schoenberg.json')),
-        'Q394' => ItemRepresenter.new(Item.new).from_json(read_fixture('items/dioscorides.json')),
-        'Q1105' => ItemRepresenter.new(Item.new).from_json(read_fixture('items/deste.json')),
-        'Q1106' => ItemRepresenter.new(Item.new).from_json(read_fixture('items/llangattock.json'))
-      }
-    end
-
     context 'with a single qualifier' do
       json = read_fixture('claims/qualified/name.json')
       claim = StatementRepresenter.new(Statement.new).from_json(json)
