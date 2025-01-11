@@ -7,10 +7,10 @@ module DigitalScriptorium
   include WikibaseRepresentable::Representers
 
   RSpec.describe ExportRepresenter do
-    let(:holding_json) { read_fixture('items/holding.json') }
-    let(:manuscript_json) { read_fixture('items/manuscript.json') }
-    let(:record_json) { read_fixture('items/record.json') }
-    let(:property_json) { read_fixture('properties/instance_of.json') }
+    let(:holding_json) { read_fixture('items/Q542_holding_example.json') }
+    let(:manuscript_json) { read_fixture('items/Q543_manuscript_example.json') }
+    let(:record_json) { read_fixture('items/Q544_record_example.json') }
+    let(:property_json) { read_fixture('properties/P16_instance_of.json') }
     let(:export) do
       described_class.new(Export.new).from_json("[#{holding_json},#{manuscript_json},#{record_json},#{property_json}]")
     end

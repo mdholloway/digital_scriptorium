@@ -6,9 +6,9 @@ module DigitalScriptorium
   include WikibaseRepresentable::Representers
 
   RSpec.describe DsItem do
-    let(:holding_json) { read_fixture('items/holding.json') }
-    let(:manuscript_json) { read_fixture('items/manuscript.json') }
-    let(:record_json) { read_fixture('items/record.json') }
+    let(:holding_json) { read_fixture('items/Q542_holding_example.json') }
+    let(:manuscript_json) { read_fixture('items/Q543_manuscript_example.json') }
+    let(:record_json) { read_fixture('items/Q544_record_example.json') }
 
     it 'correctly reports if it is a holding' do
       item = ItemRepresenter.new(described_class.new).from_json(holding_json)

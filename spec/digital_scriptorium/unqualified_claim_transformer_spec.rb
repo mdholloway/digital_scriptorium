@@ -10,7 +10,7 @@ module DigitalScriptorium
 
   RSpec.describe UnqualifiedClaimTransformer do
     context 'with a holding status claim' do
-      json = read_fixture('claims/unqualified/status.json')
+      json = read_fixture('claims/unqualified/P6_status.json')
       claim = StatementRepresenter.new(Statement.new).from_json(json)
       expected = {
         'holding_status_display' => ['{"recorded_value":"Current","linked_terms":[]}'],
@@ -24,7 +24,7 @@ module DigitalScriptorium
     end
 
     context 'with a shelfmark claim' do
-      json = read_fixture('claims/unqualified/shelfmark.json')
+      json = read_fixture('claims/unqualified/P8_shelfmark.json')
       claim = StatementRepresenter.new(Statement.new).from_json(json)
       expected = {
         'shelfmark_display' => ['{"recorded_value":"Oversize LJS 110","linked_terms":[]}'],
@@ -38,7 +38,7 @@ module DigitalScriptorium
     end
 
     context 'with a physical description claim' do
-      json = read_fixture('claims/unqualified/physical_description.json')
+      json = read_fixture('claims/unqualified/P29_physical_description.json')
       claim = StatementRepresenter.new(Statement.new).from_json(json)
       expected = {
         'physical_description_display' => ['{"recorded_value":"Extent: 1 parchment ; 170 x 245 mm.","linked_terms":[]}'],

@@ -5,8 +5,8 @@ require 'wikibase_representable'
 
 module DigitalScriptorium
   RSpec.describe NameClaimTransformer do
-    context 'with a single qualifier' do
-      json = read_fixture('claims/qualified/name.json')
+    context 'with a single name in authority file (P17) qualifier' do
+      json = read_fixture('claims/qualified/P14_name.json')
       claim = StatementRepresenter.new(Statement.new).from_json(json)
       expected = {
         'owner_display' => ['{"recorded_value":"Schoenberg, Lawrence J","linked_terms":[{"label":"Lawrence J. Schoenberg","source_url":"https://www.wikidata.org/wiki/Q107542788"}]}'],
@@ -20,8 +20,8 @@ module DigitalScriptorium
       end
     end
 
-    context 'with multiple qualifiers' do
-      json = read_fixture('claims/qualified/name_multiple_qualifier_values.json')
+    context 'with multiple name in authority file (P17) qualifiers' do
+      json = read_fixture('claims/qualified/P14_name_multiple_qualifier_values.json')
       claim = StatementRepresenter.new(Statement.new).from_json(json)
       expected = {
         'owner_display' => [
@@ -44,8 +44,8 @@ module DigitalScriptorium
       end
     end
 
-    context 'with an original script qualifier' do
-      json = read_fixture('claims/qualified/name_original_script.json')
+    context 'with an original script (P13) qualifier' do
+      json = read_fixture('claims/qualified/P14_name_original_script.json')
       claim = StatementRepresenter.new(Statement.new).from_json(json)
       expected = {
         'author_display' => ['{"recorded_value":"Dioscorides Pedanius, of Anazarbos","original_script":"ديسقوريدس. of Anazarbos","linked_terms":[{"label":"Pedanius Dioscorides","source_url":"https://www.wikidata.org/wiki/Q297776"}]}'],

@@ -7,10 +7,10 @@ module DigitalScriptorium
   include WikibaseRepresentable::Representers
 
   RSpec.describe Export do
-    let(:holding) { item_from_fixture('items/holding.json') }
-    let(:manuscript) { item_from_fixture('items/manuscript.json') }
-    let(:record) { item_from_fixture('items/record.json') }
-    let(:property) { property_from_fixture('properties/instance_of.json') }
+    let(:holding) { item_from_fixture('items/Q542_holding_example.json') }
+    let(:manuscript) { item_from_fixture('items/Q543_manuscript_example.json') }
+    let(:record) { item_from_fixture('items/Q544_record_example.json') }
+    let(:property) { property_from_fixture('properties/P16_instance_of.json') }
 
     it 'transforms a Wikibase export to a Hash' do
       export = described_class.new

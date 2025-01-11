@@ -6,9 +6,9 @@ module DigitalScriptorium
   include WikibaseRepresentable::Representers
 
   RSpec.describe DsMeta do
-    let(:holding) { ItemRepresenter.new(DsItem.new).from_json(read_fixture('items/holding.json')) }
-    let(:manuscript) { ItemRepresenter.new(DsItem.new).from_json(read_fixture('items/manuscript.json')) }
-    let(:record) { ItemRepresenter.new(DsItem.new).from_json(read_fixture('items/record.json')) }
+    let(:holding) { item_from_fixture('items/Q542_holding_example.json') }
+    let(:manuscript) { item_from_fixture('items/Q543_manuscript_example.json') }
+    let(:record) { item_from_fixture('items/Q544_record_example.json') }
     let(:meta) do
       described_class.new(record, { record.id => record, holding.id => holding, manuscript.id => manuscript })
     end
