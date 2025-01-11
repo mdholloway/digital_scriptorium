@@ -15,7 +15,7 @@ output_file = File.expand_path 'solr_import.json', dir
 config_file = File.expand_path 'property_config.yml', dir
 pretty_print = false
 
-OptionParser.new do |opts|
+OptionParser.new { |opts|
   opts.banner = 'Usage: wikibase_to_solr.rb [options]'
 
   opts.on('-i', '--in FILE', 'The file path to the gzipped Wikibase JSON export file.') do |f|
@@ -33,7 +33,7 @@ OptionParser.new do |opts|
   opts.on('-p', '--pretty-print', 'Whether to pretty-print the JSON output.') do
     pretty_print = true
   end
-end.parse!
+}.parse!
 
 def merge(solr_item, new_props)
   solr_item.merge(new_props) do |_, old_val, new_val|
@@ -42,18 +42,30 @@ def merge(solr_item, new_props)
 end
 
 def merge_transformed_fields(solr_item, claim, export_hash, property_config)
-  if claim.property_id == DigitalScriptorium::PropertyId::ASSOCIATED_NAME_AS_RECORDED
+  if config['fields'] == ['link']
+    merge(solr_item, DigitalScriptorium::LinkClaimTransformer.transform(claim, property_config))
+  elsif claim.property_id == DigitalScriptorium::PropertyId::ASSOCIATED_NAME_AS_RECORDED
     merge(solr_item, DigitalScriptorium::NameClaimTransformer.transform(claim, export_hash))
   elsif claim.property_id == DigitalScriptorium::PropertyId::PRODUCTION_DATE_AS_RECORDED
-    merge(solr_item,
-          DigitalScriptorium::DateClaimTransformer.transform(claim, export_hash, property_config))
+    merge(solr_item, DigitalScriptorium::DateClaimTransformer.transform(claim, export_hash, property_config))
+  elsif property_config['authority']
+    merge(solr_item, DigitalScriptorium::QualifiedClaimTransformer.transform(claim, export_hash, property_config))
   else
-    merge(solr_item,
-          DigitalScriptorium::ClaimTransformer.transform(claim, export_hash, property_config))
+    merge(solr_item, DigitalScriptorium::UnqualifiedClaimTransformer.transform(claim, export_hash, property_config))
   end
 end
 
-start_time = Time.now
+def base_solr_item(meta)
+  ds_id = meta.manuscript.ds_id
+  {
+    'qid_meta' => [meta.holding.id, meta.manuscript.id, meta.record.id],
+    'id' => [ds_id],
+    'id_display' => [JSON.generate(recorded_value: ds_id)],
+    'id_search' => [ds_id]
+  }
+end
+
+start_time = Time.now.utc
 
 config = YAML.load_file(config_file)
 
@@ -64,7 +76,7 @@ export_json = Zlib::GzipReader.open(input_file).read
 export_hash = DigitalScriptorium::ExportRepresenter.new(DigitalScriptorium::Export.new)
                                                    .from_json(export_json)
                                                    .to_hash
-loaded_time = Time.now
+loaded_time = Time.now.utc
 loading_spinner.success("(#{format('%0.02f', loaded_time - start_time)}s)")
 
 item_count = 0
@@ -81,7 +93,7 @@ File.open(output_file, 'w') do |file|
                 entity.record?
 
     meta = DigitalScriptorium::DsMeta.new(entity, export_hash)
-    solr_item = { 'qid_meta' => [meta.holding.id, meta.manuscript.id, meta.record.id] }
+    solr_item = base_solr_item(meta)
 
     [meta.holding, meta.manuscript, meta.record].each do |item|
       item.claims.each do |property_id, claims|
@@ -103,6 +115,6 @@ File.open(output_file, 'w') do |file|
   file << ']'
 end
 
-finish_time = Time.now
+finish_time = Time.now.utc
 generating_spinner.success("(#{format('%0.02f', finish_time - loaded_time)}s)")
 puts "Generated #{item_count} Solr documents in #{format('%0.02f', finish_time - start_time)} seconds"

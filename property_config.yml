@@ -1,9 +1,3 @@
-P1:
-  prefix: id
-  fields:
-    - id
-    - display
-    - search
 P5:
   prefix: institution
   fields:

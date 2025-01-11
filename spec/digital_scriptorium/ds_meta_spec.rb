@@ -6,18 +6,22 @@ module DigitalScriptorium
   include WikibaseRepresentable::Representers
 
   RSpec.describe DsMeta do
-    let(:holding_json) { File.read(File.expand_path('../fixtures/items/holding.json', __dir__)) }
-    let(:manuscript_json) { File.read(File.expand_path('../fixtures/items/manuscript.json', __dir__)) }
-    let(:record_json) { File.read(File.expand_path('../fixtures/items/record.json', __dir__)) }
+    let(:holding) { ItemRepresenter.new(DsItem.new).from_json(read_fixture('items/holding.json')) }
+    let(:manuscript) { ItemRepresenter.new(DsItem.new).from_json(read_fixture('items/manuscript.json')) }
+    let(:record) { ItemRepresenter.new(DsItem.new).from_json(read_fixture('items/record.json')) }
+    let(:meta) do
+      described_class.new(record, { record.id => record, holding.id => holding, manuscript.id => manuscript })
+    end
 
-    it 'initializes from linked records in export' do
-      holding = ItemRepresenter.new(DsItem.new).from_json(holding_json)
-      manuscript = ItemRepresenter.new(DsItem.new).from_json(manuscript_json)
-      record = ItemRepresenter.new(DsItem.new).from_json(record_json)
-
-      meta = described_class.new(record, { record.id => record, holding.id => holding, manuscript.id => manuscript })
+    it 'correctly returns the holding' do
       expect(meta.holding).to eq holding
+    end
+
+    it 'correctly returns the manuscript' do
       expect(meta.manuscript).to eq manuscript
+    end
+
+    it 'correctly returns the record' do
       expect(meta.record).to eq record
     end
   end

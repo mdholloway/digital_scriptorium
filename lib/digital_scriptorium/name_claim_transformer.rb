@@ -8,55 +8,54 @@ module DigitalScriptorium
     def self.transform(claim, export_hash)
       return {} unless claim.qualifiers_by_property_id? ROLE_IN_AUTHORITY_FILE
 
-      role_entity_id = claim.qualifiers_by_property_id(ROLE_IN_AUTHORITY_FILE).first.entity_id_value
-      role_item = export_hash[role_entity_id]
-      role_label = role_item.label('en')
-      prefix = role_label.downcase.split.last
-
+      prefix = get_role_prefix(claim, export_hash)
       recorded_name = claim.data_value
-      display_data = { 'recorded_value' => recorded_name }
-      search_terms = [recorded_name]
+      original_script = claim.qualifiers_by_property_id(IN_ORIGINAL_SCRIPT)&.first&.data_value&.value
+      linked_terms = get_linked_terms(claim, export_hash)
 
-      name_in_original_script = claim.qualifiers_by_property_id(IN_ORIGINAL_SCRIPT)&.first&.data_value&.value
-      display_data['original_script'] = name_in_original_script if name_in_original_script
-      search_terms << name_in_original_script if name_in_original_script
+      build_solr_props(prefix, recorded_name, original_script, linked_terms)
+    end
 
-      unless claim.qualifiers_by_property_id? NAME_IN_AUTHORITY_FILE
-        return {
-          "#{prefix}_display" => [display_data.to_json],
-          "#{prefix}_search" => search_terms,
-          "#{prefix}_facet" => [recorded_name]
-        }
-      end
+    def self.build_solr_props(prefix, recorded_value, original_script, linked_terms)
+      linked_term_labels = get_labels(linked_terms)
 
-      facets = []
+      {
+        "#{prefix}_display" => [{
+          'recorded_value' => recorded_value,
+          'original_script' => original_script,
+          'linked_terms' => linked_terms
+        }.compact.to_json],
+        "#{prefix}_search" => ([recorded_value, original_script].compact + linked_term_labels).uniq,
+        "#{prefix}_facet" => linked_term_labels.uniq
+      }
+    end
+
+    def self.get_linked_terms(claim, export_hash)
       linked_terms = []
 
       claim.qualifiers_by_property_id(NAME_IN_AUTHORITY_FILE).each do |qualifier|
         term = {}
+        term['label'] = export_hash[qualifier.entity_id_value].label('en')
 
-        name_entity_id = qualifier.entity_id_value
-        name_item = export_hash[name_entity_id]
-        name_label = name_item.label('en')
-
-        term['label'] = name_label
-        search_terms << name_label
-        facets << name_label
-
-        wikidata_id = name_item.claims_by_property_id(WIKIDATA_QID)&.first&.data_value
+        wikidata_id = export_hash[qualifier.entity_id_value].claims_by_property_id(WIKIDATA_QID)&.first&.data_value
         wikidata_url = wikidata_id && "https://www.wikidata.org/wiki/#{wikidata_id}"
         term['source_url'] = wikidata_url if wikidata_url
 
         linked_terms << term
       end
 
-      display_data['linked_terms'] = linked_terms.uniq if linked_terms.any?
+      linked_terms
+    end
 
-      {
-        "#{prefix}_display" => [display_data.to_json],
-        "#{prefix}_search" => search_terms.uniq,
-        "#{prefix}_facet" => facets.uniq
-      }
+    def self.get_role_prefix(claim, export_hash)
+      role_entity_id = claim.qualifiers_by_property_id(ROLE_IN_AUTHORITY_FILE).first.entity_id_value
+      role_item = export_hash[role_entity_id]
+      role_label = role_item.label('en')
+      role_label.downcase.split.last
+    end
+
+    def self.get_labels(linked_terms)
+      linked_terms.map { |term| term['label'] }
     end
   end
 end
