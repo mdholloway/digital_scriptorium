@@ -76,6 +76,10 @@ P23:
     - search
     - facet
   authority: P24
+P26:
+  prefix: dated
+  fields:
+    - facet
 P27:
   type: qualified
   prefix: place
