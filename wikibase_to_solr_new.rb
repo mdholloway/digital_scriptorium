@@ -112,7 +112,6 @@ File.open(output_file, 'w') do |file|
           next unless (property_config = config[property_id])
 
           fields = get_transformed_fields(claim, export_hash, property_config)
-
           solr_item = merge(solr_item, DigitalScriptorium::SolrFieldFilter.filter(fields, property_config))
         end
       end
