@@ -12,9 +12,9 @@ require 'digital_scriptorium/record'
 require 'digital_scriptorium/export'
 require 'digital_scriptorium/export_representer'
 
-require 'digital_scriptorium/link_claim_transformer'
-require 'digital_scriptorium/name_claim_transformer'
-require 'digital_scriptorium/qualified_claim_transformer'
-require 'digital_scriptorium/unqualified_claim_transformer'
+require 'digital_scriptorium/transformers/link_claim_transformer'
+require 'digital_scriptorium/transformers/name_claim_transformer'
+require 'digital_scriptorium/transformers/qualified_claim_transformer'
+require 'digital_scriptorium/transformers/unqualified_claim_transformer'
 
 require 'digital_scriptorium/solr_field_filter'
