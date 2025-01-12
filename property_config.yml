@@ -39,6 +39,7 @@ P14:
     - display
     - search
     - facet
+  fallback: true
 P18:
   type: qualified
   prefix: term
