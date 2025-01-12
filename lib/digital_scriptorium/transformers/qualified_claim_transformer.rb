@@ -11,23 +11,23 @@ module DigitalScriptorium
     def self.transform(claim, export_hash, config)
       recorded_value = primary_value_from_claim(claim, export_hash)
       original_script = claim.qualifiers_by_property_id(IN_ORIGINAL_SCRIPT)&.first&.data_value&.value
-      linked_terms = get_linked_terms(claim, export_hash, config)
+      linked_terms = get_linked_terms(claim, recorded_value, export_hash, config)
 
-      build_solr_props(claim, config['prefix'], recorded_value, original_script, linked_terms)
+      build_solr_props(claim, config, recorded_value, original_script, linked_terms)
     end
 
-    def self.build_solr_props(claim, prefix, recorded_value, original_script, linked_terms)
+    def self.build_solr_props(claim, config, recorded_value, original_script, linked_terms)
       linked_term_labels = get_labels(linked_terms)
 
       {
-        "#{prefix}_display" => [{
+        "#{config['prefix']}_display" => [{
           'recorded_value' => recorded_value,
           'original_script' => original_script,
           'linked_terms' => linked_terms.any? ? linked_terms : nil
         }.compact.to_json],
-        "#{prefix}_search" => ([recorded_value, original_script].compact + linked_term_labels).uniq,
-        "#{prefix}_facet" => linked_term_labels.any? ? linked_term_labels.uniq : [recorded_value]
-      }.merge(get_date_props(claim))
+        "#{config['prefix']}_search" => ([recorded_value, original_script].compact + linked_term_labels).uniq,
+        "#{config['prefix']}_facet" => linked_terms.any? ? linked_term_labels : nil
+      }.merge(get_date_props(claim)).compact
     end
 
     def self.get_date_props(claim)
@@ -45,7 +45,7 @@ module DigitalScriptorium
       }
     end
 
-    def self.get_linked_terms(claim, export_hash, config)
+    def self.get_linked_terms(claim, recorded_value, export_hash, config)
       linked_terms = []
 
       claim.qualifiers_by_property_id(config['authority'])&.each do |qualifier|
@@ -54,7 +54,8 @@ module DigitalScriptorium
         linked_terms << get_linked_term(authority) if authority
       end
 
-      linked_terms
+      linked_terms << { 'label' => recorded_value } if config['fallback'] && linked_terms.empty?
+      linked_terms.uniq
     end
 
     def self.get_linked_term(authority)
@@ -80,7 +81,7 @@ module DigitalScriptorium
     end
 
     def self.get_labels(linked_terms)
-      linked_terms.map { |term| term['label'] }
+      linked_terms.map { |term| term['label'] }.uniq
     end
 
     def self.time_value_from_qualifier(claim, property_id)

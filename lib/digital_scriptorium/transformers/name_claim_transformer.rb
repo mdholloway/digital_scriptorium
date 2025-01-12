@@ -9,11 +9,11 @@ module DigitalScriptorium
       return {} unless claim.qualifiers_by_property_id? ROLE_IN_AUTHORITY_FILE
 
       prefix = get_role_prefix(claim, export_hash)
-      recorded_name = claim.data_value
+      recorded_value = claim.data_value
       original_script = claim.qualifiers_by_property_id(IN_ORIGINAL_SCRIPT)&.first&.data_value&.value
-      linked_terms = get_linked_terms(claim, export_hash)
+      linked_terms = get_linked_terms(claim, recorded_value, export_hash)
 
-      build_solr_props(prefix, recorded_name, original_script, linked_terms)
+      build_solr_props(prefix, recorded_value, original_script, linked_terms)
     end
 
     def self.build_solr_props(prefix, recorded_value, original_script, linked_terms)
@@ -23,28 +23,32 @@ module DigitalScriptorium
         "#{prefix}_display" => [{
           'recorded_value' => recorded_value,
           'original_script' => original_script,
-          'linked_terms' => linked_terms.any? ? linked_terms : nil
+          'linked_terms' => linked_terms
         }.compact.to_json],
         "#{prefix}_search" => ([recorded_value, original_script].compact + linked_term_labels).uniq,
-        "#{prefix}_facet" => linked_term_labels.any? ? linked_term_labels.uniq : [recorded_value]
+        "#{prefix}_facet" => get_labels(linked_terms)
       }
     end
 
-    def self.get_linked_terms(claim, export_hash)
+    def self.get_linked_terms(claim, recorded_value, export_hash)
       linked_terms = []
 
       claim.qualifiers_by_property_id(NAME_IN_AUTHORITY_FILE)&.each do |qualifier|
-        term = {}
-        term['label'] = export_hash[qualifier.entity_id_value].label('en')
-
-        wikidata_id = export_hash[qualifier.entity_id_value].claims_by_property_id(WIKIDATA_QID)&.first&.data_value
-        wikidata_url = wikidata_id && "https://www.wikidata.org/wiki/#{wikidata_id}"
-        term['source_url'] = wikidata_url if wikidata_url
-
-        linked_terms << term
+        authority_id = qualifier.entity_id_value
+        authority = export_hash[authority_id]
+        linked_terms << get_linked_term(authority) if authority
       end
 
-      linked_terms
+      linked_terms << { 'label' => recorded_value } if linked_terms.empty?
+      linked_terms.uniq
+    end
+
+    def self.get_linked_term(authority)
+      term = { 'label' => authority.label('en') }
+      wikidata_id = authority.claims_by_property_id(WIKIDATA_QID)&.first&.data_value
+      wikidata_uri = wikidata_id && "https://www.wikidata.org/wiki/#{wikidata_id}"
+      term['source_url'] = wikidata_uri
+      term.compact
     end
 
     def self.get_role_prefix(claim, export_hash)
@@ -55,7 +59,7 @@ module DigitalScriptorium
     end
 
     def self.get_labels(linked_terms)
-      linked_terms.map { |term| term['label'] }
+      linked_terms.map { |term| term['label'] }.uniq
     end
   end
 end
