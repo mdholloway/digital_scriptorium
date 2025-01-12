@@ -9,21 +9,6 @@ module DigitalScriptorium
   include WikibaseRepresentable::Representers
 
   RSpec.describe UnqualifiedClaimTransformer do
-    context 'with a holding status claim' do
-      json = read_fixture('claims/unqualified/P6_status.json')
-      claim = StatementRepresenter.new(Statement.new).from_json(json)
-      expected = {
-        'holding_status_display' => ['{"recorded_value":"Current"}'],
-        'holding_status_search' => ['Current'],
-        'holding_status_facet' => ['Current']
-      }
-
-      it 'provides the label for the canonical holding status item in the display property' do
-        solr_item = described_class.transform(claim, export_hash, config[PropertyId::HOLDING_STATUS])
-        expect(solr_item).to eq(expected)
-      end
-    end
-
     context 'with a shelfmark claim' do
       json = read_fixture('claims/unqualified/P8_shelfmark.json')
       claim = StatementRepresenter.new(Statement.new).from_json(json)

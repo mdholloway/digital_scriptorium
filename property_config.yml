@@ -6,11 +6,6 @@ P5:
     - search
     - facet
   authority: P4
-P6:
-  type: unqualified
-  prefix: holding_status
-  fields:
-    - display
 P8:
   type: unqualified
   prefix: shelfmark
