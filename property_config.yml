@@ -25,6 +25,7 @@ P10:
     - search
     - facet
   authority: P11
+  fallback: true
 P12:
   type: unqualified
   prefix: uniform_title
@@ -46,6 +47,7 @@ P18:
     - search
     - facet
   authority: P20
+  fallback: true
 P19:
   type: qualified
   prefix: term
@@ -54,6 +56,7 @@ P19:
     - search
     - facet
   authority: P20
+  fallback: true
 P21:
   type: qualified
   prefix: language
@@ -94,6 +97,8 @@ P30:
   type: qualified
   prefix: material
   fields:
+    - display
+    - search
     - facet
   authority: P31
 P32:
