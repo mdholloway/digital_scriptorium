@@ -26,7 +26,7 @@ module DigitalScriptorium
           'linked_terms' => linked_terms.any? ? linked_terms : nil
         }.compact.to_json],
         "#{prefix}_search" => ([recorded_value, original_script].compact + linked_term_labels).uniq,
-        "#{prefix}_facet" => linked_term_labels.uniq
+        "#{prefix}_facet" => linked_term_labels.any? ? linked_term_labels.uniq : [recorded_value]
       }
     end
 
