@@ -11,7 +11,7 @@ module DigitalScriptorium
     def self.transform(claim, export_hash, config)
       recorded_value = primary_value_from_claim(claim, export_hash)
       original_script = claim.qualifiers_by_property_id(IN_ORIGINAL_SCRIPT)&.first&.data_value&.value
-      linked_terms = get_linked_terms(claim, recorded_value, export_hash, config)
+      linked_terms = get_linked_terms(claim, export_hash, config)
 
       build_solr_props(claim, config, recorded_value, original_script, linked_terms)
     end
@@ -45,7 +45,7 @@ module DigitalScriptorium
       }
     end
 
-    def self.get_linked_terms(claim, _recorded_value, export_hash, config)
+    def self.get_linked_terms(claim, export_hash, config)
       linked_terms = []
 
       claim.qualifiers_by_property_id(config['authority'])&.each do |qualifier|
