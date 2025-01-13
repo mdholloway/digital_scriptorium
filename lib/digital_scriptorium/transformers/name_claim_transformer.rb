@@ -23,14 +23,14 @@ module DigitalScriptorium
         "#{prefix}_display" => [{
           'recorded_value' => recorded_value,
           'original_script' => original_script,
-          'linked_terms' => linked_terms
+          'linked_terms' => linked_terms.any? ? linked_terms : nil
         }.compact.to_json],
         "#{prefix}_search" => ([recorded_value, original_script].compact + linked_term_labels).uniq,
-        "#{prefix}_facet" => get_labels(linked_terms)
+        "#{prefix}_facet" => linked_term_labels.any? ? linked_term_labels : [recorded_value]
       }
     end
 
-    def self.get_linked_terms(claim, recorded_value, export_hash)
+    def self.get_linked_terms(claim, _recorded_value, export_hash)
       linked_terms = []
 
       claim.qualifiers_by_property_id(NAME_IN_AUTHORITY_FILE)&.each do |qualifier|
@@ -39,7 +39,6 @@ module DigitalScriptorium
         linked_terms << get_linked_term(authority) if authority
       end
 
-      linked_terms << { 'label' => recorded_value } if linked_terms.empty?
       linked_terms.uniq
     end
 

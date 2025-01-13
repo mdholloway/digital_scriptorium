@@ -26,7 +26,7 @@ module DigitalScriptorium
           'linked_terms' => linked_terms.any? ? linked_terms : nil
         }.compact.to_json],
         "#{config['prefix']}_search" => ([recorded_value, original_script].compact + linked_term_labels).uniq,
-        "#{config['prefix']}_facet" => linked_terms.any? ? linked_term_labels : nil
+        "#{config['prefix']}_facet" => facet(linked_term_labels, recorded_value, config)
       }.merge(get_date_props(claim)).compact
     end
 
@@ -45,7 +45,7 @@ module DigitalScriptorium
       }
     end
 
-    def self.get_linked_terms(claim, recorded_value, export_hash, config)
+    def self.get_linked_terms(claim, _recorded_value, export_hash, config)
       linked_terms = []
 
       claim.qualifiers_by_property_id(config['authority'])&.each do |qualifier|
@@ -54,7 +54,6 @@ module DigitalScriptorium
         linked_terms << get_linked_term(authority) if authority
       end
 
-      linked_terms << { 'label' => recorded_value } if config['fallback'] && linked_terms.empty?
       linked_terms.uniq
     end
 
@@ -92,6 +91,14 @@ module DigitalScriptorium
     # https://www.wikidata.org/wiki/Help:Dates#Time_datatype
     def self.parse_year(date)
       Time.iso8601(date[1..]).year
+    end
+
+    def self.facet(linked_term_labels, recorded_value, config)
+      linked_term_labels.any? ? linked_term_labels : facet_fallback(recorded_value, config)
+    end
+
+    def self.facet_fallback(recorded_value, config)
+      config['fallback'] ? [recorded_value] : nil
     end
   end
 end
