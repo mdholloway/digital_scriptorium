@@ -8,15 +8,11 @@ module DigitalScriptorium
     include PropertyId
 
     def self.transform(claim, export_hash, config)
-      recorded_value = primary_value_from_claim(claim, export_hash)
-      original_script = claim.qualifiers_by_property_id(IN_ORIGINAL_SCRIPT)&.first&.data_value&.value
-
+      value = primary_value_from_claim(claim, export_hash)
       {
-        "#{config['prefix']}_display" => [{
-          'recorded_value' => recorded_value,
-          'original_script' => original_script
-        }.compact.to_json],
-        "#{config['prefix']}_search" => [recorded_value, original_script].compact
+        "#{config['prefix']}_display" => [{ 'recorded_value' => value }.to_json],
+        "#{config['prefix']}_search" => [value],
+        "#{config['prefix']}_facet" => [value]
       }
     end
 

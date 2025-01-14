@@ -1,0 +1,19 @@
+{
+  "type": "item",
+  "id": "Q15",
+  "labels": {
+    "en": {
+      "language": "en",
+      "value": "Non-dated"
+    }
+  },
+  "descriptions": {
+    "en": {
+      "language": "en",
+      "value": "The manuscript is not dated"
+    }
+  },
+  "aliases": [],
+  "claims": [],
+  "sitelinks": []
+}

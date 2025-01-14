@@ -1,0 +1,14 @@
+{
+  "mainsnak": {
+    "snaktype": "value",
+    "property": "P33",
+    "hash": "dbc0f2155818b243538162c64101662a40cb45fc",
+    "datavalue": {
+      "value": "We thank Michael W. Heil for his work in making this description available.",
+      "type": "string"
+    }
+  },
+  "type": "statement",
+  "id": "Q673$46F314F1-4B73-4DBD-A0AF-D79F8ABD23EF",
+  "rank": "normal"
+}

@@ -31,17 +31,14 @@ module DigitalScriptorium
     end
 
     def self.get_date_props(claim)
-      return {} unless claim.qualifiers && claim.property_id == PRODUCTION_DATE_AS_RECORDED
-
-      century = time_value_from_qualifier(claim, CENTURY)
-      earliest = time_value_from_qualifier(claim, EARLIEST_DATE)
-      latest = time_value_from_qualifier(claim, LATEST_DATE)
+      return {} unless claim.property_id == PRODUCTION_DATE_AS_RECORDED
+      return { 'date_meta' => [claim.data_value] } unless claim.qualifiers
 
       {
         'date_meta' => [claim.data_value],
-        'century_int' => [parse_year(century)],
-        'earliest_int' => [parse_year(earliest)],
-        'latest_int' => [parse_year(latest)]
+        'century_int' => [parse_year(time_value_from_qualifier(claim, CENTURY))],
+        'earliest_int' => [parse_year(time_value_from_qualifier(claim, EARLIEST_DATE))],
+        'latest_int' => [parse_year(time_value_from_qualifier(claim, LATEST_DATE))]
       }
     end
 

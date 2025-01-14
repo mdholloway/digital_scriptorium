@@ -1,0 +1,51 @@
+{
+  "type": "item",
+  "id": "Q300",
+  "labels": {
+    "en": {
+      "language": "en",
+      "value": "Early works"
+    }
+  },
+  "descriptions": [],
+  "aliases": [],
+  "claims": {
+    "P16": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P16",
+          "hash": "5a9182d9c735e4930804c1df38c8fa26a0e53582",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 11,
+              "id": "Q11"
+            },
+            "type": "wikibase-entityid"
+          }
+        },
+        "type": "statement",
+        "id": "Q300$FA9EEABD-9FAA-4DF8-AA04-3A5F8A78112D",
+        "rank": "normal"
+      }
+    ],
+    "P44": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P44",
+          "hash": "02d9b3756a99626ed1f16ce3add9058a0dbe0ae1",
+          "datavalue": {
+            "value": "http://id.worldcat.org/fast/1411636",
+            "type": "string"
+          }
+        },
+        "type": "statement",
+        "id": "Q300$A76C5703-8C1E-40AA-9F6C-1CCFB0C7D262",
+        "rank": "normal"
+      }
+    ]
+  },
+  "sitelinks": []
+}

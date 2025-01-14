@@ -1,0 +1,18 @@
+{
+  "mainsnak": {
+    "snaktype": "value",
+    "property": "P26",
+    "hash": "8d2d057d7adcff95c47318715bab901517aa7900",
+    "datavalue": {
+      "value": {
+        "entity-type": "item",
+        "numeric-id": 15,
+        "id": "Q15"
+      },
+      "type": "wikibase-entityid"
+    }
+  },
+  "type": "statement",
+  "id": "Q673$52F993B6-22C3-4C7F-B194-6756CF0DAF6A",
+  "rank": "normal"
+}

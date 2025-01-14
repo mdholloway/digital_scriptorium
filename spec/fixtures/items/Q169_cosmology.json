@@ -1,0 +1,51 @@
+{
+  "type": "item",
+  "id": "Q169",
+  "labels": {
+    "en": {
+      "language": "en",
+      "value": "Cosmology"
+    }
+  },
+  "descriptions": [],
+  "aliases": [],
+  "claims": {
+    "P16": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P16",
+          "hash": "5a9182d9c735e4930804c1df38c8fa26a0e53582",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 11,
+              "id": "Q11"
+            },
+            "type": "wikibase-entityid"
+          }
+        },
+        "type": "statement",
+        "id": "Q169$84590065-B1CF-416A-8E57-BFF18B2C28D9",
+        "rank": "normal"
+      }
+    ],
+    "P44": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P44",
+          "hash": "2d4eab06c58cd50db9cc856a15e9076fffff287e",
+          "datavalue": {
+            "value": "http://id.worldcat.org/fast/880600",
+            "type": "string"
+          }
+        },
+        "type": "statement",
+        "id": "Q169$13842776-1724-4A7C-A785-211EA85F83B0",
+        "rank": "normal"
+      }
+    ]
+  },
+  "sitelinks": []
+}

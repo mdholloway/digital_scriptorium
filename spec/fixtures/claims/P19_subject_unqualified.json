@@ -1,0 +1,14 @@
+{
+  "mainsnak": {
+    "snaktype": "value",
+    "property": "P19",
+    "hash": "d29179756d53be6e80b94ad6bb4e5e39ac98e1bd",
+    "datavalue": {
+      "value": "Cosmology--Early works to 1800",
+      "type": "string"
+    }
+  },
+  "type": "statement",
+  "id": "Q487$7B73718E-D96A-4A93-B224-FDE72D025970",
+  "rank": "normal"
+}

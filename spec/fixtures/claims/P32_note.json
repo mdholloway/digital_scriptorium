@@ -1,0 +1,14 @@
+{
+  "mainsnak": {
+    "snaktype": "value",
+    "property": "P32",
+    "hash": "cf6a02a2f60a08778ca32ee4da88000c5a9399c4",
+    "datavalue": {
+      "value": "Ms. codex.",
+      "type": "string"
+    }
+  },
+  "type": "statement",
+  "id": "Q484$1BDE4728-66C3-48C0-A1DA-6C9BE5915EE7",
+  "rank": "normal"
+}

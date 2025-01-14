@@ -1,0 +1,47 @@
+{
+  "mainsnak": {
+    "snaktype": "value",
+    "property": "P19",
+    "hash": "d29179756d53be6e80b94ad6bb4e5e39ac98e1bd",
+    "datavalue": {
+      "value": "Cosmology--Early works to 1800",
+      "type": "string"
+    }
+  },
+  "type": "statement",
+  "qualifiers": {
+    "P20": [
+      {
+        "snaktype": "value",
+        "property": "P20",
+        "hash": "374bdec3ee4c16b0a5b5a50942aa8221a04bd4ce",
+        "datavalue": {
+          "value": {
+            "entity-type": "item",
+            "numeric-id": 169,
+            "id": "Q169"
+          },
+          "type": "wikibase-entityid"
+        }
+      },
+      {
+        "snaktype": "value",
+        "property": "P20",
+        "hash": "d137ca39eabb27edab1f0647e5fdafe552bc3161",
+        "datavalue": {
+          "value": {
+            "entity-type": "item",
+            "numeric-id": 300,
+            "id": "Q300"
+          },
+          "type": "wikibase-entityid"
+        }
+      }
+    ]
+  },
+  "qualifiers-order": [
+    "P20"
+  ],
+  "id": "Q487$7B73718E-D96A-4A93-B224-FDE72D025970",
+  "rank": "normal"
+}

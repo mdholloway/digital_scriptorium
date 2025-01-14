@@ -1,0 +1,14 @@
+{
+  "mainsnak": {
+    "snaktype": "value",
+    "property": "P12",
+    "hash": "51154574c9745decf16d096ad8c6d25848faaa61",
+    "datavalue": {
+      "value": "Image du monde.",
+      "type": "string"
+    }
+  },
+  "type": "statement",
+  "id": "Q487$7A69C3B4-75BB-47B6-9B56-3429B560844E",
+  "rank": "normal"
+}
