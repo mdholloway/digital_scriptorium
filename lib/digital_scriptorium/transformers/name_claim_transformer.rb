@@ -6,6 +6,7 @@ module DigitalScriptorium
     include PropertyId
 
     def self.transform(claim, export_hash)
+      # TODO: Log a warning to stdout if this qualifier is missing, it's a mistake that should be addressed
       return {} unless claim.qualifiers_by_property_id? ROLE_IN_AUTHORITY_FILE
 
       prefix = get_role_prefix(claim, export_hash)
