@@ -1,0 +1,14 @@
+{
+  "mainsnak": {
+    "snaktype": "value",
+    "property": "P5",
+    "hash": "9374610faba500b29dedf759055e43198e98cded",
+    "datavalue": {
+      "value": "U. of Penna.",
+      "type": "string"
+    }
+  },
+  "type": "statement",
+  "id": "Q542$B0FDFE38-AAA8-4F33-AFC6-D486673EB44E",
+  "rank": "normal"
+}

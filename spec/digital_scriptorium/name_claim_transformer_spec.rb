@@ -5,8 +5,8 @@ require 'wikibase_representable'
 
 module DigitalScriptorium
   RSpec.describe NameClaimTransformer do
-    context 'with a single name in authority file (P17) qualifier' do
-      json = read_fixture('claims/qualified/P14_name.json')
+    context 'with a single authority file (P17) qualifier' do
+      json = read_fixture('claims/P14_name_qualified_no_original_script.json')
       claim = StatementRepresenter.new(Statement.new).from_json(json)
       expected = {
         'owner_display' => [{
@@ -26,8 +26,8 @@ module DigitalScriptorium
       end
     end
 
-    context 'with multiple name in authority file (P17) qualifiers' do
-      json = read_fixture('claims/qualified/P14_name_multiple_qualifier_values.json')
+    context 'with multiple authority file (P17) qualifiers' do
+      json = read_fixture('claims/P14_name_multiple_qualifier_values.json')
       claim = StatementRepresenter.new(Statement.new).from_json(json)
 
       recorded_value = 'From the codex made for Leonello d\'Este. ' \
@@ -61,8 +61,8 @@ module DigitalScriptorium
       end
     end
 
-    context 'with an original script (P13) qualifier' do
-      json = read_fixture('claims/qualified/P14_name_original_script.json')
+    context 'with a authority file (P17) and original script (P13) qualifiers' do
+      json = read_fixture('claims/P14_name_qualified_original_script.json')
       claim = StatementRepresenter.new(Statement.new).from_json(json)
       expected = {
         'author_display' => [{

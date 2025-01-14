@@ -13,17 +13,17 @@ module DigitalScriptorium
       StatementRepresenter.new(Statement.new).from_json(json)
     end
 
-    context 'with an institution (P5) claim' do
-      json = read_fixture('claims/qualified/P5_institution.json')
+    context 'with an qualified institution (P5) claim' do
+      json = read_fixture('claims/P5_institution_qualified.json')
       expected = {
         'institution_display' => [{
-          'recorded_value' => 'University of Pennsylvania',
+          'recorded_value' => 'U. of Penna.',
           'linked_terms' => [{
             'label' => 'University of Pennsylvania',
             'source_url' => 'https://www.wikidata.org/wiki/Q49117'
           }]
         }.to_json],
-        'institution_search' => ['University of Pennsylvania'],
+        'institution_search' => ['U. of Penna.', 'University of Pennsylvania'],
         'institution_facet' => ['University of Pennsylvania']
       }
 
@@ -34,7 +34,7 @@ module DigitalScriptorium
     end
 
     context 'with a title (P10) claim with standard title (P11) and original script (P13) qualifiers' do
-      json = read_fixture('claims/qualified/P10_title.json')
+      json = read_fixture('claims/P10_title_qualified.json')
       expected = {
         'title_display' => [{
           'recorded_value' => 'Kitāb al-Majisṭī',
@@ -52,7 +52,7 @@ module DigitalScriptorium
     end
 
     context 'with a qualified genre (P18) claim' do
-      json = read_fixture('claims/qualified/P18_genre.json')
+      json = read_fixture('claims/P18_genre_qualified.json')
       expected = {
         'term_display' => [{
           'recorded_value' => 'Deeds',
@@ -69,7 +69,7 @@ module DigitalScriptorium
     end
 
     context 'with a qualified language (P21) claim' do
-      json = read_fixture('claims/qualified/P21_language.json')
+      json = read_fixture('claims/P21_language_qualified.json')
       expected = {
         'language_display' => [{
           'recorded_value' => 'In Latin',
@@ -85,8 +85,8 @@ module DigitalScriptorium
       end
     end
 
-    context 'with a date (P23) claim' do
-      json = read_fixture('claims/qualified/P23_date.json')
+    context 'with a qualified date (P23) claim' do
+      json = read_fixture('claims/P23_date_qualified.json')
       expected = {
         'date_meta' => ['1358.'],
         'date_display' => [{
@@ -109,8 +109,8 @@ module DigitalScriptorium
       end
     end
 
-    context 'with a place (P27) claim with multi-valued qualifier' do
-      json = read_fixture('claims/qualified/P27_place.json')
+    context 'with a qualified place (P27) claim with multi-valued qualifier' do
+      json = read_fixture('claims/P27_place_multiple_qualifier_values.json')
       expected = {
         'place_display' => [{
           'recorded_value' => '[Provence or Spain],',
@@ -130,7 +130,7 @@ module DigitalScriptorium
     end
 
     context 'with a qualified material (P30) claim' do
-      json = read_fixture('claims/qualified/P30_material.json')
+      json = read_fixture('claims/P30_material_qualified.json')
       expected = {
         'material_display' => [{
           'recorded_value' => 'parchment',

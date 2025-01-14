@@ -1,0 +1,14 @@
+{
+  "mainsnak": {
+    "snaktype": "value",
+    "property": "P27",
+    "hash": "64060adb20324c30cdacd76a5437499fa23d877e",
+    "datavalue": {
+      "value": "[Provence or Spain],",
+      "type": "string"
+    }
+  },
+  "type": "statement",
+  "id": "Q493$0711BABA-CD68-411C-9A2D-FAEE42761663",
+  "rank": "normal"
+}

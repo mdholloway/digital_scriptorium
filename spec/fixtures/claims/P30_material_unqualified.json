@@ -1,0 +1,14 @@
+{
+  "mainsnak": {
+    "snaktype": "value",
+    "property": "P30",
+    "hash": "02646471404243a788eaf5d487266bf4bb5524fe",
+    "datavalue": {
+      "value": "parchment",
+      "type": "string"
+    }
+  },
+  "type": "statement",
+  "id": "Q544$A1CA52B3-A97A-4545-BBEC-DE5E6AC7DB6E",
+  "rank": "normal"
+}

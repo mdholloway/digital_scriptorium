@@ -1,0 +1,14 @@
+{
+  "mainsnak": {
+    "snaktype": "value",
+    "property": "P10",
+    "hash": "c543c2bae4274a088607a2055abe341658557324",
+    "datavalue": {
+      "value": "Kitāb al-Majisṭī",
+      "type": "string"
+    }
+  },
+  "type": "statement",
+  "id": "Q649$B4FBF451-232F-4319-8333-9F3E1622E96E",
+  "rank": "normal"
+}

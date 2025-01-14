@@ -1,0 +1,30 @@
+{
+  "mainsnak": {
+    "snaktype": "value",
+    "property": "P14",
+    "hash": "e6408806c91061c3bcdf84c60168dded2feb6701",
+    "datavalue": {
+      "value": "Dioscorides Pedanius, of Anazarbos",
+      "type": "string"
+    }
+  },
+  "type": "statement",
+  "qualifiers": {
+    "P13": [
+      {
+        "snaktype": "value",
+        "property": "P13",
+        "hash": "d2e77faa1d29cdc0793a2545248d83b3010cf706",
+        "datavalue": {
+          "value": "ديسقوريدس. of Anazarbos",
+          "type": "string"
+        }
+      }
+    ]
+  },
+  "qualifiers-order": [
+    "P13"
+  ],
+  "id": "Q514$854A97AF-34F1-40EE-9691-D9A85CC7748A",
+  "rank": "normal"
+}

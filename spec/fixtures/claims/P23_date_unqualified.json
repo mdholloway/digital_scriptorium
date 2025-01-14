@@ -1,0 +1,14 @@
+{
+  "mainsnak": {
+    "snaktype": "value",
+    "property": "P23",
+    "hash": "ff62be508403e913e71c078a14d32189f907eb0d",
+    "datavalue": {
+      "value": "1358.",
+      "type": "string"
+    }
+  },
+  "type": "statement",
+  "id": "Q544$868A931C-03C4-43DB-B6DB-FBB6A1ADD34C",
+  "rank": "normal"
+}

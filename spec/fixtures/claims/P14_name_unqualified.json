@@ -1,0 +1,14 @@
+{
+  "mainsnak": {
+    "snaktype": "value",
+    "property": "P14",
+    "hash": "e6408806c91061c3bcdf84c60168dded2feb6701",
+    "datavalue": {
+      "value": "Dioscorides Pedanius, of Anazarbos",
+      "type": "string"
+    }
+  },
+  "type": "statement",
+  "id": "Q514$854A97AF-34F1-40EE-9691-D9A85CC7748A",
+  "rank": "normal"
+}

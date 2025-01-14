@@ -1,0 +1,14 @@
+{
+  "mainsnak": {
+    "snaktype": "value",
+    "property": "P18",
+    "hash": "5d0305c385cd9e771a33cf3346a87909c54f9733",
+    "datavalue": {
+      "value": "Deeds",
+      "type": "string"
+    }
+  },
+  "type": "statement",
+  "id": "Q544$B974CC4D-4D42-47E2-8831-D687DDF3731A",
+  "rank": "normal"
+}
