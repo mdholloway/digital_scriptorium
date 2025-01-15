@@ -13,7 +13,7 @@ module DigitalScriptorium
 
     def role_prefix(claim, export_hash)
       role_entity_id = claim.qualifiers_by_property_id(ROLE_IN_AUTHORITY_FILE)&.first&.entity_id_value
-      raise "Missing role qualifier for name claim" unless role_entity_id
+      raise 'Missing role qualifier for name claim' unless role_entity_id
 
       role_item = export_hash[role_entity_id]
       role_label = role_item.label('en')

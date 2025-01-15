@@ -17,7 +17,7 @@ output_file = File.expand_path 'solr_import.json', dir
 config_file = File.expand_path 'property_config.yml', dir
 pretty_print = false
 
-logger = Logging.logger(STDOUT)
+logger = Logging.logger($stdout)
 
 OptionParser.new { |opts|
   opts.banner = 'Usage: wikibase_to_solr.rb [options]'
@@ -95,10 +95,9 @@ File.open(output_file, 'w') do |file|
           next unless (property_config = config[property_id])
 
           begin
-            transformer_class = DigitalScriptorium.const_get(property_config['transformer_class'])
-            transformer = transformer_class.new claim, export_hash
+            transformer = DigitalScriptorium.const_get(property_config['transformer_class']).new claim, export_hash
             solr_item = merge solr_item, transformer.solr_props
-          rescue => e
+          rescue StandardError => e
             logger.error "Error processing claim for item #{item.id}: #{e}"
           end
         end
