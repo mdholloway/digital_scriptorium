@@ -98,7 +98,7 @@ File.open(output_file, 'w') do |file|
             transformer = DigitalScriptorium.const_get(property_config['transformer_class']).new claim, export_hash
             solr_item = merge solr_item, transformer.solr_props
           rescue StandardError => e
-            logger.error "Error processing claim for item #{item.id}: #{e}"
+            logger.error "Error processing #{property_id} claim for item #{item.id}: #{e}"
           end
         end
       end
