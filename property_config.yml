@@ -1,34 +1,52 @@
-P5:
+define: &HOLDING_INSTITUTION_AS_RECORDED P5
+define: &SHELFMARK                       P8
+define: &LINK_TO_INSTITUTIONAL_RECORD    P9
+define: &TITLE_AS_RECORDED               P10
+define: &UNIFORM_TITLE_AS_RECORDED       P12
+define: &ASSOCIATED_NAME_AS_RECORDED     P14
+define: &GENRE_AS_RECORDED               P18
+define: &SUBJECT_AS_RECORDED             P19
+define: &LANGUAGE_AS_RECORDED            P21
+define: &PRODUCTION_DATE_AS_RECORDED     P23
+define: &DATED                           P26
+define: &PRODUCTION_PLACE_AS_RECORDED    P27
+define: &PHYSICAL_DESCRIPTION            P29
+define: &MATERIAL_AS_RECORDED            P30
+define: &NOTE                            P32
+define: &ACKNOWLEDGEMENTS                P33
+define: &IIIF_MANIFEST                   P41
+
+HOLDING_INSTITUTION_AS_RECORDED:
   transformer_class: InstitutionClaimTransformer
-P8:
+SHELFMARK:
   transformer_class: ShelfmarkClaimTransformer
-P9:
+LINK_TO_INSTITUTIONAL_RECORD:
   transformer_class: InstitutionalRecordClaimTransformer
-P10:
+TITLE_AS_RECORDED:
   transformer_class: TitleClaimTransformer
-P12:
+UNIFORM_TITLE_AS_RECORDED:
   transformer_class: UniformTitleClaimTransformer
-P14:
+ASSOCIATED_NAME_AS_RECORDED:
   transformer_class: NameClaimTransformer
-P18:
+GENRE_AS_RECORDED:
   transformer_class: TermClaimTransformer
-P19:
+SUBJECT_AS_RECORDED:
   transformer_class: TermClaimTransformer
-P21:
+LANGUAGE_AS_RECORDED:
   transformer_class: LanguageClaimTransformer
-P23:
+PRODUCTION_DATE_AS_RECORDED:
   transformer_class: DateClaimTransformer
-P26:
+DATED:
   transformer_class: DatedClaimTransformer
-P27:
+PRODUCTION_PLACE_AS_RECORDED:
   transformer_class: PlaceClaimTransformer
-P29:
+PHYSICAL_DESCRIPTION:
   transformer_class: PhysicalDescriptionClaimTransformer
-P30:
+MATERIAL_AS_RECORDED:
   transformer_class: MaterialClaimTransformer
-P32:
+NOTE:
   transformer_class: NoteClaimTransformer
-P33:
+ACKNOWLEDGEMENTS:
   transformer_class: AcknowledgementsClaimTransformer
-P41:
+IIIF_MANIFEST:
   transformer_class: IiifManifestClaimTransformer
