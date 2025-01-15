@@ -2,6 +2,7 @@
 
 require 'digital_scriptorium'
 require 'json'
+require 'logging'
 require 'optparse'
 require 'set'
 require 'time'
@@ -15,6 +16,8 @@ input_file = File.expand_path 'wikibase_export.json.gz', dir
 output_file = File.expand_path 'solr_import.json', dir
 config_file = File.expand_path 'property_config.yml', dir
 pretty_print = false
+
+logger = Logging.logger(STDOUT)
 
 OptionParser.new { |opts|
   opts.banner = 'Usage: wikibase_to_solr.rb [options]'
@@ -92,11 +95,11 @@ File.open(output_file, 'w') do |file|
           next unless (property_config = config[property_id])
 
           begin
-            transformer = property_config['transformer_class'].new claim, export_hash
-            solr_item = merge(solr_item, transformer.solr_props)
-          rescue e
-            # TODO: Log properly
-            puts "Error processing item ID #{item.id}: #{e}"
+            transformer_class = DigitalScriptorium.const_get(property_config['transformer_class'])
+            transformer = transformer_class.new claim, export_hash
+            solr_item = merge solr_item, transformer.solr_props
+          rescue => e
+            logger.error "Error processing claim for item #{item.id}: #{e}"
           end
         end
       end
