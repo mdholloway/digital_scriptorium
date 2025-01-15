@@ -42,26 +42,6 @@ def merge(solr_item, new_props)
   end
 end
 
-def link_property?(property_config)
-  property_config['type'] == 'link'
-end
-
-def qualified_property?(property_config)
-  property_config['type'] == 'qualified'
-end
-
-def get_transformed_fields(claim, export_hash, property_config)
-  if link_property?(property_config)
-    DigitalScriptorium::LinkClaimTransformer.transform(claim, property_config)
-  elsif claim.property_id == DigitalScriptorium::PropertyId::ASSOCIATED_NAME_AS_RECORDED
-    DigitalScriptorium::NameClaimTransformer.transform(claim, export_hash)
-  elsif qualified_property?(property_config)
-    DigitalScriptorium::QualifiedClaimTransformer.transform(claim, export_hash, property_config)
-  else
-    DigitalScriptorium::UnqualifiedClaimTransformer.transform(claim, export_hash, property_config)
-  end
-end
-
 def base_solr_item(meta)
   ds_id = meta.manuscript.ds_id
   {
@@ -111,8 +91,13 @@ File.open(output_file, 'w') do |file|
         claims.each do |claim|
           next unless (property_config = config[property_id])
 
-          fields = get_transformed_fields(claim, export_hash, property_config)
-          solr_item = merge(solr_item, DigitalScriptorium::SolrFieldFilter.filter(fields, property_config))
+          begin
+            transformer = property_config['transformer_class'].new claim, export_hash
+            solr_item = merge(solr_item, transformer.solr_props)
+          rescue e
+            # TODO: Log properly
+            puts "Error processing item ID #{item.id}: #{e}"
+          end
         end
       end
     end

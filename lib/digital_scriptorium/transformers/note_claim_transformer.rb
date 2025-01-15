@@ -2,8 +2,8 @@
 
 module DigitalScriptorium
   # Base transformer class providing a common interface for all transformers.
-  class ShelfmarkClaimTransformer < BaseClaimTransformer
-    PREFIX = 'shelfmark'
+  class NoteClaimTransformer < BaseClaimTransformer
+    PREFIX = 'note'
 
     def initialize(claim, _)
       super(claim, prefix: PREFIX)

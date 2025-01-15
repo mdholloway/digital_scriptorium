@@ -5,12 +5,12 @@ module DigitalScriptorium
   class IiifManifestClaimTransformer < LinkClaimTransformer
     PREFIX = 'iiif_manifest'
 
-    def initialize(claim)
-      super(PREFIX, claim)
+    def initialize(claim, _)
+      super(claim, prefix: PREFIX)
     end
 
     def extra_props
-      super.merge { 'images_facet' => 'Yes' }
+      super.merge({ 'images_facet' => ['Yes'] })
     end
   end
 end

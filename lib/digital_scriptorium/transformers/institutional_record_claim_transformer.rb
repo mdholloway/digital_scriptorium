@@ -5,8 +5,8 @@ module DigitalScriptorium
   class InstitutionalRecordClaimTransformer < LinkClaimTransformer
     PREFIX = 'institutional_record'
 
-    def initialize(claim)
-      super(PREFIX, claim)
+    def initialize(claim, _)
+      super(claim, prefix: PREFIX)
     end
   end
 end

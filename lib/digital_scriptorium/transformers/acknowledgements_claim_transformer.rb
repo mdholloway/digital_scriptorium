@@ -2,8 +2,8 @@
 
 module DigitalScriptorium
   # Base transformer class providing a common interface for all transformers.
-  class ShelfmarkClaimTransformer < BaseClaimTransformer
-    PREFIX = 'shelfmark'
+  class AcknowledgementsClaimTransformer < BaseClaimTransformer
+    PREFIX = 'acknowledgements'
 
     def initialize(claim, _)
       super(claim, prefix: PREFIX)
@@ -11,10 +11,6 @@ module DigitalScriptorium
 
     def display_values
       [display_value(@claim.data_value)]
-    end
-
-    def search_values
-      [@claim.data_value]
     end
   end
 end

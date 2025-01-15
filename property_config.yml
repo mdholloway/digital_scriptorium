@@ -1,121 +1,34 @@
 P5:
-  type: qualified
-  prefix: institution
-  fields:
-    - display
-    - search
-    - facet
-  authority: P4
+  transformer_class: InstitutionClaimTransformer
 P8:
-  type: unqualified
-  prefix: shelfmark
-  fields:
-    - display
-    - search
+  transformer_class: ShelfmarkClaimTransformer
 P9:
-  type: link
-  prefix: institutional_record
-  fields:
-    - link
+  transformer_class: InstitutionalRecordClaimTransformer
 P10:
-  type: qualified
-  prefix: title
-  fields:
-    - display
-    - search
-    - facet
-  authority: P11
-  fallback: true
+  transformer_class: TitleClaimTransformer
 P12:
-  type: unqualified
-  prefix: uniform_title
-  fields:
-    - search
-# NOTE: P14 can translate to any of a few different Solr fields with prefixes derived from the
-# value of its role (P15) qualifier. It is handled in its own dedicated processing method.
+  transformer_class: UniformTitleClaimTransformer
 P14:
-  type: qualified
-  fields:
-    - display
-    - search
-    - facet
-  fallback: true
+  transformer_class: NameClaimTransformer
 P18:
-  type: qualified
-  prefix: term
-  fields:
-    - display
-    - search
-    - facet
-  authority: P20
-  fallback: true
+  transformer_class: TermClaimTransformer
 P19:
-  type: qualified
-  prefix: term
-  fields:
-    - display
-    - search
-    - facet
-  authority: P20
-  fallback: true
+  transformer_class: TermClaimTransformer
 P21:
-  type: qualified
-  prefix: language
-  fields:
-    - display
-    - search
-    - facet
-  authority: P22
+  transformer_class: LanguageClaimTransformer
 P23:
-  type: qualified
-  prefix: date
-  fields:
-    - meta
-    - display
-    - search
-    - facet
-  authority: P24
+  transformer_class: DateClaimTransformer
 P26:
-  type: unqualified
-  prefix: dated
-  fields:
-    - facet
+  transformer_class: DatedClaimTransformer
 P27:
-  type: qualified
-  prefix: place
-  fields:
-    - display
-    - search
-    - facet
-  authority: P28
+  transformer_class: PlaceClaimTransformer
 P29:
-  type: unqualified
-  prefix: physical_description
-  fields:
-    - display
-    - search
+  transformer_class: PhysicalDescriptionClaimTransformer
 P30:
-  type: qualified
-  prefix: material
-  fields:
-    - display
-    - search
-    - facet
-  authority: P31
+  transformer_class: MaterialClaimTransformer
 P32:
-  type: unqualified
-  prefix: note
-  fields:
-    - display
-    - search
+  transformer_class: NoteClaimTransformer
 P33:
-  type: unqualified
-  prefix: acknowledgements
-  fields:
-    - display
+  transformer_class: AcknowledgementsClaimTransformer
 P41:
-  type: link
-  prefix: iiif_manifest
-  fields:
-    - facet
-    - link
+  transformer_class: IiifManifestClaimTransformer
