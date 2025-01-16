@@ -10,7 +10,7 @@ module DigitalScriptorium
     end
 
     def display_values
-      [display_value(@claim.data_value)]
+      [display_value(claim.data_value)]
     end
   end
 end

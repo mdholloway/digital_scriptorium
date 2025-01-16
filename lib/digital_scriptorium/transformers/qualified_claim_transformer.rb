@@ -5,6 +5,8 @@ module DigitalScriptorium
   class QualifiedClaimTransformer < BaseClaimTransformer
     include PropertyId
 
+    attr_reader :export_hash, :authority_id
+
     def initialize(claim, export_hash, **kwargs)
       super(claim, **kwargs)
       @export_hash = export_hash
@@ -24,7 +26,7 @@ module DigitalScriptorium
     end
 
     def in_original_script
-      @claim.qualifiers_by_property_id(IN_ORIGINAL_SCRIPT)&.first&.data_value&.value
+      claim.qualifiers_by_property_id(IN_ORIGINAL_SCRIPT)&.first&.data_value&.value
     end
 
     def external_uri(authority)
@@ -50,9 +52,9 @@ module DigitalScriptorium
       @linked_terms ||= begin
         linked_terms = []
 
-        @claim.qualifiers_by_property_id(@authority_id)&.each do |qualifier|
+        claim.qualifiers_by_property_id(authority_id)&.each do |qualifier|
           authority_file_item_id = qualifier.entity_id_value
-          authority = @export_hash[authority_file_item_id]
+          authority = export_hash[authority_file_item_id]
           linked_terms << linked_term_for(authority) if authority
         end
 
@@ -65,12 +67,12 @@ module DigitalScriptorium
     end
 
     def main_snak_value
-      if @claim.value_type? WikibaseRepresentable::Model::EntityIdValue
-        entity_id = @claim.entity_id_value
-        referenced_item = @export_hash[entity_id]
+      if claim.value_type? WikibaseRepresentable::Model::EntityIdValue
+        entity_id = claim.entity_id_value
+        referenced_item = export_hash[entity_id]
         referenced_item.label('en')
       else
-        @claim.data_value
+        claim.data_value
       end
     end
   end

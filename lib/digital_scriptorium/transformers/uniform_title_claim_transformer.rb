@@ -10,7 +10,7 @@ module DigitalScriptorium
     end
 
     def search_values
-      [@claim.data_value]
+      [claim.data_value]
     end
   end
 end

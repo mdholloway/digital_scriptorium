@@ -9,7 +9,7 @@ module DigitalScriptorium
       super(claim, prefix: PREFIX)
     end
 
-    def extra_props
+    def solr_props
       super.merge({ 'images_facet' => ['Yes'] })
     end
   end
