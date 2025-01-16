@@ -16,37 +16,37 @@ define: &NOTE                            P32
 define: &ACKNOWLEDGEMENTS                P33
 define: &IIIF_MANIFEST                   P41
 
-HOLDING_INSTITUTION_AS_RECORDED:
+*HOLDING_INSTITUTION_AS_RECORDED:
   transformer_class: InstitutionClaimTransformer
-SHELFMARK:
+*SHELFMARK:
   transformer_class: ShelfmarkClaimTransformer
-LINK_TO_INSTITUTIONAL_RECORD:
+*LINK_TO_INSTITUTIONAL_RECORD:
   transformer_class: InstitutionalRecordClaimTransformer
-TITLE_AS_RECORDED:
+*TITLE_AS_RECORDED:
   transformer_class: TitleClaimTransformer
-UNIFORM_TITLE_AS_RECORDED:
+*UNIFORM_TITLE_AS_RECORDED:
   transformer_class: UniformTitleClaimTransformer
-ASSOCIATED_NAME_AS_RECORDED:
+*ASSOCIATED_NAME_AS_RECORDED:
   transformer_class: NameClaimTransformer
-GENRE_AS_RECORDED:
+*GENRE_AS_RECORDED:
   transformer_class: TermClaimTransformer
-SUBJECT_AS_RECORDED:
+*SUBJECT_AS_RECORDED:
   transformer_class: TermClaimTransformer
-LANGUAGE_AS_RECORDED:
+*LANGUAGE_AS_RECORDED:
   transformer_class: LanguageClaimTransformer
-PRODUCTION_DATE_AS_RECORDED:
+*PRODUCTION_DATE_AS_RECORDED:
   transformer_class: DateClaimTransformer
-DATED:
+*DATED:
   transformer_class: DatedClaimTransformer
-PRODUCTION_PLACE_AS_RECORDED:
+*PRODUCTION_PLACE_AS_RECORDED:
   transformer_class: PlaceClaimTransformer
-PHYSICAL_DESCRIPTION:
+*PHYSICAL_DESCRIPTION:
   transformer_class: PhysicalDescriptionClaimTransformer
-MATERIAL_AS_RECORDED:
+*MATERIAL_AS_RECORDED:
   transformer_class: MaterialClaimTransformer
-NOTE:
+*NOTE:
   transformer_class: NoteClaimTransformer
-ACKNOWLEDGEMENTS:
+*ACKNOWLEDGEMENTS:
   transformer_class: AcknowledgementsClaimTransformer
-IIIF_MANIFEST:
+*IIIF_MANIFEST:
   transformer_class: IiifManifestClaimTransformer

@@ -63,7 +63,7 @@ end
 
 start_time = Time.now.utc
 
-config = YAML.load_file(config_file)
+config = YAML.load_file(config_file, aliases: true)
 
 loading_spinner = TTY::Spinner.new('[:spinner] Loading export data', hide_cursor: true)
 loading_spinner.auto_spin
