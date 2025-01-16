@@ -8,9 +8,10 @@ module DigitalScriptorium
     include PropertyId
 
     PREFIX = 'date'
+    AUTHORITY_ID = PRODUCTION_CENTURY_IN_AUTHORITY_FILE
 
     def initialize(claim, export_hash)
-      super(claim, export_hash, prefix: PREFIX, authority_id: PRODUCTION_CENTURY_IN_AUTHORITY_FILE)
+      super(claim, export_hash, prefix: PREFIX, authority_id: AUTHORITY_ID)
     end
 
     def solr_props
