@@ -8,7 +8,14 @@
     }
   },
   "descriptions": [],
-  "aliases": [],
+  "aliases": {
+    "en": [
+      {
+        "language": "en",
+        "value": "14th century"
+      }
+    ]
+  },
   "claims": {
     "P16": [
       {
