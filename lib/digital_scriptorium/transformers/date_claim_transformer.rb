@@ -3,7 +3,7 @@
 require 'time'
 
 module DigitalScriptorium
-  # Base transformer class providing a common interface for all transformers.
+  # Transformer for production date (P23) claims.
   class DateClaimTransformer < QualifiedClaimTransformer
     include PropertyId
 

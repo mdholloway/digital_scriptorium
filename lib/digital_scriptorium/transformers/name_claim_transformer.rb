@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module DigitalScriptorium
-  # Transformer for name (P14) claims.
+  # Transformer for associated name (P14) claims.
   # NOTE: Name claims produce fields prefixes derived from the value of their role (P15) qualifiers
   # (owner, author, scribe, artist, agent).
   class NameClaimTransformer < QualifiedClaimTransformerWithFacetFallback

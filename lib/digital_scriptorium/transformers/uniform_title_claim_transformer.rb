@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module DigitalScriptorium
-  # Base transformer class providing a common interface for all transformers.
+  # Transformer for uniform title (P12) claims.
   class UniformTitleClaimTransformer < BaseClaimTransformer
     PREFIX = 'uniform_title'
 

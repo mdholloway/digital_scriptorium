@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module DigitalScriptorium
-  # Transformer for extracting links from relevant Digital Scriptorium claims.
+  # Transformer for IIIF Manifest (P41) claims.
   class IiifManifestClaimTransformer < LinkClaimTransformer
     PREFIX = 'iiif_manifest'
 

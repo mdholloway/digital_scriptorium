@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module DigitalScriptorium
-  # Transformer for extracting links from relevant Digital Scriptorium claims.
+  # Transformer for institutional record (P9) claims.
   class InstitutionalRecordClaimTransformer < LinkClaimTransformer
     PREFIX = 'institutional_record'
 

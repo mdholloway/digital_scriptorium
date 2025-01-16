@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module DigitalScriptorium
-  # Base transformer class providing a common interface for all transformers.
+  # Transformer for acknowledgements (P32) claims.
   class NoteClaimTransformer < BaseClaimTransformer
     PREFIX = 'note'
 

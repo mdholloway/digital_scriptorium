@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module DigitalScriptorium
-  # Transformer for converting qualified claims of Digital Scriptorium items into Solr fields.
+  # Transformer for title (P10) claims.
   class TitleClaimTransformer < QualifiedClaimTransformerWithFacetFallback
     include PropertyId
 

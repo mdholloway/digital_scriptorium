@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module DigitalScriptorium
-  # Base transformer class providing a common interface for all transformers.
+  # Transformer for shelfmark (P8) claims.
   class ShelfmarkClaimTransformer < BaseClaimTransformer
     PREFIX = 'shelfmark'
 

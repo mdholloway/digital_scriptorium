@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module DigitalScriptorium
-  # Base transformer class providing a common interface for all transformers.
+  # Transformer for physical description (P29) claims.
   class PhysicalDescriptionClaimTransformer < BaseClaimTransformer
     PREFIX = 'physical_description'
 
