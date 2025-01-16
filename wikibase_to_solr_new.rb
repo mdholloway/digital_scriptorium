@@ -7,7 +7,6 @@ require 'optparse'
 require 'set'
 require 'time'
 require 'tty-spinner'
-require 'yaml'
 require 'zlib'
 
 dir = File.dirname __FILE__
@@ -63,8 +62,6 @@ end
 
 start_time = Time.now.utc
 
-config = YAML.load_file(config_file, aliases: true)
-
 loading_spinner = TTY::Spinner.new('[:spinner] Loading export data', hide_cursor: true)
 loading_spinner.auto_spin
 
@@ -92,10 +89,10 @@ File.open(output_file, 'w') do |file|
     [meta.holding, meta.manuscript, meta.record].each do |item|
       item.claims.each do |property_id, claims|
         claims.each do |claim|
-          next unless (property_config = config[property_id])
+          next unless DigitalScriptorium::Transformers.defined? property_id
 
           begin
-            transformer = DigitalScriptorium.const_get(property_config['transformer_class']).new claim, export_hash
+            transformer = DigitalScriptorium::Transformers.create property_id, claim, export_hash
             solr_item = merge solr_item, transformer.solr_props
           rescue StandardError => e
             logger.error "Error processing #{property_id} claim for item #{item.id}: #{e}"
