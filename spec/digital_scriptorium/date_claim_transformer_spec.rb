@@ -16,7 +16,8 @@ module DigitalScriptorium
           }]
         }.to_json],
         'date_search' => ['1358.', 'fourteenth century (dates CE)'],
-        'date_facet' => ['fourteenth century (dates CE)']
+        'date_facet' => ['fourteenth century (dates CE)'],
+        'century_int' => [1301]
       }
 
       it 'extracts display, search, facet and extra date fields' do
