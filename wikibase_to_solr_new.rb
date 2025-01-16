@@ -7,7 +7,6 @@ require 'optparse'
 require 'set'
 require 'time'
 require 'tty-spinner'
-require 'yaml'
 require 'zlib'
 
 dir = File.dirname __FILE__
@@ -62,8 +61,6 @@ def record?(entity)
 end
 
 start_time = Time.now.utc
-
-config = YAML.load_file(config_file, aliases: true)
 
 loading_spinner = TTY::Spinner.new('[:spinner] Loading export data', hide_cursor: true)
 loading_spinner.auto_spin

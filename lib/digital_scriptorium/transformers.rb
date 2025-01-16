@@ -1,28 +1,29 @@
 # frozen_string_literal: true
 
-require 'digital_scriptorium/transformers/base_claim_transformer'
-require 'digital_scriptorium/transformers/link_claim_transformer'
-require 'digital_scriptorium/transformers/qualified_claim_transformer'
-require 'digital_scriptorium/transformers/qualified_claim_transformer_with_facet_fallback'
+require_relative 'transformers/base_claim_transformer'
+require_relative 'transformers/link_claim_transformer'
+require_relative 'transformers/qualified_claim_transformer'
+require_relative 'transformers/qualified_claim_transformer_with_facet_fallback'
 
-require 'digital_scriptorium/transformers/acknowledgements_claim_transformer'
-require 'digital_scriptorium/transformers/date_claim_transformer'
-require 'digital_scriptorium/transformers/dated_claim_transformer'
-require 'digital_scriptorium/transformers/iiif_manifest_claim_transformer'
-require 'digital_scriptorium/transformers/institution_claim_transformer'
-require 'digital_scriptorium/transformers/institutional_record_claim_transformer'
-require 'digital_scriptorium/transformers/language_claim_transformer'
-require 'digital_scriptorium/transformers/material_claim_transformer'
-require 'digital_scriptorium/transformers/name_claim_transformer'
-require 'digital_scriptorium/transformers/note_claim_transformer'
-require 'digital_scriptorium/transformers/physical_description_claim_transformer'
-require 'digital_scriptorium/transformers/place_claim_transformer'
-require 'digital_scriptorium/transformers/shelfmark_claim_transformer'
-require 'digital_scriptorium/transformers/term_claim_transformer'
-require 'digital_scriptorium/transformers/title_claim_transformer'
-require 'digital_scriptorium/transformers/uniform_title_claim_transformer'
+require_relative 'transformers/acknowledgements_claim_transformer'
+require_relative 'transformers/date_claim_transformer'
+require_relative 'transformers/dated_claim_transformer'
+require_relative 'transformers/iiif_manifest_claim_transformer'
+require_relative 'transformers/institution_claim_transformer'
+require_relative 'transformers/institutional_record_claim_transformer'
+require_relative 'transformers/language_claim_transformer'
+require_relative 'transformers/material_claim_transformer'
+require_relative 'transformers/name_claim_transformer'
+require_relative 'transformers/note_claim_transformer'
+require_relative 'transformers/physical_description_claim_transformer'
+require_relative 'transformers/place_claim_transformer'
+require_relative 'transformers/shelfmark_claim_transformer'
+require_relative 'transformers/term_claim_transformer'
+require_relative 'transformers/title_claim_transformer'
+require_relative 'transformers/uniform_title_claim_transformer'
 
 module DigitalScriptorium
+  # Factory for creating claim transformers
   class Transformers
     include PropertyId
 
