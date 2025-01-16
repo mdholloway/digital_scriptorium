@@ -27,23 +27,23 @@ module DigitalScriptorium
     include PropertyId
 
     TRANSFORMERS = {
-      HOLDING_INSTITUTION_AS_RECORDED: InstitutionClaimTransformer,
-      SHELFMARK: ShelfmarkClaimTransformer,
-      LINK_TO_INSTITUTIONAL_RECORD: InstitutionalRecordClaimTransformer,
-      TITLE_AS_RECORDED: TitleClaimTransformer,
-      UNIFORM_TITLE_AS_RECORDED: UniformTitleClaimTransformer,
-      ASSOCIATED_NAME_AS_RECORDED: NameClaimTransformer,
-      GENRE_AS_RECORDED: TermClaimTransformer,
-      SUBJECT_AS_RECORDED: TermClaimTransformer,
-      LANGUAGE_AS_RECORDED: LanguageClaimTransformer,
-      PRODUCTION_DATE_AS_RECORDED: DateClaimTransformer,
-      DATED: DatedClaimTransformer,
-      PRODUCTION_PLACE_AS_RECORDED: PlaceClaimTransformer,
-      PHYSICAL_DESCRIPTION: PhysicalDescriptionClaimTransformer,
-      MATERIAL_AS_RECORDED: MaterialClaimTransformer,
-      NOTE: NoteClaimTransformer,
-      ACKNOWLEDGEMENTS: AcknowledgementsClaimTransformer,
-      IIIF_MANIFEST: IiifManifestClaimTransformer
+      HOLDING_INSTITUTION_AS_RECORDED => InstitutionClaimTransformer,
+      SHELFMARK => ShelfmarkClaimTransformer,
+      LINK_TO_INSTITUTIONAL_RECORD => InstitutionalRecordClaimTransformer,
+      TITLE_AS_RECORDED => TitleClaimTransformer,
+      UNIFORM_TITLE_AS_RECORDED => UniformTitleClaimTransformer,
+      ASSOCIATED_NAME_AS_RECORDED => NameClaimTransformer,
+      GENRE_AS_RECORDED => TermClaimTransformer,
+      SUBJECT_AS_RECORDED => TermClaimTransformer,
+      LANGUAGE_AS_RECORDED => LanguageClaimTransformer,
+      PRODUCTION_DATE_AS_RECORDED => DateClaimTransformer,
+      DATED => DatedClaimTransformer,
+      PRODUCTION_PLACE_AS_RECORDED => PlaceClaimTransformer,
+      PHYSICAL_DESCRIPTION => PhysicalDescriptionClaimTransformer,
+      MATERIAL_AS_RECORDED => MaterialClaimTransformer,
+      NOTE => NoteClaimTransformer,
+      ACKNOWLEDGEMENTS => AcknowledgementsClaimTransformer,
+      IIIF_MANIFEST => IiifManifestClaimTransformer
     }.freeze
 
     def self.defined?(property_id)
