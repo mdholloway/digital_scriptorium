@@ -3,10 +3,8 @@
 module DigitalScriptorium
   # Transformer for physical description (P29) claims.
   class PhysicalDescriptionClaimTransformer < BaseClaimTransformer
-    PREFIX = 'physical_description'
-
-    def initialize(claim, _)
-      super(claim, prefix: PREFIX)
+    def initialize(claim, _, **kwargs)
+      super(claim, **kwargs)
     end
 
     def display_values

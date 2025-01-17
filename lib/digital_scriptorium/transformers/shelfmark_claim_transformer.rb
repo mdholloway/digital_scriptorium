@@ -3,10 +3,8 @@
 module DigitalScriptorium
   # Transformer for shelfmark (P8) claims.
   class ShelfmarkClaimTransformer < BaseClaimTransformer
-    PREFIX = 'shelfmark'
-
-    def initialize(claim, _)
-      super(claim, prefix: PREFIX)
+    def initialize(claim, _, **kwargs)
+      super(claim, **kwargs)
     end
 
     def display_values

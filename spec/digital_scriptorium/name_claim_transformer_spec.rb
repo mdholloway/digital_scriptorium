@@ -6,6 +6,8 @@ module DigitalScriptorium
   RSpec.describe NameClaimTransformer do
     context 'with a single authority file (P17) qualifier' do
       json = read_fixture('claims/P14_name_qualified_no_original_script.json')
+      prefix = Transformers.prefix(ASSOCIATED_NAME_AS_RECORDED)
+      authority_id = Transformers.authority_id(ASSOCIATED_NAME_AS_RECORDED)
       expected = {
         'owner_display' => [{
           'recorded_value' => 'Schoenberg, Lawrence J',
@@ -19,13 +21,16 @@ module DigitalScriptorium
       }
 
       it 'includes the qualifier data in all fields' do
-        solr_props = described_class.new(build_claim(json), export_hash).solr_props
+        solr_props = described_class.new(build_claim(json), export_hash, prefix: prefix,
+                                                                         authority_id: authority_id).solr_props
         expect(solr_props).to eq(expected)
       end
     end
 
     context 'with multiple authority file (P17) qualifiers' do
       json = read_fixture('claims/P14_name_multiple_qualifier_values.json')
+      prefix = Transformers.prefix(ASSOCIATED_NAME_AS_RECORDED)
+      authority_id = Transformers.authority_id(ASSOCIATED_NAME_AS_RECORDED)
       recorded_value = 'From the codex made for Leonello d\'Este. ' \
         'Brought to Wales as war booty by 1813, already in a damaged state, by the Rolls family, ' \
         'later enobled as Barons Llangattock, of The Hendre, Monmouth ' \
@@ -52,13 +57,16 @@ module DigitalScriptorium
       }
 
       it 'includes the data from all qualifiers in the display, search, and facet fields' do
-        solr_props = described_class.new(build_claim(json), export_hash).solr_props
+        solr_props = described_class.new(build_claim(json), export_hash, prefix: prefix,
+                                                                         authority_id: authority_id).solr_props
         expect(solr_props).to eq(expected)
       end
     end
 
     context 'with a authority file (P17) and original script (P13) qualifiers' do
       json = read_fixture('claims/P14_name_qualified_original_script.json')
+      prefix = Transformers.prefix(ASSOCIATED_NAME_AS_RECORDED)
+      authority_id = Transformers.authority_id(ASSOCIATED_NAME_AS_RECORDED)
       expected = {
         'author_display' => [{
           'recorded_value' => 'Dioscorides Pedanius, of Anazarbos',
@@ -73,7 +81,8 @@ module DigitalScriptorium
       }
 
       it 'includes the original script value in the display and search fields' do
-        solr_props = described_class.new(build_claim(json), export_hash).solr_props
+        solr_props = described_class.new(build_claim(json), export_hash, prefix: prefix,
+                                                                         authority_id: authority_id).solr_props
         expect(solr_props).to eq(expected)
       end
     end

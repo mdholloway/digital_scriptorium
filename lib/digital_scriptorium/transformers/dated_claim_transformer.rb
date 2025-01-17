@@ -3,12 +3,10 @@
 module DigitalScriptorium
   # Transformer for dated? (P26) claims.
   class DatedClaimTransformer < BaseClaimTransformer
-    PREFIX = 'dated'
-
     attr_reader :export_hash
 
-    def initialize(claim, export_hash)
-      super(claim, prefix: PREFIX)
+    def initialize(claim, export_hash, **kwargs)
+      super(claim, **kwargs)
       @export_hash = export_hash
     end
 

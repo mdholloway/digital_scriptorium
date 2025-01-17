@@ -7,13 +7,7 @@ module DigitalScriptorium
   class DateClaimTransformer < QualifiedClaimTransformer
     include PropertyId
 
-    PREFIX = 'date'
-    AUTHORITY_ID = PRODUCTION_CENTURY_IN_AUTHORITY_FILE
     CENTURY_ALIAS_PATTERN = /^\d{1,2}(st|nd|rd|th) century$/
-
-    def initialize(claim, export_hash)
-      super(claim, export_hash, prefix: PREFIX, authority_id: AUTHORITY_ID)
-    end
 
     def search_values
       super + [canonical_century_label].compact

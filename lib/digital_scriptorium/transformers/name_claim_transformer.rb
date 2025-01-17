@@ -7,10 +7,8 @@ module DigitalScriptorium
   class NameClaimTransformer < QualifiedClaimTransformerWithFacetFallback
     include PropertyId
 
-    AUTHORITY_ID = NAME_IN_AUTHORITY_FILE
-
-    def initialize(claim, export_hash)
-      super(claim, export_hash, prefix: role_prefix(claim, export_hash), authority_id: AUTHORITY_ID)
+    def initialize(claim, export_hash, **kwargs)
+      super(claim, export_hash, prefix: role_prefix(claim, export_hash), authority_id: kwargs[:authority_id])
     end
 
     def role_prefix(claim, export_hash)

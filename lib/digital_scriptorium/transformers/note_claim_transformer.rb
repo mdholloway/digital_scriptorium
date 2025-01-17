@@ -3,10 +3,8 @@
 module DigitalScriptorium
   # Transformer for acknowledgements (P32) claims.
   class NoteClaimTransformer < BaseClaimTransformer
-    PREFIX = 'note'
-
-    def initialize(claim, _)
-      super(claim, prefix: PREFIX)
+    def initialize(claim, _, **kwargs)
+      super(claim, **kwargs)
     end
 
     def display_values
