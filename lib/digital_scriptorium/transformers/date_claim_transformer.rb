@@ -28,7 +28,8 @@ module DigitalScriptorium
     def linked_term_for(authority)
       {
         'label' => authority.label('en'),
-        'facet' => century_int,
+        'facet_field' => 'century_int',
+        'facet_value' => century_int,
         'source_url' => external_uri(authority) || wikidata_uri(authority)
       }.compact
     end
