@@ -72,6 +72,10 @@ module DigitalScriptorium
       IIIF_MANIFEST                   => 'iiif_manifest'
     }.freeze
 
+    def self.defined?(property_id)
+      TRANSFORMERS.include?(property_id)
+    end
+
     def self.transformer(property_id)
       TRANSFORMERS[property_id]
     end
@@ -88,7 +92,7 @@ module DigitalScriptorium
       transformer_class = TRANSFORMERS[property_id]
       authority_id = AUTHORITY_IDS[property_id]
       prefix = PREFIXES[property_id]
-      return unless transformer && prefix
+      return unless transformer_class && prefix
 
       transformer_class.new(claim, export_hash, prefix: prefix, authority_id: authority_id)
     end
