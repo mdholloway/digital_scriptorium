@@ -7,18 +7,8 @@ module DigitalScriptorium
   class DateClaimTransformer < QualifiedClaimTransformer
     include PropertyId
 
-    CENTURY_ALIAS_PATTERN = /^\d{1,2}(st|nd|rd|th) century$/
-
-    def search_values
-      super + [canonical_century_label].compact
-    end
-
-    def facet_values
-      [century_alias].compact
-    end
-
     def solr_props
-      super.merge(meta_props)
+      super.merge(meta_props).merge(int_props)
     end
 
     def meta_props
@@ -27,26 +17,22 @@ module DigitalScriptorium
       }
     end
 
-    def century_item
-      export_hash[authority_qualifiers&.first&.entity_id_value]
-    end
+    def int_props
+      return {} unless claim.qualifiers_by_property_id? CENTURY
 
-    def canonical_century_label
-      century_item&.label('en')
-    end
-
-    def century_alias
-      century_item&.aliases_for_language('en')
-                  &.select { |term| term.value.match?(CENTURY_ALIAS_PATTERN) }
-                  &.first
-                  &.value
-    end
-
-    def linked_term_for(authority)
       {
-        'label' => century_alias,
-        'source_url' => external_uri(authority) || wikidata_uri(authority)
-      }.compact
+        'century_int' => [parse_year(time_value_from_qualifier(CENTURY))]
+      }
+    end
+
+    def time_value_from_qualifier(property_id)
+      claim.qualifiers_by_property_id(property_id)&.first&.time_value
+    end
+
+    # Wikibase date format "resembling ISO 8601": +YYYY-MM-DDT00:00:00Z
+    # https://www.wikidata.org/wiki/Help:Dates#Time_datatype
+    def parse_year(date)
+      Time.iso8601(date[1..]).year
     end
   end
 end

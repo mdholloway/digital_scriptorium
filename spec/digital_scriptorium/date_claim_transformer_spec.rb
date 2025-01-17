@@ -15,12 +15,13 @@ module DigitalScriptorium
         'date_display' => [{
           'recorded_value' => '1358.',
           'linked_terms' => [{
-            'label' => '14th century',
+            'label' => 'fourteenth century (dates CE)',
             'source_url' => 'http://vocab.getty.edu/aat/300404506'
           }]
         }.to_json],
-        'date_search' => ['1358.', '14th century', 'fourteenth century (dates CE)'],
-        'date_facet' => ['14th century']
+        'date_search' => ['1358.', 'fourteenth century (dates CE)'],
+        'date_facet' => ['fourteenth century (dates CE)'],
+        'century_int' => [1301]
       }
 
       it 'extracts display, search, facet and extra date fields' do

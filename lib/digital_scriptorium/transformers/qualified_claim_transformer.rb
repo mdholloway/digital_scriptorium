@@ -48,15 +48,11 @@ module DigitalScriptorium
       }.compact
     end
 
-    def authority_qualifiers
-      claim.qualifiers_by_property_id(authority_id)
-    end
-
     def linked_terms
       @linked_terms ||= begin
         linked_terms = []
 
-        authority_qualifiers&.each do |qualifier|
+        claim.qualifiers_by_property_id(authority_id)&.each do |qualifier|
           authority_file_item_id = qualifier.entity_id_value
           authority = export_hash[authority_file_item_id]
           linked_terms << linked_term_for(authority) if authority
