@@ -16,6 +16,7 @@ module DigitalScriptorium
           'recorded_value' => '1358.',
           'linked_terms' => [{
             'label' => 'fourteenth century (dates CE)',
+            'facet' => 1301,
             'source_url' => 'http://vocab.getty.edu/aat/300404506'
           }]
         }.to_json],

@@ -21,8 +21,20 @@ module DigitalScriptorium
       return {} unless claim.qualifiers_by_property_id? CENTURY
 
       {
-        'century_int' => [parse_year(time_value_from_qualifier(CENTURY))]
+        'century_int' => [century_int]
       }
+    end
+
+    def linked_term_for(authority)
+      {
+        'label' => authority.label('en'),
+        'facet' => century_int,
+        'source_url' => external_uri(authority) || wikidata_uri(authority)
+      }.compact
+    end
+
+    def century_int
+      parse_year(time_value_from_qualifier(CENTURY))
     end
 
     def time_value_from_qualifier(property_id)
