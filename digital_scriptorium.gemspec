@@ -28,9 +28,6 @@ Gem::Specification.new do |spec|
   spec.executables = spec.files.grep(%r{\Aexe/}) { |f| File.basename(f) }
   spec.require_paths = ['lib']
 
-  spec.add_dependency 'multi_json', '~> 1.15'
-  spec.add_dependency 'representable', '~> 3.2'
-  spec.add_dependency 'tty-spinner', '~> 0.9'
   spec.add_dependency 'wikibase_representable', '~> 0.1'
   spec.add_development_dependency 'bundler', '~> 2.5'
   spec.add_development_dependency 'rake', '~> 13.2'
