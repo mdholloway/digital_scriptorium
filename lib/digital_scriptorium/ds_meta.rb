@@ -26,9 +26,7 @@ module DigitalScriptorium
     end
 
     def current_holdings(manuscript, export_hash)
-      manuscript.holding_ids
-                .map { |id| export_hash[id] }
-                .filter { |holding| current?(holding) }
+      manuscript.holding_ids.filter_map { |id| export_hash[id] if current?(export_hash[id]) }
     end
   end
 end
