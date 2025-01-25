@@ -1,34 +1,25 @@
 # frozen_string_literal: true
 
+require 'wikibase_representable'
+
 module DigitalScriptorium
   # An item representing a Digital Scriptorium holding (instance of Q2)
-  class Holding < DsItem
-    def institution_as_recorded_claims
-      claims_by_property_id HOLDING_INSTITUTION_AS_RECORDED # P5
-    end
+  class Holding < WikibaseRepresentable::Model::Item
+    include ItemId
+    include PropertyId
 
     def status_claims
       claims_by_property_id HOLDING_STATUS # P6
     end
 
-    def institutional_id_claims
-      claims_by_property_id INSTITUTIONAL_ID # P7
+    def status
+      return nil unless status_claims&.any?
+
+      status_claims&.first&.entity_id_value
     end
 
-    def shelfmark_claims
-      claims_by_property_id SHELFMARK # P8
-    end
-
-    def link_to_institutional_record_claims
-      claims_by_property_id LINK_TO_INSTITUTIONAL_RECORD # P9
-    end
-
-    def start_time_claims
-      claims_by_property_id START_TIME # P38
-    end
-
-    def end_time_claims
-      claims_by_property_id END_TIME # P39
+    def current?
+      status == HOLDING_STATUS_CURRENT
     end
   end
 end

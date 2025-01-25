@@ -23,6 +23,6 @@ module DigitalScriptorium
     PLACE                      = 'Q16'
     MATERIAL                   = 'Q17'
 
-    CORE_MODEL_ITEMS = Set[MANUSCRIPT, HOLDING, RECORD]
+    CORE_MODEL_ITEMS = Set[MANUSCRIPT, HOLDING, DS_20_RECORD]
   end
 end

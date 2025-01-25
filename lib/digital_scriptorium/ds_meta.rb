@@ -21,12 +21,8 @@ module DigitalScriptorium
       @record = record
     end
 
-    def current?(holding)
-      holding.holding_status == HOLDING_STATUS_CURRENT
-    end
-
     def current_holdings(manuscript, export_hash)
-      manuscript.holding_ids.filter_map { |id| export_hash[id] if current?(export_hash[id]) }
+      manuscript.holding_ids.filter_map { |id| export_hash[id] if export_hash[id].current? }
     end
   end
 end
