@@ -7,7 +7,7 @@ module DigitalScriptorium
   module ItemId
     MANUSCRIPT                 = 'Q1'
     HOLDING                    = 'Q2'
-    RECORD                     = 'Q3'
+    DS_20_RECORD               = 'Q3'
     HOLDING_STATUS_CURRENT     = 'Q4'
     HOLDING_STATUS_NON_CURRENT = 'Q5'
     STANDARD_TITLE             = 'Q6'

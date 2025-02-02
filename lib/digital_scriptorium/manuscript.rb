@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require 'wikibase_representable'
-
 module DigitalScriptorium
   # An item representing a Digital Scriptorium manuscript (instance of Q1)
   class Manuscript < DsItem
