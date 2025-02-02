@@ -39,6 +39,12 @@ def property_from_fixture(file)
   WikibaseRepresentable::Representers::PropertyRepresenter.new(property).from_json(read_fixture(file))
 end
 
+# Return a fixture export hash for all item and property JSON files in
+# +fixtures/items+ and +fixtures/properties+. Returned fixture has Manuscript,
+# Holding, and Record items, as well as corresponding Items for authority
+# values: term, name, place, material, etc.
+#
+# @return [Hash]
 def export_hash
   @export_hash ||= begin
     fixtures = []

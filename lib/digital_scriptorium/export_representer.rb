@@ -16,15 +16,15 @@ module DigitalScriptorium
     }, class: lambda { |input:, **|
       return Property unless input['type'] == Item::ENTITY_TYPE
 
-      instance_of_id = instance_of_id_from input
-      return Item unless CORE_MODEL_ITEMS.include? instance_of_id
-
-      if instance_of_id == MANUSCRIPT
+      case instance_of_id_from input
+      when MANUSCRIPT
         Manuscript
-      elsif instance_of_id == HOLDING
+      when HOLDING
         Holding
-      else
+      when DS_20_RECORD
         Record
+      else
+        Item
       end
     }
   end

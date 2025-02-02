@@ -13,7 +13,7 @@ module DigitalScriptorium
     end
 
     def status
-      return nil unless status_claims&.any?
+      return unless status_claims&.any?
 
       status_claims&.first&.entity_id_value
     end
