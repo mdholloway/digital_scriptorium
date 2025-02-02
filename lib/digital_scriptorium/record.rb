@@ -4,7 +4,7 @@ require 'wikibase_representable'
 
 module DigitalScriptorium
   # An item representing a Digital Scriptorium record (instance of Q3)
-  class Record < WikibaseRepresentable::Model::Item
+  class Record < DsItem
     include PropertyId
 
     def described_manuscript_id

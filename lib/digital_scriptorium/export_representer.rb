@@ -24,7 +24,7 @@ module DigitalScriptorium
       when DS_20_RECORD
         Record
       else
-        Item
+        DsItem
       end
     }
   end

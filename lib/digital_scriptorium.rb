@@ -3,6 +3,7 @@
 require 'digital_scriptorium/item_id'
 require 'digital_scriptorium/property_id'
 
+require 'digital_scriptorium/ds_item'
 require 'digital_scriptorium/ds_meta'
 require 'digital_scriptorium/holding'
 require 'digital_scriptorium/manuscript'

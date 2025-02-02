@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 module DigitalScriptorium
+  include WikibaseRepresentable::Model
+
   RSpec.describe ExportRepresenter do
     it 'deserializes holding as a Holding' do
       expect(export_hash.fetch('Q542')).to be_instance_of Holding
@@ -15,11 +17,11 @@ module DigitalScriptorium
     end
 
     it 'deserializes property as a Property' do
-      expect(export_hash.fetch('P16')).to be_instance_of WikibaseRepresentable::Model::Property
+      expect(export_hash.fetch('P16')).to be_instance_of Property
     end
 
-    it 'deserializes non-core item as an Item' do
-      expect(export_hash.fetch('Q129')).to be_instance_of WikibaseRepresentable::Model::Item
+    it 'deserializes non-core item as a DsItem' do
+      expect(export_hash.fetch('Q129')).to be_instance_of DsItem
     end
   end
 end

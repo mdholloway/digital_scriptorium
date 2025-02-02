@@ -30,7 +30,7 @@ def build_claim(json)
 end
 
 def item_from_fixture(file)
-  item = WikibaseRepresentable::Model::Item.new
+  item = DigitalScriptorium::DsItem.new
   WikibaseRepresentable::Representers::ItemRepresenter.new(item).from_json(read_fixture(file))
 end
 

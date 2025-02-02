@@ -4,7 +4,7 @@ require 'wikibase_representable'
 
 module DigitalScriptorium
   # An item representing a Digital Scriptorium holding (instance of Q2)
-  class Holding < WikibaseRepresentable::Model::Item
+  class Holding < DsItem
     include ItemId
     include PropertyId
 
