@@ -3,32 +3,24 @@
 require 'wikibase_representable'
 
 module DigitalScriptorium
+  include ItemId
   include WikibaseRepresentable::Representers
 
   RSpec.describe DsItem do
-    let(:holding_json) { read_fixture('items/Q542_holding_example.json') }
-    let(:manuscript_json) { read_fixture('items/Q543_manuscript_example.json') }
-    let(:record_json) { read_fixture('items/Q544_record_example.json') }
+    let(:holding) { item_from_fixture('items/Q542_holding_example.json') }
+    let(:manuscript) { item_from_fixture('items/Q543_manuscript_example.json') }
+    let(:record) { item_from_fixture('items/Q544_record_example.json') }
 
-    it 'correctly reports if it is a holding' do
-      item = ItemRepresenter.new(described_class.new).from_json(holding_json)
-      expect(item.holding?).to be true
+    it 'correctly reports holding instance-of item ID' do
+      expect(holding.instance_of).to eq HOLDING
     end
 
-    it 'correctly reports if it is a manuscript' do
-      item = ItemRepresenter.new(described_class.new).from_json(manuscript_json)
-      expect(item.manuscript?).to be true
+    it 'correctly reports manuscript instance-of item ID' do
+      expect(manuscript.instance_of).to eq MANUSCRIPT
     end
 
-    it 'correctly reports if it is a record' do
-      item = ItemRepresenter.new(described_class.new).from_json(record_json)
-      expect(item.record?).to be true
-    end
-
-    it 'returns instance_of (P16) claims' do
-      item = ItemRepresenter.new(described_class.new).from_json(record_json)
-      expect(item.instance_of_claims).not_to be_empty
-      expect(item.instance_of_claims.first.entity_id_value).to eq 'Q3'
+    it 'correctly reports record instance-of item ID' do
+      expect(record.instance_of).to eq DS_20_RECORD
     end
   end
 end

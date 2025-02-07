@@ -6,14 +6,11 @@ module DigitalScriptorium
   include WikibaseRepresentable::Representers
 
   RSpec.describe DsMeta do
-    let(:holding) { item_from_fixture('items/Q542_holding_example.json') }
-    let(:manuscript) { item_from_fixture('items/Q543_manuscript_example.json') }
-    let(:record) { item_from_fixture('items/Q544_record_example.json') }
-
     context 'with a record concerning a manuscript with a single current holding' do
       it 'correctly sets the holding' do
+        record = export_hash.fetch('Q544')
         meta = described_class.new(record, export_hash)
-        expect(meta.holding).to eq holding
+        expect(meta.holding).to eq export_hash.fetch('Q542')
       end
     end
 
