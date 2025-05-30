@@ -12,17 +12,26 @@ module DigitalScriptorium
       manuscript = export_hash[record.described_manuscript_id]
       current_holdings = current_holdings(manuscript, export_hash)
 
-      if current_holdings.size != 1
-        raise "Manuscripts must have exactly 1 current holding, found #{current_holdings.size}"
-      end
-
-      @holding = current_holdings.first
+      @holding = validate_holdings_count(manuscript, current_holdings)
       @manuscript = manuscript
       @record = record
     end
 
     def current_holdings(manuscript, export_hash)
       manuscript.holding_ids.filter_map { |id| export_hash[id] if export_hash[id]&.current? }
+    end
+
+    private
+
+    def validate_holdings_count(manuscript, current_holdings)
+      case current_holdings.size
+      when 0
+        raise NoCurrentHoldingException, manuscript.id
+      when 1
+        current_holdings.first
+      else
+        raise MultipleCurrentHoldingsException.new(manuscript.id, current_holdings.size)
+      end
     end
   end
 end
