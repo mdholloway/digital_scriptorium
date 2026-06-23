@@ -1,8 +1,6 @@
 # frozen_string_literal: true
 
 module DigitalScriptorium
-  
-
   RSpec.describe ShelfmarkClaimTransformer do
     context 'with a shelfmark (P8) claim' do
       json = read_fixture('claims/P8_shelfmark.json')

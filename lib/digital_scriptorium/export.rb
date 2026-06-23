@@ -25,7 +25,9 @@ module DigitalScriptorium
     end
 
     def to_hash
+      # rubocop:disable Rails/IndexBy
       @items.to_h { |el| [el.id, el] }
+      # rubocop:enable Rails/IndexBy
     end
   end
 end

@@ -3,8 +3,6 @@
 require 'json'
 
 module DigitalScriptorium
-  
-
   RSpec.describe QualifiedClaimTransformerWithFacetFallback do
     context 'with a title (P10) claim with standard title (P11) and original script (P13) qualifiers' do
       json = read_fixture('claims/P10_title_qualified.json')

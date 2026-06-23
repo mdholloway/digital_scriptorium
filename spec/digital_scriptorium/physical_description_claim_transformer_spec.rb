@@ -3,8 +3,6 @@
 require 'wikibase_representable'
 
 module DigitalScriptorium
-  
-
   RSpec.describe PhysicalDescriptionClaimTransformer do
     context 'with a physical description (P29) claim' do
       json = read_fixture('claims/P29_physical_description.json')

@@ -1,8 +1,6 @@
 # frozen_string_literal: true
 
 module DigitalScriptorium
-  
-
   RSpec.describe LinkClaimTransformer do
     context 'with an institutional record (P9) claim' do
       json = read_fixture('claims/P9_institutional_record.json')

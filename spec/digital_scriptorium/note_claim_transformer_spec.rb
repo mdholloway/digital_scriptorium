@@ -1,8 +1,6 @@
 # frozen_string_literal: true
 
 module DigitalScriptorium
-  
-
   RSpec.describe NoteClaimTransformer do
     context 'with a note (P32) claim' do
       json = read_fixture('claims/P32_note.json')

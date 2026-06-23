@@ -1,8 +1,6 @@
 # frozen_string_literal: true
 
 module DigitalScriptorium
-  
-
   RSpec.describe IiifManifestClaimTransformer do
     context 'with an IIIF manifest (P41) claim' do
       json = read_fixture('claims/P41_iiif_manifest.json')

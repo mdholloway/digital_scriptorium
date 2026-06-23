@@ -7,13 +7,17 @@ module DigitalScriptorium
   # Representer class for deserializing Wikibase data exports from JSON.
   class ExportRepresenter < Representable::Decorator
     include Representable::JSON::Collection
-    include WikibaseRepresentable::Model
-    include WikibaseRepresentable::Representers
 
     items decorator: lambda { |input:, **|
-      input.type == Item::ENTITY_TYPE ? ItemRepresenter : PropertyRepresenter
+      if input.type == WikibaseRepresentable::Model::Item::ENTITY_TYPE
+        WikibaseRepresentable::Representers::ItemRepresenter
+      else
+        WikibaseRepresentable::Representers::PropertyRepresenter
+      end
     }, class: lambda { |input:, **|
-      return Property unless input['type'] == Item::ENTITY_TYPE
+      unless input['type'] == WikibaseRepresentable::Model::Item::ENTITY_TYPE
+        return WikibaseRepresentable::Model::Property
+      end
 
       case ExportRepresenter.instance_of_id_from input
       when ItemId::MANUSCRIPT
@@ -27,14 +31,12 @@ module DigitalScriptorium
       end
     }
 
-    # rubocop:disable Naming/PredicateMethod
     def self.instance_of_id_from(item_hash)
       claims = item_hash['claims']
       return nil unless claims&.any?
 
       claims.dig(PropertyId::INSTANCE_OF, 0, 'mainsnak', 'datavalue', 'value', 'id')
     end
-    # rubocop:enable Naming/PredicateMethod
 
     private
 

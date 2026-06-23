@@ -1,8 +1,6 @@
 # frozen_string_literal: true
 
 module DigitalScriptorium
-  
-
   RSpec.describe UniformTitleClaimTransformer do
     context 'with a uniform title (P12) claim' do
       json = read_fixture('claims/P12_uniform_title.json')

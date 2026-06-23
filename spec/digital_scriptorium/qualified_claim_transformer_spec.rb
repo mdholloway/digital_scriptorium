@@ -1,8 +1,6 @@
 # frozen_string_literal: true
 
 module DigitalScriptorium
-  
-
   RSpec.describe QualifiedClaimTransformer do
     context 'with a qualified institution (P5) claim' do
       json = read_fixture('claims/P5_institution_qualified.json')
