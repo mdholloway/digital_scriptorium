@@ -1,20 +1,5 @@
 # frozen_string_literal: true
 
-require_relative 'transformers/base_claim_transformer'
-require_relative 'transformers/link_claim_transformer'
-require_relative 'transformers/qualified_claim_transformer'
-require_relative 'transformers/qualified_claim_transformer_with_facet_fallback'
-
-require_relative 'transformers/acknowledgements_claim_transformer'
-require_relative 'transformers/date_claim_transformer'
-require_relative 'transformers/dated_claim_transformer'
-require_relative 'transformers/iiif_manifest_claim_transformer'
-require_relative 'transformers/name_claim_transformer'
-require_relative 'transformers/note_claim_transformer'
-require_relative 'transformers/physical_description_claim_transformer'
-require_relative 'transformers/shelfmark_claim_transformer'
-require_relative 'transformers/uniform_title_claim_transformer'
-
 module DigitalScriptorium
   # Factory for creating claim transformers
   module Transformers

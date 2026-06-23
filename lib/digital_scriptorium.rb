@@ -1,16 +1,18 @@
 # frozen_string_literal: true
 
-require 'digital_scriptorium/version'
-require 'digital_scriptorium/item_id'
-require 'digital_scriptorium/property_id'
+# Top-level namespace for the Digital Scriptorium gem
+module DigitalScriptorium
+end
 
-require 'digital_scriptorium/ds_item'
-require 'digital_scriptorium/ds_meta'
-require 'digital_scriptorium/holding'
-require 'digital_scriptorium/manuscript'
-require 'digital_scriptorium/record'
-
-require 'digital_scriptorium/export'
-require 'digital_scriptorium/export_representer'
-
-require 'digital_scriptorium/transformers'
+require 'zeitwerk'
+loader = Zeitwerk::Loader.for_gem
+# TODO: v1.0 – Fix transformer class namespacing quirk.
+# Transformer classes (e.g., NameClaimTransformer) currently live in
+# lib/digital_scriptorium/transformers/*.rb but are defined as
+# DigitalScriptorium::NameClaimTransformer, NOT
+# DigitalScriptorium::Transformers::NameClaimTransformer.
+# The collapse call below works around this mismatch for Zeitwerk.
+# For 1.0, move the classes into the proper
+# DigitalScriptorium::Transformers namespace and remove the collapse.
+loader.collapse("#{__dir__}/digital_scriptorium/transformers")
+loader.setup
