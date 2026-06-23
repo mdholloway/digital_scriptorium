@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
   spec.summary = 'Supporting code for the Digital Scriptorium DS Catalog 2.0 project'
   spec.homepage = 'https://github.com/mdholloway/digital_scriptorium'
   spec.license = 'MIT'
-  spec.required_ruby_version = '>= 3.0.0'
+  spec.required_ruby_version = '>= 3.2.0'
   spec.metadata['homepage_uri'] = spec.homepage
   spec.metadata['rubygems_mfa_required'] = 'true'
 
@@ -29,7 +29,7 @@ Gem::Specification.new do |spec|
   spec.require_paths = ['lib']
 
   spec.add_dependency 'wikibase_representable', '~> 0.1'
-  spec.add_development_dependency 'bundler', '~> 2.5'
+
   spec.add_development_dependency 'pry', '~> 0.14'
   spec.add_development_dependency 'rake', '~> 13.2'
   spec.add_development_dependency 'rspec', '~> 3.13'
