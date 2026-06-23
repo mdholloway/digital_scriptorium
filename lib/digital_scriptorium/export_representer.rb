@@ -15,7 +15,7 @@ module DigitalScriptorium
     }, class: lambda { |input:, **|
       return Property unless input['type'] == Item::ENTITY_TYPE
 
-      case instance_of_id_from input
+      case ExportRepresenter.instance_of_id_from input
       when ItemId::MANUSCRIPT
         Manuscript
       when ItemId::HOLDING
