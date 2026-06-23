@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+require 'digital_scriptorium/version'
 require 'digital_scriptorium/item_id'
 require 'digital_scriptorium/property_id'
 
