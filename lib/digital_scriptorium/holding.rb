@@ -4,13 +4,14 @@ module DigitalScriptorium
   # An item representing a Digital Scriptorium holding (instance of Q2)
   class Holding < DsItem
     def status_claims
-      claims_by_property_id PropertyId::HOLDING_STATUS # P6
+      claims_by_property_id(PropertyId::HOLDING_STATUS)
     end
 
     def status
-      return unless status_claims&.any?
+      claims = status_claims
+      return unless claims&.any?
 
-      status_claims&.first&.entity_id_value
+      claims.first.entity_id_value
     end
 
     def current?
