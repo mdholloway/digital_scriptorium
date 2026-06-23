@@ -5,10 +5,14 @@ module DigitalScriptorium
   class BaseClaimTransformer
     attr_reader :claim, :prefix
 
-    def initialize(claim, **kwargs)
+    # rubocop:disable Lint/UnusedMethodArgument
+    # export_hash and authority_id are accepted for API compatibility
+    # with Transformers.create, which passes them to all transformers
+    def initialize(claim, export_hash = nil, prefix: nil, authority_id: nil)
       @claim = claim
-      @prefix = kwargs[:prefix]
+      @prefix = prefix
     end
+    # rubocop:enable Lint/UnusedMethodArgument
 
     def display_values
       []

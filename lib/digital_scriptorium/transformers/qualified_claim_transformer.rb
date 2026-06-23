@@ -5,10 +5,10 @@ module DigitalScriptorium
   class QualifiedClaimTransformer < BaseClaimTransformer
     attr_reader :export_hash, :authority_id
 
-    def initialize(claim, export_hash, **kwargs)
-      super(claim, **kwargs)
+    def initialize(claim, export_hash, prefix: nil, authority_id: nil)
+      super(claim, export_hash, prefix: prefix, authority_id: authority_id)
       @export_hash = export_hash
-      @authority_id = kwargs[:authority_id]
+      @authority_id = authority_id
     end
 
     def display_values

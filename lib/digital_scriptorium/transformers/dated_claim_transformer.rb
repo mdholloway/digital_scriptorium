@@ -5,8 +5,8 @@ module DigitalScriptorium
   class DatedClaimTransformer < BaseClaimTransformer
     attr_reader :export_hash
 
-    def initialize(claim, export_hash, **kwargs)
-      super(claim, **kwargs)
+    def initialize(claim, export_hash = nil, prefix: nil, authority_id: nil)
+      super(claim, export_hash, prefix: prefix, authority_id: authority_id)
       @export_hash = export_hash
     end
 
