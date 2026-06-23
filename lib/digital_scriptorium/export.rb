@@ -16,7 +16,7 @@ module DigitalScriptorium
       claims = item_hash['claims']
       return nil unless claims&.any?
 
-      claims.dig('P16', 0, 'mainsnak', 'datavalue', 'value', 'id')
+      claims.dig(PropertyId::INSTANCE_OF, 0, 'mainsnak', 'datavalue', 'value', 'id')
     end
   end
 end

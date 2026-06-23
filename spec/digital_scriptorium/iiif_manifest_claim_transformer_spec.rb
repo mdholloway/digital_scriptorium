@@ -1,12 +1,12 @@
 # frozen_string_literal: true
 
 module DigitalScriptorium
-  include PropertyId
+  
 
   RSpec.describe IiifManifestClaimTransformer do
     context 'with an IIIF manifest (P41) claim' do
       json = read_fixture('claims/P41_iiif_manifest.json')
-      prefix = Transformers.prefix(IIIF_MANIFEST)
+      prefix = Transformers.prefix(PropertyId::IIIF_MANIFEST)
       expected = {
         'iiif_manifest_link' => ['https://colenda.library.upenn.edu/phalt/iiif/2/81431-p33p8v/manifest'],
         'images_facet' => ['Yes']

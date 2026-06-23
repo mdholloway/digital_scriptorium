@@ -3,11 +3,8 @@
 module DigitalScriptorium
   # An item representing a Digital Scriptorium holding (instance of Q2)
   class Holding < DsItem
-    include ItemId
-    include PropertyId
-
     def status_claims
-      claims_by_property_id HOLDING_STATUS # P6
+      claims_by_property_id PropertyId::HOLDING_STATUS # P6
     end
 
     def status
@@ -17,7 +14,7 @@ module DigitalScriptorium
     end
 
     def current?
-      status == HOLDING_STATUS_CURRENT
+      status == ItemId::HOLDING_STATUS_CURRENT
     end
   end
 end

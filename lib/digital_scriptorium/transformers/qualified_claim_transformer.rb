@@ -3,8 +3,6 @@
 module DigitalScriptorium
   # Transformer for converting qualified claims of Digital Scriptorium items into Solr fields.
   class QualifiedClaimTransformer < BaseClaimTransformer
-    include PropertyId
-
     attr_reader :export_hash, :authority_id
 
     def initialize(claim, export_hash, **kwargs)
@@ -26,15 +24,15 @@ module DigitalScriptorium
     end
 
     def in_original_script
-      claim.qualifiers_by_property_id(IN_ORIGINAL_SCRIPT)&.first&.data_value&.value
+      claim.qualifiers_by_property_id(PropertyId::IN_ORIGINAL_SCRIPT)&.first&.data_value&.value
     end
 
     def external_uri(authority)
-      authority.claims_by_property_id(EXTERNAL_URI)&.first&.data_value
+      authority.claims_by_property_id(PropertyId::EXTERNAL_URI)&.first&.data_value
     end
 
     def wikidata_id(authority)
-      authority.claims_by_property_id(WIKIDATA_QID)&.first&.data_value
+      authority.claims_by_property_id(PropertyId::WIKIDATA_QID)&.first&.data_value
     end
 
     def wikidata_uri(authority)

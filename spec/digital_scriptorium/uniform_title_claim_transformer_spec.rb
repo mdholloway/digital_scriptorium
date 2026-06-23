@@ -1,12 +1,12 @@
 # frozen_string_literal: true
 
 module DigitalScriptorium
-  include PropertyId
+  
 
   RSpec.describe UniformTitleClaimTransformer do
     context 'with a uniform title (P12) claim' do
       json = read_fixture('claims/P12_uniform_title.json')
-      prefix = Transformers.prefix(UNIFORM_TITLE_AS_RECORDED)
+      prefix = Transformers.prefix(PropertyId::UNIFORM_TITLE_AS_RECORDED)
       expected = {
         'uniform_title_search' => ['Image du monde.']
       }
