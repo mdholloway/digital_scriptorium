@@ -1,13 +1,11 @@
 # frozen_string_literal: true
 
 module DigitalScriptorium
-  include PropertyId
-
   RSpec.describe QualifiedClaimTransformer do
     context 'with a qualified institution (P5) claim' do
       json = read_fixture('claims/P5_institution_qualified.json')
-      prefix = Transformers.prefix(HOLDING_INSTITUTION_AS_RECORDED)
-      authority_id = Transformers.authority_id(HOLDING_INSTITUTION_AS_RECORDED)
+      prefix = Transformers.prefix(PropertyId::HOLDING_INSTITUTION_AS_RECORDED)
+      authority_id = Transformers.authority_id(PropertyId::HOLDING_INSTITUTION_AS_RECORDED)
       expected = {
         'institution_display' => [{
           'recorded_value' => 'U. of Penna.',
@@ -29,8 +27,8 @@ module DigitalScriptorium
 
     context 'with an unqualified institution (P5) claim' do
       json = read_fixture('claims/P5_institution_unqualified.json')
-      prefix = Transformers.prefix(HOLDING_INSTITUTION_AS_RECORDED)
-      authority_id = Transformers.authority_id(HOLDING_INSTITUTION_AS_RECORDED)
+      prefix = Transformers.prefix(PropertyId::HOLDING_INSTITUTION_AS_RECORDED)
+      authority_id = Transformers.authority_id(PropertyId::HOLDING_INSTITUTION_AS_RECORDED)
       expected = {
         'institution_display' => [{ 'recorded_value' => 'U. of Penna.' }.to_json],
         'institution_search' => ['U. of Penna.']
@@ -45,8 +43,8 @@ module DigitalScriptorium
 
     context 'with a qualified language (P21) claim' do
       json = read_fixture('claims/P21_language_qualified.json')
-      prefix = Transformers.prefix(LANGUAGE_AS_RECORDED)
-      authority_id = Transformers.authority_id(LANGUAGE_AS_RECORDED)
+      prefix = Transformers.prefix(PropertyId::LANGUAGE_AS_RECORDED)
+      authority_id = Transformers.authority_id(PropertyId::LANGUAGE_AS_RECORDED)
       expected = {
         'language_display' => [{
           'recorded_value' => 'In Latin',
@@ -65,8 +63,8 @@ module DigitalScriptorium
 
     context 'with an unqualified language (P21) claim' do
       json = read_fixture('claims/P21_language_unqualified.json')
-      prefix = Transformers.prefix(LANGUAGE_AS_RECORDED)
-      authority_id = Transformers.authority_id(LANGUAGE_AS_RECORDED)
+      prefix = Transformers.prefix(PropertyId::LANGUAGE_AS_RECORDED)
+      authority_id = Transformers.authority_id(PropertyId::LANGUAGE_AS_RECORDED)
       expected = {
         'language_display' => [{ 'recorded_value' => 'In Latin' }.to_json],
         'language_search' => ['In Latin']
@@ -81,8 +79,8 @@ module DigitalScriptorium
 
     context 'with a qualified place (P27) claim with multi-valued qualifier' do
       json = read_fixture('claims/P27_place_multiple_qualifier_values.json')
-      prefix = Transformers.prefix(PRODUCTION_PLACE_AS_RECORDED)
-      authority_id = Transformers.authority_id(PRODUCTION_PLACE_AS_RECORDED)
+      prefix = Transformers.prefix(PropertyId::PRODUCTION_PLACE_AS_RECORDED)
+      authority_id = Transformers.authority_id(PropertyId::PRODUCTION_PLACE_AS_RECORDED)
       expected = {
         'place_display' => [{
           'recorded_value' => '[Provence or Spain],',
@@ -104,8 +102,8 @@ module DigitalScriptorium
 
     context 'with an unqualified place (P27) claim' do
       json = read_fixture('claims/P27_place_unqualified.json')
-      prefix = Transformers.prefix(PRODUCTION_PLACE_AS_RECORDED)
-      authority_id = Transformers.authority_id(PRODUCTION_PLACE_AS_RECORDED)
+      prefix = Transformers.prefix(PropertyId::PRODUCTION_PLACE_AS_RECORDED)
+      authority_id = Transformers.authority_id(PropertyId::PRODUCTION_PLACE_AS_RECORDED)
       expected = {
         'place_display' => [{ 'recorded_value' => '[Provence or Spain],' }.to_json],
         'place_search' => ['[Provence or Spain],']
@@ -120,8 +118,8 @@ module DigitalScriptorium
 
     context 'with a qualified material (P30) claim' do
       json = read_fixture('claims/P30_material_qualified.json')
-      prefix = Transformers.prefix(MATERIAL_AS_RECORDED)
-      authority_id = Transformers.authority_id(MATERIAL_AS_RECORDED)
+      prefix = Transformers.prefix(PropertyId::MATERIAL_AS_RECORDED)
+      authority_id = Transformers.authority_id(PropertyId::MATERIAL_AS_RECORDED)
       expected = {
         'material_display' => [{
           'recorded_value' => 'parchment',
@@ -140,8 +138,8 @@ module DigitalScriptorium
 
     context 'with an unqualified material (P30) claim' do
       json = read_fixture('claims/P30_material_unqualified.json')
-      prefix = Transformers.prefix(MATERIAL_AS_RECORDED)
-      authority_id = Transformers.authority_id(MATERIAL_AS_RECORDED)
+      prefix = Transformers.prefix(PropertyId::MATERIAL_AS_RECORDED)
+      authority_id = Transformers.authority_id(PropertyId::MATERIAL_AS_RECORDED)
       expected = {
         'material_display' => [{ 'recorded_value' => 'parchment' }.to_json],
         'material_search' => ['parchment']

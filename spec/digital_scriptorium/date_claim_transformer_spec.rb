@@ -3,13 +3,11 @@
 require 'json'
 
 module DigitalScriptorium
-  include PropertyId
-
   RSpec.describe DateClaimTransformer do
     context 'with a qualified date (P23) claim' do
       json = read_fixture('claims/P23_date_qualified.json')
-      prefix = Transformers.prefix(PRODUCTION_DATE_AS_RECORDED)
-      authority_id = Transformers.authority_id(PRODUCTION_DATE_AS_RECORDED)
+      prefix = Transformers.prefix(PropertyId::PRODUCTION_DATE_AS_RECORDED)
+      authority_id = Transformers.authority_id(PropertyId::PRODUCTION_DATE_AS_RECORDED)
       expected = {
         'date_meta' => ['1358.'],
         'date_display' => [{
@@ -35,8 +33,8 @@ module DigitalScriptorium
 
     context 'with an unqualified date (P23) claim' do
       json = read_fixture('claims/P23_date_unqualified.json')
-      prefix = Transformers.prefix(PRODUCTION_DATE_AS_RECORDED)
-      authority_id = Transformers.authority_id(PRODUCTION_DATE_AS_RECORDED)
+      prefix = Transformers.prefix(PropertyId::PRODUCTION_DATE_AS_RECORDED)
+      authority_id = Transformers.authority_id(PropertyId::PRODUCTION_DATE_AS_RECORDED)
       expected = {
         'date_meta' => ['1358.'],
         'date_display' => [{ 'recorded_value' => '1358.' }.to_json],

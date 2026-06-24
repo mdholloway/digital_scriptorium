@@ -3,13 +3,11 @@
 require 'json'
 
 module DigitalScriptorium
-  include PropertyId
-
   RSpec.describe QualifiedClaimTransformerWithFacetFallback do
     context 'with a title (P10) claim with standard title (P11) and original script (P13) qualifiers' do
       json = read_fixture('claims/P10_title_qualified.json')
-      prefix = Transformers.prefix(TITLE_AS_RECORDED)
-      authority_id = Transformers.authority_id(TITLE_AS_RECORDED)
+      prefix = Transformers.prefix(PropertyId::TITLE_AS_RECORDED)
+      authority_id = Transformers.authority_id(PropertyId::TITLE_AS_RECORDED)
       expected = {
         'title_display' => [{
           'recorded_value' => 'Kitāb al-Majisṭī',
@@ -29,8 +27,8 @@ module DigitalScriptorium
 
     context 'with a title (P10) claim with only an original script (P13) qualifier' do
       json = read_fixture('claims/P10_title_qualified_original_script_only.json')
-      prefix = Transformers.prefix(TITLE_AS_RECORDED)
-      authority_id = Transformers.authority_id(TITLE_AS_RECORDED)
+      prefix = Transformers.prefix(PropertyId::TITLE_AS_RECORDED)
+      authority_id = Transformers.authority_id(PropertyId::TITLE_AS_RECORDED)
       expected = {
         'title_display' => [{
           'recorded_value' => 'Kitāb al-Majisṭī',
@@ -49,8 +47,8 @@ module DigitalScriptorium
 
     context 'with an unqualified title (P10) claim' do
       json = read_fixture('claims/P10_title_unqualified.json')
-      prefix = Transformers.prefix(TITLE_AS_RECORDED)
-      authority_id = Transformers.authority_id(TITLE_AS_RECORDED)
+      prefix = Transformers.prefix(PropertyId::TITLE_AS_RECORDED)
+      authority_id = Transformers.authority_id(PropertyId::TITLE_AS_RECORDED)
       expected = {
         'title_display' => [{ 'recorded_value' => 'Kitāb al-Majisṭī' }.to_json],
         'title_search' => ['Kitāb al-Majisṭī'],
@@ -66,8 +64,8 @@ module DigitalScriptorium
 
     context 'with a qualified genre (P18) claim' do
       json = read_fixture('claims/P18_genre_qualified.json')
-      prefix = Transformers.prefix(GENRE_AS_RECORDED)
-      authority_id = Transformers.authority_id(GENRE_AS_RECORDED)
+      prefix = Transformers.prefix(PropertyId::GENRE_AS_RECORDED)
+      authority_id = Transformers.authority_id(PropertyId::GENRE_AS_RECORDED)
       expected = {
         'term_display' => [{
           'recorded_value' => 'Deeds',
@@ -86,8 +84,8 @@ module DigitalScriptorium
 
     context 'with an unqualified genre (P18) claim' do
       json = read_fixture('claims/P18_genre_unqualified.json')
-      prefix = Transformers.prefix(GENRE_AS_RECORDED)
-      authority_id = Transformers.authority_id(GENRE_AS_RECORDED)
+      prefix = Transformers.prefix(PropertyId::GENRE_AS_RECORDED)
+      authority_id = Transformers.authority_id(PropertyId::GENRE_AS_RECORDED)
       expected = {
         'term_display' => [{ 'recorded_value' => 'Deeds' }.to_json],
         'term_search' => ['Deeds'],
@@ -103,8 +101,8 @@ module DigitalScriptorium
 
     context 'with a subject (P19) claim with multiple authority (P20) values' do
       json = read_fixture('claims/P19_subject_multiple_qualifier_values.json')
-      prefix = Transformers.prefix(SUBJECT_AS_RECORDED)
-      authority_id = Transformers.authority_id(SUBJECT_AS_RECORDED)
+      prefix = Transformers.prefix(PropertyId::SUBJECT_AS_RECORDED)
+      authority_id = Transformers.authority_id(PropertyId::SUBJECT_AS_RECORDED)
       expected = {
         'term_display' => [{
           'recorded_value' => 'Cosmology--Early works to 1800',
@@ -126,8 +124,8 @@ module DigitalScriptorium
 
     context 'with an unqualified subject (P19) claim' do
       json = read_fixture('claims/P19_subject_unqualified.json')
-      prefix = Transformers.prefix(SUBJECT_AS_RECORDED)
-      authority_id = Transformers.authority_id(SUBJECT_AS_RECORDED)
+      prefix = Transformers.prefix(PropertyId::SUBJECT_AS_RECORDED)
+      authority_id = Transformers.authority_id(PropertyId::SUBJECT_AS_RECORDED)
       expected = {
         'term_display' => [{ 'recorded_value' => 'Cosmology--Early works to 1800' }.to_json],
         'term_search' => ['Cosmology--Early works to 1800'],
