@@ -3,20 +3,31 @@
 module DigitalScriptorium
   # Simple model class representing a Wikibase JSON export.
   # Provides a to_hash method to facilitate entity lookups by ID.
-  class Export < Array
-    def to_hash
-      hash = {}
-      each do |el|
-        hash[el.id] = el
-      end
-      hash
+  class Export
+    include Enumerable
+
+    def initialize(items = [])
+      @items = items
     end
 
-    def instance_of_id_from(item_hash)
-      claims = item_hash['claims']
-      return nil unless claims&.any?
+    def <<(item)
+      @items << item
+      self
+    end
 
-      claims.dig('P16', 0, 'mainsnak', 'datavalue', 'value', 'id')
+    def each(&block)
+      @items.each(&block)
+    end
+
+    def replace(items)
+      @items = items.to_a
+      self
+    end
+
+    def to_hash
+      # rubocop:disable Rails/IndexBy
+      @items.to_h { |el| [el.id, el] }
+      # rubocop:enable Rails/IndexBy
     end
   end
 end

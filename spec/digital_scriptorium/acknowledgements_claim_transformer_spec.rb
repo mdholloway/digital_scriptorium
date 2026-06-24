@@ -1,12 +1,10 @@
 # frozen_string_literal: true
 
 module DigitalScriptorium
-  include PropertyId
-
   RSpec.describe AcknowledgementsClaimTransformer do
     context 'with an acknowledgements (P33) claim' do
       json = read_fixture('claims/P33_acknowledgements.json')
-      prefix = Transformers.prefix(ACKNOWLEDGEMENTS)
+      prefix = Transformers.prefix(PropertyId::ACKNOWLEDGEMENTS)
       expected = {
         'acknowledgements_display' => [
           '{"recorded_value":"We thank Michael W. Heil for his work in making this description available."}'

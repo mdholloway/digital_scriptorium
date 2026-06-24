@@ -5,8 +5,6 @@ require 'time'
 module DigitalScriptorium
   # Transformer for production date (P23) claims.
   class DateClaimTransformer < QualifiedClaimTransformer
-    include PropertyId
-
     def solr_props
       super.merge(meta_props).merge(int_props)
     end
@@ -18,7 +16,7 @@ module DigitalScriptorium
     end
 
     def int_props
-      return {} unless claim.qualifiers_by_property_id? CENTURY
+      return {} unless claim.qualifiers_by_property_id? PropertyId::CENTURY
 
       {
         'century_int' => [century_int]
@@ -35,7 +33,7 @@ module DigitalScriptorium
     end
 
     def century_int
-      parse_year(time_value_from_qualifier(CENTURY))
+      parse_year(time_value_from_qualifier(PropertyId::CENTURY))
     end
 
     def time_value_from_qualifier(property_id)

@@ -3,9 +3,6 @@
 module DigitalScriptorium
   # Represents a meta record consisting of a manuscript, its holding information, and metadata record.
   class DsMeta
-    include ItemId
-    include PropertyId
-
     attr_reader :holding, :manuscript, :record
 
     def initialize(record, export_hash)
